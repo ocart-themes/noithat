@@ -2,7 +2,7 @@
 @if($data)
     <div class="inline-block">
         <div class="float-left w-10 h-10">
-            <img src="{{ TnMedia::url(empty($data->images) ? asset('/images/no-image.jpg') : head($data->images)) }}" alt="{{ $data->name }}" class="rounded-full m-w-10 w-full h-full">
+            <img src="{{ TnMedia::getImageUrl(Arr::first($data->images),'thumb', asset('/images/no-image.jpg')) }}" alt="{{ $data->name }}" class="rounded-full m-w-10 w-full h-full">
         </div>
         <div class="pl-3 flex flex-wrap">
             <div>

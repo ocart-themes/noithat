@@ -3,7 +3,7 @@
     <div class="h-full block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
         <div class="relative pb-32 md:pb-40 overflow-hidden">
             <a href="{!! route(ROUTE_PRODUCT_SCREEN_NAME, ['slug' => $data->slug]) !!}">
-                <img class="absolute inset-0 h-full w-full object-cover" src="{{ TnMedia::url(empty($data->images) ? asset('/images/no-image.jpg') : head($data->images)) }}" alt="">
+                <img class="absolute inset-0 h-full w-full object-cover" src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}" alt="">
             </a>
         </div>
         <div class="p-2 md:p-3">
