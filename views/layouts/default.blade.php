@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-pjax-version" content="{{ mix('themes/ripple/css/style.css') }}">
+    <meta http-equiv="x-pjax-version" content="{{ mix('themes/noithat/css/style.css') }}">
 
     <link rel="icon" type="image/png" href="{{ get_favicon() }}">
 
@@ -15,7 +15,7 @@
 
     <!-- Styles -->
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-    <link rel="stylesheet" href="{{ Theme::asset('css/style.css?v=1') }}">
+    <link rel="stylesheet" href="{{ Theme::asset('css/style.css?v=1.1') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -169,8 +169,9 @@
         })
     })
 
-    function addToCart(productId, slug = null, quantity = 1, optionAttrs = []) {
-        axios.post('/add-to-cart', {
+    @if(is_active_plugin('ecommerce'))
+    function addToCart(productId, slug = null, quantity = 1, optionAttrs = [], buynow = false) {
+        axios.post('{{route(ROUTE_ADD_TO_CART_NAME)}}', {
             productId: productId,
             slug: slug,
             quantity: quantity,
@@ -178,12 +179,16 @@
         }).then((res) => {
             toast.success(res.message);
             $(".cart-count").text(res.count);
+            if (!!buynow){
+                $.pjax({url: '{{ route(ROUTE_SHOPPING_CART_SCREEN_NAME) }}', container: '#body'})
+            }
         }).catch(e => {
             toast.error(e.message)
         }).finally(() => {
             // $.pjax.reload('#body', {});
         });
     }
+    @endif
 
     $(function () {
         $(document).on('click', '[data-toggle=modal]', function () {

@@ -55,6 +55,7 @@
                 }
             },
 
+            @if(is_active_plugin('contact'))
             submit() {
                 $(".loading-icon").show();
                 const name = $(id + " input[name=name]").val();
@@ -64,7 +65,7 @@
 
                 $(".form-contact input").removeClass('text-red-600 border border-red-500 error:focus:border-red-500');
 
-                return axios.post('contact/send', {
+                return axios.post('{{ route(ROUTE_CONTACT_SEND) }}', {
                     name: name,
                     phone: phone,
                     email: email,
@@ -76,6 +77,7 @@
                     $(".loading-icon").hide();
                 });
             }
+            @endif
 
         }
     }

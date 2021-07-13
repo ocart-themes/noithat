@@ -25,7 +25,7 @@
                 @endif
 
                 <button x-on:click="openMobile = !openMobile" type="button"
-                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
                         aria-expanded="false">
                     <span class="sr-only">Open menu</span>
                     <!-- Heroicon name: outline/menu -->
@@ -40,18 +40,22 @@
 
             <!-- Menu Main -->
             @php
-                $menuMain = get_menu_main();
+                $menuMain = main_navigation();
+                $menuMain = parent_recursive($menuMain->toArray());
             @endphp
 
             @if(!empty($menuMain))
                 <nav class="hidden lg:flex space-x-6">
-                    @foreach($menuMain->data as $item)
-                        @if(!empty($item->children))
+                    @foreach($menuMain as $item)
+                        @php
+                        $children = Arr::get($item, 'children');
+                        @endphp
+                        @if(!empty($children))
                             <div class="group inline-block relative">
                                 <button type="button"
-                                        class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
                                         aria-expanded="false">
-                                    <span>{{ $item->name }}</span>
+                                    <span>{{ Arr::get($item, 'title') }}</span>
                                     <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
                                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                          aria-hidden="true">
@@ -66,8 +70,8 @@
                                     class="absolute z-10 -ml-4 pt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 absolute hidden group-hover:block">
                                     <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                                         <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                            @foreach($item->children as $i)
-                                                <a href="{{ $i->slug }}"
+                                            @foreach($children as $i)
+                                                <a href="{{ Arr::get($i, 'url') }}"
                                                    class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                                     <!-- Heroicon name: outline/cursor-click -->
                                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
@@ -79,16 +83,16 @@
                                                     </svg>
                                                     <div class="ml-4">
                                                         <p class="text-base font-medium text-gray-900">
-                                                            {{ $i->name }}
+                                                            {{ Arr::get($i, 'title') }}
                                                         </p>
                                                         {{--                                                    <p class="mt-1 text-sm text-gray-500">--}}
                                                         {{--                                                        Speak directly to your customers in a more meaningful way.--}}
                                                         {{--                                                    </p>--}}
                                                     </div>
                                                 </a>
-                                                @if(!empty($i->children))
-                                                    @foreach($i->children as $ii)
-                                                        <a href="{{ $ii->slug }}"
+                                                @if(!empty(Arr::get($i, 'children')))
+                                                    @foreach(Arr::get($i, 'children') as $ii)
+                                                        <a href="{{ Arr::get($ii, 'url') }}"
                                                            class="ml-4 -m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                                                  xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -100,7 +104,7 @@
                                                             </svg>
                                                             <div class="ml-4">
                                                                 <p class="text-base font-medium text-gray-900">
-                                                                    {{ $ii->name }}
+                                                                    {{ Arr::get($ii, 'title') }}
                                                                 </p>
                                                             </div>
                                                         </a>
@@ -113,14 +117,15 @@
                                 </div>
                             </div>
                         @else
-                            <a href="{{ $item->slug }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
-                                {{ $item->name }}
+                            <a href="{{ Arr::get($item, 'url') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                                {{ Arr::get($item, 'title') }}
                             </a>
                         @endif
                     @endforeach
 
                 </nav>
-            @endif
+        @endif
+
             <!-- End Menu Main -->
 
             <!-- Login/Cart -->
@@ -212,8 +217,11 @@
                 @if(!empty($menuMain))
                     <div class="mt-6">
                         <nav>
-                            @foreach($menuMain->data as $item)
-                                <a href="{{ $item->slug }}"
+                            @foreach($menuMain as $item)
+                                @php
+                                    $children = Arr::get($item, 'children');
+                                @endphp
+                                <a href="{{ Arr::get($item, 'url') }}"
                                    class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                     <!-- Heroicon name: outline/cursor-click -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
@@ -223,16 +231,16 @@
                                               d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
                                     </svg>
                                     <span class="ml-3 text-base font-medium text-gray-900">
-                                            {{ $item->name }}
+                                            {{ Arr::get($item, 'title') }}
                                         </span>
                                 </a>
-                                @if(!empty($item->children))
+                                @if(!empty($children))
                                     <nav class="ml-6">
-                                        @foreach($item->children as $subitem)
-                                            <a href="{{ $subitem->slug }}"
+                                        @foreach($children as $subitem)
+                                            <a href="{{ Arr::get($subitem, 'url') }}"
                                                class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                                 <span class="ml-3 text-base font-medium text-gray-900">
-                                            - {{ $subitem->name }}
+                                            - {{ Arr::get($subitem, 'title') }}
                                             </span>
                                         @endforeach
                                     </nav>
