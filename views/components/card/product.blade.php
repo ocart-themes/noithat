@@ -1,15 +1,13 @@
 @props(['data' => null])
 @if($data)
     <div class="h-full block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
-        <div class="relative pb-32 md:pb-40 overflow-hidden">
-            <a href="{!! route(ROUTE_PRODUCT_SCREEN_NAME, ['slug' => $data->slug]) !!}">
-                <img
-                    class="absolute inset-0 h-full w-full object-cover"
-                    src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}"
-                    alt=""
-                >
-            </a>
-        </div>
+        <a href="{!! route(ROUTE_PRODUCT_SCREEN_NAME, ['slug' => $data->slug]) !!}">
+            <img
+                class="w-full object-cover"
+                src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}"
+                alt=""
+            >
+        </a>
         <div class="p-2 md:p-3">
             @if(count($data->categories)>0)
                 <div class="hidden md:inline-block">

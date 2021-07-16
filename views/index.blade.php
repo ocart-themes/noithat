@@ -9,7 +9,7 @@
         <section class="section-custom sec-categories-product bg-white lg:bg-auto antialiased font-sans">
             <div class="container-custom">
                 <div class="w-full grid grid-cols-6 lg:grid-cols-9 gap-2 lg:gap-4">
-                    @foreach(parent_recursive(get_categories_feature()) as $category)
+                    @foreach(get_categories_feature() as $category)
                         <div class="text-center rounded-t-full hover:shadow-xl">
                             <a href="{!! route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, ['slug'=> $category->slug]) !!}" class="inline-block w-full">
                                 <img src="{{ TnMedia::getImageUrl($category->image, 'medium', asset('/images/no-image.jpg')) }}" class="w-full block m-auto rounded-full lg:p-3" style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);">
@@ -18,17 +18,6 @@
                         </div>
                     @endforeach
                 </div>
-{{--                --}}
-{{--                <div class="flex flex-wrap -mx-2 lg:-mx-4">--}}
-{{--                    @foreach(parent_recursive(get_categories_feature()) as $category)--}}
-{{--                    <div class="w-1/4 xl:w-1/6 p-1 lg:p-4 hover:shadow-xl text-center">--}}
-{{--                        <a href="{!! route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, ['slug'=> $category->slug]) !!}" class="inline-block w-full">--}}
-{{--                            <img src="{{ TnMedia::url(empty($category->image) ? asset('/images/no-image.jpg') : $category->image) }}" class="w-full block m-auto rounded-full lg:p-4">--}}
-{{--                            <div class="text-gray-600 font-bold line-clamp-2 text-xs md:text-base">{{ $category->name }}</div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
             </div>
         </section>
     @endif
