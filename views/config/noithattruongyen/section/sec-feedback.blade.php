@@ -1,9 +1,9 @@
 <section class="section-custom sec-testimonials">
     <div class="max-w-6xl mx-auto px-8">
-        <div class="relative" x-data="{ activeSlide: 1, slides:[1, 2] }">
+        <div class="relative" x-data="{ activeSlide: 1, slides:[1, 2, 3] }">
             <div class="relative lg:flex rounded-lg shadow-2xl overflow-hidden" key="1" x-show="activeSlide === 1">
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center">
-                    <img class="absolute h-full w-full object-cover" src="https://noithattruongyen.vn/images/1639e3e0-6c0b-4a46-90e6-0c7fb0dde47e-20%20(7)-min-800x364.jpg" alt=""/>
+                    <img class="absolute h-full w-full object-cover" src="https://ocart.test/storage/images/k-3.jpg" alt=""/>
                     <div class="absolute inset-0 bg-indigo-900 opacity-20"></div>
                 </div>
                 <div class="relative lg:w-7/12 bg-white">
@@ -12,17 +12,17 @@
                     </svg>
                     <div class="relative py-4 lg:py-24 px-4 lg:px-16 text-gray-700 leading-relaxed">
                         <p>
-                            Công ty Thiết Kế Nội Thất Trường Yến <strong class="text-gray-900 font-medium">là</strong> một trong những đơn vị hàng đầu trong lĩnh vực thiết kế nội thất, thi công nội thất. Nhiều năm kinh nghiệm về thiết kế nội thất chung cư, biệt thự..vv.
+                            Trong hơi thở dồn dập của thời đại, chuyện ăn mặc của con người không còn dừng ở “ăn no mặc ấm” mà đã “thoát xác”, trở thành một tín ngưỡng, một niềm tin lấp lánh bao phủ lấy chúng ta.
                         </p>
                         <p class="mt-6">
-                            <a href="javascript:void(0)" class="font-medium text-blue-600 hover:text-red-900">Công ty Thiết Kế Nội Thất Trường Yến &rarr;</a>
+                            <a href="javascript:void(0)" class="font-medium text-blue-600 hover:text-red-900">Công ty Thiết Kế Sevenweb.vn &rarr;</a>
                         </p>
                     </div>
                 </div>
             </div>
             <div class="relative lg:flex rounded-lg shadow-2xl overflow-hidden" key="2" x-show="activeSlide === 2">
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center">
-                    <img class="absolute h-full w-full object-cover" src="https://noithattruongyen.vn/images/96199b4e-7f60-494f-b861-8896346d915a-13%20(8)-min-768x432.jpg" alt=""/>
+                    <img class="absolute h-full w-full object-cover" src="https://ocart.test/storage/images/k-2.jpg" alt=""/>
                     <div class="absolute inset-0 bg-indigo-900 opacity-20"></div>
                 </div>
                 <div class="relative lg:w-7/12 bg-white">
@@ -31,10 +31,29 @@
                     </svg>
                     <div class="relative py-12 lg:py-24 px-8 lg:px-16 text-gray-700 leading-relaxed">
                         <p>
-                            Công ty Thiết Kế Nội Thất Trường Yến là một trong những đơn vị hàng đầu trong lĩnh vực thiết kế nội thất, thi công nội thất. Nhiều năm kinh nghiệm về thiết kế nội thất chung cư, biệt thự..vv.
+                            Trải qua bao thăng trầm của lịch sử, những tích tụ của quá khứ tạo thành lớp bụi vàng lấp lánh để những người trẻ Việt gìn giữ, chắt chiu và sáng tạo bằng tất cả tâm huyết của mình.
                         </p>
                         <p class="mt-6">
-                            <a href="javascript:void(0)" class="font-medium text-blue-600 hover:text-red-900">Thiết Kế Nội Thất Trường Yến &rarr;</a>
+                            <a href="javascript:void(0)" class="font-medium text-blue-600 hover:text-red-900">Thiết Kế Sevenweb.vn &rarr;</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative lg:flex rounded-lg shadow-2xl overflow-hidden" key="3" x-show="activeSlide === 3">
+                <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center">
+                    <img class="absolute h-full w-full object-cover" src="https://ocart.test/storage/images/k-1.jpg" alt=""/>
+                    <div class="absolute inset-0 bg-indigo-900 opacity-20"></div>
+                </div>
+                <div class="relative lg:w-7/12 bg-white">
+                    <svg class="absolute h-full text-white w-24 -ml-12" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polygon points="50,0 100,0 50,100 0,100"/>
+                    </svg>
+                    <div class="relative py-4 lg:py-24 px-4 lg:px-16 text-gray-700 leading-relaxed">
+                        <p>
+                            Họ chính là những người tài hoa và nhiệt huyết nhất của làng thời trang Việt. Bằng tài năng thiên phú kết hợp với sự nhẫn nại, kiên trì và lòng yêu nghề, những “đôi bàn tay vàng”.
+                        </p>
+                        <p class="mt-6">
+                            <a href="javascript:void(0)" class="font-medium text-blue-600 hover:text-red-900">Công ty Thiết Kế Sevenweb.vn &rarr;</a>
                         </p>
                     </div>
                 </div>

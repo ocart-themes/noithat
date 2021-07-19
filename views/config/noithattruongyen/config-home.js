@@ -229,148 +229,131 @@ const configSections = {
 const configProductsMenu = {
     "data": [
         {
-            "name" : "Phòng khách",
-            "slug": "",
-            "id": "17",
+            "name" : "Thời trang nam",
+            "slug": "thoi-trang-nam",
+            "id": "67",
             "children": [
                 {
-                    "name" : "Sofa gỗ",
-                    "slug": "sofa",
+                    "name" : "Trang phục",
+                    "slug": "trang-phuc-nam",
                 },
                 {
-                    "name" : "Sofa da/nỉ",
-                    "slug": "sofa-da-ni",
+                    "name" : "Phụ kiện",
+                    "slug": "phu-kien-thoi-trang-nam",
                 },
                 {
-                    "name" : "Kệ tivi",
-                    "slug": "ke-ti-vi",
+                    "name" : "Giày dép",
+                    "slug": "giay-dep-nam",
                 },
                 {
-                    "name" : "Bàn trà",
-                    "slug": "ban-tra",
+                    "name" : "Đồ lót",
+                    "slug": "do-lot-nam",
                 },
                 {
-                    "name" : "Tủ giầy",
-                    "slug": "tu-giay",
+                    "name" : "Giày của bé",
+                    "slug": "giay-be-trai",
                 },
                 {
-                    "name" : "Tủ trang trí",
-                    "slug": "tu-trang-tri",
+                    "name" : "Trang phục bé",
+                    "slug": "trang-phuc-be-trai",
                 }
             ]
         },
         {
-            "name" : "Phòng ăn & bếp",
-            "slug": "",
-            "id": "13",
+            "name" : "Trang phục nam",
+            "slug": "trang-phuc-nam",
+            "id": "11",
             "children": [
                 {
-                    "name" : " Bàn ăn",
-                    "slug": "ban-an",
+                    "name" : " Áo hoodie",
+                    "slug": "ao-hoodie-nam",
                 },
                 {
-                    "name" : "Ghế ăn",
-                    "slug": "ghe-an",
+                    "name" : "Áo khoác",
+                    "slug": "ao-khoac-nam",
                 },
                 {
-                    "name" : "Tủ bếp",
-                    "slug": "tu-bep",
+                    "name" : "Áo Polo",
+                    "slug": "ao-polo-nam",
                 },
                 {
-                    "name" : "Tủ rượu",
-                    "slug": "tu-ruou",
+                    "name" : "Áo sơ mi",
+                    "slug": "ao-so-mi-nam",
+                },
+                {
+                    "name" : "Áo thun",
+                    "slug": "ao-thun-nam",
+                },
+                {
+                    "name" : "Áo trùm đầu",
+                    "slug": "ao-trum-dau-cardigan-nam",
+                },
+                {
+                    "name" : "Đồ vest",
+                    "slug": "do-vest-nam",
+                },
+                {
+                    "name" : "Quần dài",
+                    "slug": "quan-dai-nam",
+                },
+                {
+                    "name" : "Quần Jean",
+                    "slug": "quan-jean-nam",
+                },
+                {
+                    "name" : "Quần short",
+                    "slug": "quan-short-nam",
+                },
+                {
+                    "name" : "Hồi giáo",
+                    "slug": "trang-phuc-hoi-giao",
                 }
             ]
         },
         {
-            "name" : "Phòng ngủ",
-            "slug": "",
-            "id": "9",
+            "name" : "Phụ kiện thời trang nam",
+            "slug": "phu-kien-thoi-trang-nam",
+            "id": "14",
             "children": [
                 {
-                    "name" : "Giường",
-                    "slug": "giuong",
+                    "name" : "Thắt lưng",
+                    "slug": "that-lung-nam",
                 },
                 {
-                    "name" : "Tủ quần áo",
-                    "slug": "tu-quan-ao",
+                    "name" : "Tất vớ",
+                    "slug": "tat-vo-nam",
                 },
                 {
-                    "name" : "Bàn phấn",
-                    "slug": "ban-phan",
+                    "name" : "Ô dù",
+                    "slug": "o-du",
                 },
                 {
-                    "name" : "Tab đầu giường",
-                    "slug": "tab-dau-giuong",
+                    "name" : "Nón mũ nam",
+                    "slug": "non-mu-nam",
                 },
                 {
-                    "name" : "Bàn làm việc",
-                    "slug": "ban-lam-viec",
+                    "name" : "Nơ thời trang",
+                    "slug": "no-thoi-trang",
                 },
                 {
-                    "name" : "Combo phong ngủ",
-                    "slug": "combo-phong-ngu",
+                    "name" : "Khẩu trang",
+                    "slug": "khau-trang-vai",
+                },
+                {
+                    "name" : "Khăn choàng",
+                    "slug": "khan-choang-nam",
+                },
+                {
+                    "name" : "Găng tay",
+                    "slug": "gang-tay-nam",
+                },
+                {
+                    "name" : "Cà vạt",
+                    "slug": "ca-vat",
                 }
             ]
         },
-        {
-            "name" : "Phòng thờ",
-            "slug": "",
-            "id": "3",
-            "children": [
-                {
-                    "name" : "Vách trang trí",
-                    "slug": "vach-trang-tri",
-                },
-                {
-                    "name" : "Bàn thờ treo",
-                    "slug": "ban-tho-treo",
-                },
-                {
-                    "name" : "Tủ thờ",
-                    "slug": "tu-tho",
-                }
-            ]
-        },
-        {
-            "name" : "Trẻ em",
-            "slug": "",
-            "id": "6",
-            "children": [
-                {
-                    "name" : "Tủ quần áo trẻ em",
-                    "slug": "tu-quan-ao-tre-em",
-                },
-                {
-                    "name" : "Giường trẻ em",
-                    "slug": "giuong-tre-em",
-                },
-                {
-                    "name" : "Bàn học",
-                    "slug": "ban-hoc",
-                }
-            ]
-        },
-        {
-            "name" : "Đồ trang trí",
-            "slug": "",
-            "id": "1",
-            "children": [
-                {
-                    "name" : "Gương",
-                    "slug": "guong",
-                },
-                {
-                    "name" : "Giá",
-                    "slug": "gia",
-                },
-                {
-                    "name" : "Kệ",
-                    "slug": "ke",
-                }
-            ]
-        }
     ]
 }
 
-console.log(JSON.stringify(configMenuFooter))
+console.log(JSON.stringify(configProductsMenu))

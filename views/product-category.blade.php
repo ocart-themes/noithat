@@ -18,7 +18,7 @@
                     @endforeach
                 </div>
                 @if(method_exists($products, 'links'))
-                    <div>{!! $products->links() !!}</div>
+                    <div class="my-4">{!! $products->links() !!}</div>
                 @endif
             @else
                 <div class="p-2 md:p-4 mb-2 bg-gray-100">Chưa có sản phẩm nào!</div>

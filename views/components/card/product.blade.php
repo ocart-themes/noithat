@@ -9,34 +9,50 @@
             >
         </a>
         <div class="p-2 md:p-3">
-            @if(count($data->categories)>0)
-                <div class="hidden md:inline-block">
-                    <div class="line-clamp-1">
-                        @foreach($data->categories as $key=>$item)
-                            <a href="{!! route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, ['slug' => $item->slug]) !!}" class="leading-none text-gray-500 tracking-wide text-xs hover:text-blue-700" >
-                                {{ $item->name }}
-                            </a>
-                            @if(count($data->categories) != $key + 1)
-                                <span>, </span>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-            @endif
+{{--            @if(count($data->categories)>0)--}}
+{{--                <div class="hidden md:inline-block">--}}
+{{--                    <div class="line-clamp-1">--}}
+{{--                        @foreach($data->categories as $key=>$item)--}}
+{{--                            <a href="{!! route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, ['slug' => $item->slug]) !!}" class="leading-none text-gray-500 tracking-wide text-xs hover:text-blue-700" >--}}
+{{--                                {{ $item->name }}--}}
+{{--                            </a>--}}
+{{--                            @if(count($data->categories) != $key + 1)--}}
+{{--                                <span>, </span>--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            @endif--}}
             <a href="{!! route(ROUTE_PRODUCT_SCREEN_NAME, ['slug' => $data->slug]) !!}" class="hover:text-blue-700">
                 <h3 class="text-xs md:text-base font-semibold text-gray-700 line-clamp-2">{{ $data->name }}</h3>
             </a>
+
+            @if(is_active_plugin('ec_review'))
+                @php
+                    $avg = get_average_star_of_product($data->id);
+                @endphp
+                @if($avg > 1)
+                <div class="flex items-center my-1 md:mt-2 md: mb-0">
+                    @for($i=0; $i < 5; $i++)
+                        <x-theme::icons.star :active="$i < $avg"/>
+                    @endfor
+                </div>
+                @endif
+
+            @endif
 {{--            <div class="hidden md:block text-sm text-gray-500 md:line-clamp-3">{!! $data->description !!}</div>--}}
-            <div class="flex justify-between items-center md:mt-2">
+            <div class="flex justify-between items-center">
                 @if(!empty($data->sell_price) && $data->sell_price > 0)
-                    <div class="flex text-red-600">
-                        <span class="font-bold text-sm md:text-base">{{ format_price($data->sell_price) }}</span>
+                    <div class="inline-flex items-center">
+                        <span class="font-bold text-sm md:text-base">
+                            {{ format_price($data->sell_price) }}
+                        </span>
                         &nbsp;
-                        <span class="text-sm font-semibold">đ</span>
+                        <span class="text-base font-semibold underline">đ</span>
                         @if($data->price > $data->sell_price)
-                            <span class="hidden md:block font-medium line-through text-gray-300 text-sm ml-2">{{ format_price($data->price) }}</span>
-                            &nbsp;
-                            <span class="hidden md:block text-xs font-semibold text-gray-300 line-through">đ</span>
+                            <span class="font-bold text-white bg-red-500 rounded-sm px-1 text-xs ml-2">
+                                -{{ format_price(100 - ($data->sell_price/$data->price)*100) }}%
+                            </span>
                         @endif
                     </div>
                 @else

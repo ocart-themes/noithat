@@ -4,7 +4,7 @@
     'guest' => 'Guest'
 ]);
 
-TnMedia::addSize('medium', '300', '300');
+TnMedia::addSize('medium', '400', '400');
 TnMedia::addSize('large', '1080', '1080');
 
 if (is_active_plugin('contact')) {

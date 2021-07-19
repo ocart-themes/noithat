@@ -1,40 +1,53 @@
 <footer class="text-gray-300 dark-footer skin-dark-footer">
     <div class="bg-gray-800">
         <div class="container-custom py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:justify-items-end">
-                <div class="footer-widget">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:justify-items-end">
+                <div class="footer-widget col-span-2">
                     @php
-                        $logo = get_logo_footer();
+                        $address1 = theme_options()->getOption('address1', null);
+                        $address2 = theme_options()->getOption('address2', null);
+                        $hotline = theme_options()->getOption('address2', null);
                     @endphp
-                    @if(!empty($logo))
-                        <a href="{!! route('home') !!}">
-                            <img src="{{ $logo }}" class="img-footer w-2/4 mb-3" alt="">
-                        </a>
+                    <h4 class="widget-title mb-3 font-bold text-lg text-white">{!! get_title() !!}</h4>
+                    <p>{!! get_deps_footer() !!}</p>
+                    @if($address1)
+                    <p>Địa chỉ 1: {!! theme_options()->getOption('address1', null) !!}</p>
                     @endif
-                    <h4 class="widget-title mb-3 font-bold text-lg text-white">{!! get_deps_footer() !!}</h4>
-                    <p>Văn phòng đại diện: {!! get_address() !!}</p>
-                    <p>Xưởng sản xuất: {!! get_address2() !!}</p>
-                    <p>Hotline: {!! get_phone() !!}</p>
+                    @if($address2)
+                    <p>Địa chỉ 2: {!! theme_options()->getOption('address2', null) !!}</p>
+                    @endif
+                    @if($hotline)
+                    <p>Hotline: {!! theme_options()->getOption('phone', null) !!}</p>
+                    @endif
                 </div>
+
+                <!-- Menu Footer -->
                 @php
-                    $menuFooter = get_menu_footer();
+                    $menuFooter = footer_navigation();
+                    $menuFooter = parent_recursive($menuFooter->toArray());
                 @endphp
-                @if(!empty($menuFooter) && !empty($menuFooter->data) && is_array($menuFooter->data))
-                    @foreach($menuFooter->data as $item)
-                        <div class="footer-widget">
-                            <h4 class="widget-title mb-3 font-bold text-lg text-white">{{ $item->title }}</h4>
-                            @if(!empty($item->menu) && is_array($item->menu))
+                @if(!empty($menuFooter) && is_array($menuFooter))
+                    @foreach($menuFooter as $item)
+                        @php
+                            $children = Arr::get($item, 'children');
+                        @endphp
+
+                        @if(!empty($children))
+                            <div class="footer-widget">
+                                <h4 class="widget-title mb-3 font-bold text-lg text-white">
+                                    {{ Arr::get($item, 'title') }}
+                                </h4>
                                 <ul class="footer-menu">
-                                    @foreach($item->menu as $i)
-                                        @if(!empty($i->slug))
-                                            <li><a href="{{ $i->slug }}">{{ $i->name }}</a></li>
+                                    @foreach($children as $i)
+                                        @if(!empty(Arr::get($i, 'url')))
+                                            <li><a href="{{ Arr::get($i, 'url') }}">{{ Arr::get($i, 'title') }}</a></li>
                                         @else
-                                            <li>{{ $i->name }}</li>
+                                            <li>{{ Arr::get($i, 'title') }}</li>
                                         @endif
                                     @endforeach
                                 </ul>
-                            @endif
-                        </div>
+                            </div>
+                        @endif
                     @endforeach
                 @endif
             </div>

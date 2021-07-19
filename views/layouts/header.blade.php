@@ -254,7 +254,7 @@
             </div>
             <div class="py-6 px-5 space-y-6">
                 <p>{{ get_deps() }}</p>
-                <p>Hotline: {{ get_phone() }}</p>
+                <p>Hotline: {{ theme_options()->getOption('phone', null) }}</p>
                 <p>Địa chỉ: {{ get_address() }}</p>
             </div>
             <div class="py-6 px-5 space-y-6">

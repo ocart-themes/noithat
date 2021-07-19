@@ -32,10 +32,9 @@
         @endphp
         @if(!empty($products_feature) && count($products_feature)>0)
             <section class="section-custom sec-product antialiased text-gray-900 font-sans">
-                <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-4">
+                <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-8">
                     <h2 class="text-xl md:text-2xl font-bold">Sản phẩm bán chạy</h2>
-{{--                    <p class="text-sm md:text-base text-gray-600">Chúng tôi cho là xứng đáng với họ, và họ đang buộc tội những người ghét người công bình, Nhưng, sự thật,--}}
-{{--                        và bị hư hỏng bởi những lời xu nịnh của hiện tại, và những nỗi đau này, thú vui đã xóa bỏ</p>--}}
+                    <p class="text-sm md:text-base text-gray-600">Những sản phẩm bán chạy nhất của cửa hàng sẽ được hiển thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với chúng tôi khi bạn có thắc mắc.</p>
                 </div>
                 <div class="container-custom">
                     <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
@@ -56,10 +55,9 @@
         @endphp
         @if(!empty($products_new) && count($products_new)>0)
             <section class="section-custom sec-product antialiased text-gray-900 font-sans">
-                <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-4">
+                <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-8">
                     <h2 class="text-xl md:text-2xl font-bold">Sản phẩm khuyến mãi mới nhất</h2>
-                    {{--                    <p class="text-sm md:text-base text-gray-600">Chúng tôi cho là xứng đáng với họ, và họ đang buộc tội những người ghét người công bình, Nhưng, sự thật,--}}
-                    {{--                        và bị hư hỏng bởi những lời xu nịnh của hiện tại, và những nỗi đau này, thú vui đã xóa bỏ</p>--}}
+                                        <p class="text-sm md:text-base text-gray-600">Những sản phẩm khuyến mãi mới nhất của cửa hàng sẽ được hiển thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với chúng tôi khi bạn có thắc mắc.</p>
                 </div>
                 <div class="container-custom">
                     <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
@@ -88,9 +86,11 @@
 
     @if(is_active_plugin('blog'))
         <section class="section-custom sec-post antialiased font-sans">
-            <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-4">
+            <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-8">
                 <h2 class="text-xl md:text-2xl font-bold">Tin tức mới nhất</h2>
-{{--                <p class="text-sm md:text-base text-gray-600">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>--}}
+                <p class="text-sm md:text-base text-gray-600">
+                    Những tin tức mới nhất của cửa hàng sẽ được hiển thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với chúng tôi khi bạn có thắc mắc.
+                </p>
             </div>
 
             <div class="container-custom">

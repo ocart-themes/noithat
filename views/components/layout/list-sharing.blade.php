@@ -1,8 +1,8 @@
 <div id="list-sharing-desktop" class="list-sharing opacity-0 z-50 block md:inline-block">
     <ul class="list-sharing-ul">
-        @if(!empty(get_phone()))
+        @if(!empty(theme_options()->getOption('phone', null)))
             <li class="list-sharing-item">
-                <a href="tel:{{ preg_replace( '/[^0-9]/', '', get_phone() )}}" rel="nofollow"
+                <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone', null) )}}" rel="nofollow"
                    class="list-sharing-item-icon">
                     <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="22" cy="22" r="22" fill="url(#paint2_linear)"></circle>
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li class="list-sharing-item">
-                <a href="https://zalo.me/{{ preg_replace( '/[^0-9]/', '', get_phone() )}}" target="_blank"
+                <a href="https://zalo.me/{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone', null) )}}" target="_blank"
                    rel="nofollow" class="list-sharing-item-icon">
                     <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="22" cy="22" r="22" fill="url(#paint4_linear)"></circle>

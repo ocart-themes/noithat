@@ -1,15 +1,20 @@
 @php
     $banner = get_banner();
 @endphp
-<div class="slide-home owl-carousel owl-theme relative">
-    @if(!empty($banner) && is_array($banner))
-        @foreach($banner as $item)
-            <div class="item">
-                <img src="{{ $item->img }}">
-            </div>
-        @endforeach
-    @endif
-</div>
+<section class="section-custom ">
+    <div class="container-custom">
+        <div class="slide-home owl-carousel owl-theme relative">
+            @if(!empty($banner) && is_array($banner))
+                @foreach($banner as $item)
+                    <div class="item">
+                        <img src="{{ $item->img }}">
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+</section>
+
 <script>
     $(document).ready(function () {
         $('.slide-home').owlCarousel({

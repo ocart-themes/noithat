@@ -49,58 +49,6 @@
                             </a>
                         </span>
             </div>
-            <div class="hidden py-4 border-b border-gray-100">
-                <ul>
-                    <li class="mb-5 border-b border-dotted">
-                        <div class="pb-6">
-                            <div class="float-left w-16">
-                                <img src="https://themezhub.net/resido-live/resido/assets/img/user-1.jpg" alt="" class="rounded-full m-w-16">
-                            </div>
-                            <div class="pl-6 flex flex-wrap">
-                                <div class="comment-meta">
-                                    <div class="comment-left-meta">
-                                        <h4 class="font-2xl font-bold">Rosalina Kelian</h4>
-                                        <div class="mt-1 text-green-500">19th May 2018</div>
-                                    </div>
-                                </div>
-                                <div class="mt-4 text-gray-500">
-                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborumab.
-                                        perspiciatis unde omnis iste natus error
-                                        perspiciatis unde omnis iste natus error.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="mb-5">
-                        <div class="pb-6">
-                            <div class="float-left w-16">
-                                <img src="https://themezhub.net/resido-live/resido/assets/img/user-1.jpg" alt="" class="rounded-full m-w-16">
-                            </div>
-                            <div class="pl-6 flex flex-wrap">
-                                <div class="comment-meta">
-                                    <div class="comment-left-meta">
-                                        <h4 class="font-2xl font-bold">Rosalina Kelian</h4>
-                                        <div class="mt-1 text-green-500">19th May 2018</div>
-                                    </div>
-                                </div>
-                                <div class="mt-4 text-gray-500">
-                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborumab.
-                                        perspiciatis unde omnis iste natus error
-                                        perspiciatis unde omnis iste natus error.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div>
-                    <form>
-                        <textarea class="p-3 bg-indigo-50 w-full rounded-md outline-none" placeholder="Viết bình luận..." rows="5"></textarea>
-                        <div class="my-2">
-                            <button class="flex text-white bg-green-500 border-0 py-4 px-6 focus:outline-none hover:bg-green-700 rounded" type="submit">Submit Review</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
 
             <div class="fb-comments" data-href="{!! route(ROUTE_BLOG_POST_SCREEN_NAME, ['slug' => $post->slug]) !!}" data-width="100%" data-numposts="5"></div>
 

@@ -53,7 +53,7 @@
                             @endif
                             @if(is_active_plugin('ec_review'))
                                 <a
-                                    href="#comment-list"
+                                    href="#reviews-list"
                                     class="flex items-center"
                                 >
                                     @php
@@ -73,7 +73,7 @@
                                         x-text="product.sell_price"></span>đ</span>
                             </template>
                             <template x-if="product.price > product.sell_price">
-                                <span class="title-font font-medium text-md text-gray-300 line-through ml-4"><span
+                                <span class="title-font font-medium text-md text-gray-500 line-through ml-4"><span
                                         x-text="product.price"></span>đ</span>
                             </template>
                             <template
@@ -167,11 +167,11 @@
                                 </div>
                             </button>
 
-                            @if(!empty(get_phone()))
-                                <a href="tel:{{ preg_replace( '/[^0-9]/', '', get_phone() )}}"
+                            @if(!empty(theme_options()->getOption('phone', null)))
+                                <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone', null) )}}"
                                    class="items-center whitespace-nowrap inline-flex w-full text-white bg-green-500 border-0 py-3 px-6 mt-3 focus:outline-none rounded">
                                     <x-theme::icons.phone class="w-8"/>
-                                    <span class="w-full text-xl text-center">{{ get_phone() }}</span>
+                                    <span class="w-full text-xl text-center">{{ theme_options()->getOption('phone', null) }}</span>
                                 </a>
                             @endif
 
@@ -260,7 +260,7 @@
                 </div>
 
                 @if(is_active_plugin('ec_review'))
-                <div x-data="{selected:1}" id="comment-list" class="bg-white rounded-md mb-7">
+                <div x-data="{selected:1}" id="reviews-list" class="bg-white rounded-md mb-7">
                     <ul class="shadow-box">
 
                         <li class="relative">
@@ -392,7 +392,7 @@
                 <style></style>
 
                 @if(count($product->categories)>0)
-                    <div>
+                    <div class="mb-7">
                         <div class="text-left outline-none focus:outline-none font-bold mb-2 lg:mb-4">Sản phẩm liên
                             quan
                         </div>
