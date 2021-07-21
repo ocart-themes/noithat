@@ -23,7 +23,7 @@
     @endif
 
     @if(!empty($sections) && in_array('about', Arr::get($sections, 'value', [])))
-        @include(Theme::getThemeNamespace('config/' . Arr::get($sections, 'name', '') . '/section/sec-about'))
+        @include(Theme::getThemeNamespace('sections/sec-about'))
     @endif
 
     @if(is_active_plugin('ecommerce') && in_array('products_feture', Arr::get($sections, 'value', [])))

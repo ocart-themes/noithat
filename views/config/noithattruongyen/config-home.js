@@ -356,4 +356,23 @@ const configProductsMenu = {
     ]
 }
 
-console.log(JSON.stringify(configProductsMenu))
+const configSecAbout = {
+    "title": "",
+    "deps": "",
+    "data": [
+        {
+            "subTitle": "Dịch vụ tận tâm",
+            "subDeps": "Chúng tôi tin tưởng sẽ làm hài lòng quý khách hàng sử dụng sản phẩm của chúng tôi."
+        },
+        {
+            "subTitle": "Giá thành hợp lý",
+            "subDeps": "Chúng tôi tin tưởng sẽ làm hài lòng quý khách hàng sử dụng sản phẩm của chúng tôi."
+        },
+        {
+            "subTitle": "Sản phẩm đa dạng",
+            "subDeps": "Chúng tôi tin tưởng sẽ làm hài lòng quý khách hàng sử dụng sản phẩm của chúng tôi."
+        }
+    ]
+}
+
+console.log(JSON.stringify(configSecAbout))
