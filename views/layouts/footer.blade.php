@@ -22,34 +22,37 @@
                 </div>
 
                 <!-- Menu Footer -->
-                @php
-                    $menuFooter = footer_navigation();
-                    $menuFooter = parent_recursive($menuFooter->toArray());
-                @endphp
-                @if(!empty($menuFooter) && is_array($menuFooter))
-                    @foreach($menuFooter as $item)
-                        @php
-                            $children = Arr::get($item, 'children');
-                        @endphp
+                @if(function_exists('footer_navigation'))
+                    @php
+                        $menuFooter = footer_navigation();
+                        $menuFooter = parent_recursive($menuFooter->toArray());
+                    @endphp
+                    @if(!empty($menuFooter) && is_array($menuFooter))
+                        @foreach($menuFooter as $item)
+                            @php
+                                $children = Arr::get($item, 'children');
+                            @endphp
 
-                        @if(!empty($children))
-                            <div class="footer-widget">
-                                <h4 class="widget-title mb-3 font-bold text-lg text-white">
-                                    {{ Arr::get($item, 'title') }}
-                                </h4>
-                                <ul class="footer-menu">
-                                    @foreach($children as $i)
-                                        @if(!empty(Arr::get($i, 'url')))
-                                            <li><a href="{{ Arr::get($i, 'url') }}">{{ Arr::get($i, 'title') }}</a></li>
-                                        @else
-                                            <li>{{ Arr::get($i, 'title') }}</li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                    @endforeach
+                            @if(!empty($children))
+                                <div class="footer-widget">
+                                    <h4 class="widget-title mb-3 font-bold text-lg text-white">
+                                        {{ Arr::get($item, 'title') }}
+                                    </h4>
+                                    <ul class="footer-menu">
+                                        @foreach($children as $i)
+                                            @if(!empty(Arr::get($i, 'url')))
+                                                <li><a href="{{ Arr::get($i, 'url') }}">{{ Arr::get($i, 'title') }}</a></li>
+                                            @else
+                                                <li>{{ Arr::get($i, 'title') }}</li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endif
                 @endif
+
             </div>
         </div>
     </div>
