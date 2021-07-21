@@ -22,10 +22,6 @@
         </section>
     @endif
 
-    @if(!empty($sections) && in_array('about', Arr::get($sections, 'value', [])))
-        @include(Theme::getThemeNamespace('sections/sec-about'))
-    @endif
-
     @if(is_active_plugin('ecommerce') && in_array('products_feture', Arr::get($sections, 'value', [])))
         @php
             $products_feature = get_list_products_feature(8);
@@ -47,6 +43,10 @@
                 </div>
             </section>
         @endif
+    @endif
+
+    @if(!empty($sections) && in_array('about', Arr::get($sections, 'value', [])))
+        @include(Theme::getThemeNamespace('sections/sec-about'))
     @endif
 
     @if(is_active_plugin('ecommerce') && in_array('products_new', Arr::get($sections, 'value', [])))
@@ -116,7 +116,7 @@
     @endif
 
     @if(is_active_plugin('contact') && !empty($sections) && in_array('contact', Arr::get($sections, 'value', [])))
-        @include(Theme::getThemeNamespace('config/' . Arr::get($sections, 'name', '') . '/section/sec-contact'))
+        @include(Theme::getThemeNamespace('sections/sec-contact'))
     @endif
 
     <style>
