@@ -45,7 +45,7 @@
         @endif
     @endif
 
-    @if(!empty($sections) && in_array('about', Arr::get($sections, 'value', [])))
+    @if(!empty($sections) && in_array('about', Arr::get($sections, 'value', [])) && function_exists('get_sec_about'))
         @include(Theme::getThemeNamespace('sections/sec-about'))
     @endif
 
@@ -72,7 +72,7 @@
         @endif
     @endif
 
-    @if(!empty($sections) && in_array('feedback', Arr::get($sections, 'value', [])))
+    @if(!empty($sections) && in_array('feedback', Arr::get($sections, 'value', [])) && function_exists('get_sec_feedback'))
         @include(Theme::getThemeNamespace('sections/sec-feedback'))
     @endif
 
@@ -108,8 +108,8 @@
 
         </section>
     @endif
-    @if(!empty($sections) && in_array('partner', Arr::get($sections, 'value', [])))
-        @include(Theme::getThemeNamespace('config/' . Arr::get($sections, 'name', '') . '/section/sec-partner'))
+    @if(!empty($sections) && in_array('partner', Arr::get($sections, 'value', [])) && function_exists('get_partner'))
+        @include(Theme::getThemeNamespace('sections/sec-partner'))
     @endif
     @if(is_active_plugin('distributor'))
         @include(Theme::getThemeNamespace('sections.distributor'))
