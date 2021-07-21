@@ -73,7 +73,7 @@
     @endif
 
     @if(!empty($sections) && in_array('feedback', Arr::get($sections, 'value', [])))
-        @include(Theme::getThemeNamespace('config/' . Arr::get($sections, 'name', '') . '/section/sec-feedback'))
+        @include(Theme::getThemeNamespace('sections/sec-feedback'))
     @endif
 
     @if(is_active_plugin('ecommerce') && in_array('products_category', Arr::get($sections, 'value', [])))

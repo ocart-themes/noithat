@@ -375,4 +375,27 @@ const configSecAbout = {
     ]
 }
 
-console.log(JSON.stringify(configSecAbout))
+const configSecFeedback = {
+    "data": [
+        {
+            "title": "ShopMen thời trang giới trẻ",
+            "link": "#",
+            "deps": "Trong hơi thở dồn dập của thời đại, chuyện ăn mặc của con người không còn dừng ở “ăn no mặc ấm” mà đã “thoát xác”, trở thành một tín ngưỡng, một niềm tin lấp lánh bao phủ lấy chúng ta.",
+            "img": "/storage/images/k-3.jpg"
+        },
+        {
+            "title": "ShopMen thời trang giới trẻ",
+            "link": "#",
+            "deps": "Trải qua bao thăng trầm của lịch sử, những tích tụ của quá khứ tạo thành lớp bụi vàng lấp lánh để những người trẻ Việt gìn giữ, chắt chiu và sáng tạo bằng tất cả tâm huyết của mình.",
+            "img": "/storage/images/k-2.jpg"
+        },
+        {
+            "title": "ShopMen thời trang giới trẻ",
+            "link": "#",
+            "deps": "Họ chính là những người tài hoa và nhiệt huyết nhất của làng thời trang Việt. Bằng tài năng thiên phú kết hợp với sự nhẫn nại, kiên trì và lòng yêu nghề, những “đôi bàn tay vàng”",
+            "img": "/storage/images/k-1.jpg"
+        }
+    ]
+}
+
+console.log(JSON.stringify(configSecFeedback))
