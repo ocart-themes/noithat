@@ -11,9 +11,14 @@
                 <div class="w-full grid grid-cols-6 lg:grid-cols-9 gap-2 lg:gap-4">
                     @foreach(get_categories_feature() as $category)
                         <div class="text-center rounded-t-full hover:shadow-xl">
-                            <a href="{!! route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, ['slug'=> $category->slug]) !!}" class="inline-block w-full">
-                                <img src="{{ TnMedia::getImageUrl($category->image, 'medium', asset('/images/no-image.jpg')) }}" class="w-full block m-auto rounded-full lg:p-3" style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);">
-                                <div class="text-gray-600 font-bold line-clamp-2 text-xs md:text-base">{{ $category->name }}</div>
+                            <a href="{!! route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, ['slug'=> $category->slug]) !!}"
+                               class="inline-block w-full">
+                                <img
+                                    src="{{ TnMedia::getImageUrl($category->image, 'medium', asset('/images/no-image.jpg')) }}"
+                                    class="w-full block m-auto rounded-full lg:p-3"
+                                    style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);" alt="">
+                                <div
+                                    class="text-gray-600 font-bold line-clamp-2 text-xs md:text-base">{{ $category->name }}</div>
                             </a>
                         </div>
                     @endforeach
@@ -30,7 +35,9 @@
             <section class="section-custom sec-product antialiased text-gray-900 font-sans">
                 <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-8">
                     <h2 class="text-xl md:text-2xl font-bold">Sản phẩm bán chạy</h2>
-                    <p class="text-sm md:text-base text-gray-600">Những sản phẩm bán chạy nhất của cửa hàng sẽ được hiển thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với chúng tôi khi bạn có thắc mắc.</p>
+                    <p class="text-sm md:text-base text-gray-600">Những sản phẩm bán chạy nhất của cửa hàng sẽ được hiển
+                        thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với
+                        chúng tôi khi bạn có thắc mắc.</p>
                 </div>
                 <div class="container-custom">
                     <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
@@ -57,7 +64,9 @@
             <section class="section-custom sec-product antialiased text-gray-900 font-sans">
                 <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-8">
                     <h2 class="text-xl md:text-2xl font-bold">Sản phẩm khuyến mãi mới nhất</h2>
-                                        <p class="text-sm md:text-base text-gray-600">Những sản phẩm khuyến mãi mới nhất của cửa hàng sẽ được hiển thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với chúng tôi khi bạn có thắc mắc.</p>
+                    <p class="text-sm md:text-base text-gray-600">Những sản phẩm khuyến mãi mới nhất của cửa hàng sẽ
+                        được hiển thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ
+                        ngay với chúng tôi khi bạn có thắc mắc.</p>
                 </div>
                 <div class="container-custom">
                     <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
@@ -89,7 +98,8 @@
             <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-8">
                 <h2 class="text-xl md:text-2xl font-bold">Tin tức mới nhất</h2>
                 <p class="text-sm md:text-base text-gray-600">
-                    Những tin tức mới nhất của cửa hàng sẽ được hiển thị bên dưới cập nhật theo thời gian thực. Chúng tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với chúng tôi khi bạn có thắc mắc.
+                    Những tin tức mới nhất của cửa hàng sẽ được hiển thị bên dưới cập nhật theo thời gian thực. Chúng
+                    tôi luôn hỗ trợ bạn 24/7 hãy liên hệ ngay với chúng tôi khi bạn có thắc mắc.
                 </p>
             </div>
 
@@ -123,8 +133,9 @@
         section:nth-child(even) {
             background: #ececec63;
         }
+
         @media (max-width: 1023px) {
-            .sec-categories-product{
+            .sec-categories-product {
                 background: white !important;
             }
         }
