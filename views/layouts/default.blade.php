@@ -127,6 +127,7 @@
         </div>
     </div>
 
+    <!-- Cart Sidebar -->
 </div>
 
 <div id="loading" style="display:none" class="fixed w-full h-full top-0 left-0 z-50 flex items-center justify-center">

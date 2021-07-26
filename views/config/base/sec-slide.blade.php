@@ -1,7 +1,7 @@
 @php
     $banner = get_banner();
 @endphp
-<section class="section-custom ">
+<section class="section-custom py-6">
     <div class="container-custom">
         <div class="slide-home owl-carousel owl-theme relative">
             @if(!empty($banner) && is_array($banner))

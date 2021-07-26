@@ -11,7 +11,7 @@
                         key="@json($key + 1)"
                         x-show="activeSlide === @json($key + 1)"
                     >
-                        <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center">
+                        <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                             <img
                                 class="absolute h-full w-full object-cover"
                                 src="{{ $item->img }}?w=600"
@@ -30,7 +30,7 @@
                                 <p class="mt-6">
                                     <a
                                         href="javascript:void(0)"
-                                        class="font-medium text-blue-600 hover:text-red-900"
+                                        class="font-medium text-blue-600 hover:text-blue-900"
                                     >
                                         {{ $item->title }} &rarr;
                                     </a>

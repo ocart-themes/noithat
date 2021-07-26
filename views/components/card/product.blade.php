@@ -1,7 +1,7 @@
 @props(['data' => null])
 @if($data)
-    <div class="h-full block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
-        <a href="{!! $data->url !!}">
+    <div class="h-full block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden transition ease-in-out duration-500 transform hover:-translate-y-3">
+        <a href="{!! $data->url !!}" class="effect">
             <img
                 class="w-full object-cover"
                 src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}"

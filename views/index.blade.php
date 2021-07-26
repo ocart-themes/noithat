@@ -3,7 +3,13 @@
         $sections = get_config_sections();
     @endphp
 
-    @include(Theme::getThemeNamespace('config/base/sec-slide'))
+    @if(in_array('slide', Arr::get($sections, 'value', [])))
+        @include(Theme::getThemeNamespace('config/base/sec-slide'))
+    @endif
+
+    @if(in_array('slide_grid', Arr::get($sections, 'value', [])))
+        @include(Theme::getThemeNamespace('config/base/sec-slide-grid'))
+    @endif
 
     @if(is_active_plugin('ecommerce') && $sections != null && in_array('categories_product', Arr::get($sections, 'value', [])) && !empty(get_categories_feature()))
         <section class="section-custom sec-categories-product bg-white lg:bg-auto antialiased font-sans">
