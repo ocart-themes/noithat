@@ -395,33 +395,42 @@
                 <style></style>
 
                 @if(count($product->categories)>0)
-                    <div class="mb-7">
-                        <div class="text-left outline-none focus:outline-none font-bold mb-2 lg:mb-4">
-                            Sản phẩm liên quan
+                    @php
+                        $products_relate = get_list_products_relate(Arr::get($product->categories->first(), 'id'), 8);
+                    @endphp
+                    @if(count($products_relate)>1)
+                        <div class="mb-7">
+                            <div class="text-left outline-none focus:outline-none font-bold mb-2 lg:mb-4">
+                                Sản phẩm liên quan
+                            </div>
+                            <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
+                                @foreach($products_relate as $item)
+                                    <div>
+                                        <x-theme::card.product :data="$item"/>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                        <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
-                            @foreach(get_list_products_relate(Arr::get($product->categories->first(), 'id'), 8) as $item)
-                                <div>
-                                    <x-theme::card.product :data="$item"/>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+                    @endif
                 @endif
 
                 <div>
                     @php
                         $products_feature = get_list_products_feature(8);
                     @endphp
-                    <div class="text-left outline-none focus:outline-none font-bold my-2 lg:my-4">Sản phẩm bán chạy
-                    </div>
-                    <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
-                        @foreach($products_feature as $item)
-                            <div>
-                                <x-theme::card.product :data="$item"/>
-                            </div>
-                        @endforeach
-                    </div>
+                    @if(count($products_feature)>1)
+                        <div class="text-left outline-none focus:outline-none font-bold my-2 lg:my-4">
+                            Sản phẩm bán chạy
+                        </div>
+                        <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
+                            @foreach($products_feature as $item)
+                                <div>
+                                    <x-theme::card.product :data="$item"/>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+
                 </div>
             </div>
         </div>
