@@ -47,7 +47,10 @@
 
                     </div>
                     <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
-                        @foreach(get_list_products_category($item_menu->id, 7) as $key=>$product)
+                        @php
+                            $list_product_of_category = get_list_products_category($item_menu->id, 7)
+                        @endphp
+                        @foreach($list_product_of_category as $key=>$product)
                             @if($key == 1)
                                 <div class="hidden lg:block col-span-2">
                                     <x-theme::card.product-horizontal-big :data="$product"/>

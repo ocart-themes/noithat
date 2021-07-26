@@ -29,16 +29,13 @@
 
             @if(is_active_plugin('ec_review'))
                 @php
-                    $avg = get_average_star_of_product($data->id);
+                    $avg = $data->reviews_avg;
                 @endphp
-                @if($avg > 1)
                 <div class="flex items-center my-1 md:mt-2 md: mb-0">
                     @for($i=0; $i < 5; $i++)
                         <x-theme::icons.star :active="$i < $avg"/>
                     @endfor
                 </div>
-                @endif
-
             @endif
 {{--            <div class="hidden md:block text-sm text-gray-500 md:line-clamp-3">{!! $data->description !!}</div>--}}
             <div class="flex justify-between items-center">
