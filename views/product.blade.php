@@ -171,7 +171,8 @@
                                 <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone', null) )}}"
                                    class="items-center whitespace-nowrap inline-flex w-full text-white bg-green-500 border-0 py-3 px-6 mt-3 focus:outline-none rounded">
                                     <x-theme::icons.phone class="w-8"/>
-                                    <span class="w-full text-xl text-center">{{ theme_options()->getOption('phone', null) }}</span>
+                                    <span
+                                        class="w-full text-xl text-center">{{ theme_options()->getOption('phone', null) }}</span>
                                 </a>
                             @endif
 
@@ -260,130 +261,132 @@
                 </div>
 
                 @if(is_active_plugin('ec_review'))
-                <div x-data="{selected:1}" id="reviews-list" class="bg-white rounded-md mb-7">
-                    <ul class="shadow-box">
+                    <div x-data="{selected:1}" id="reviews-list" class="bg-white rounded-md mb-7">
+                        <ul class="shadow-box">
 
-                        <li class="relative">
+                            <li class="relative">
 
-                            <button type="button" class="w-full px-6 py-4 text-left outline-none focus:outline-none">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-bold">Khách hàng chấm điểm, đánh giá, nhận xét</span>
-                                </div>
-                            </button>
-
-                            @php
-                                $reviews = get_list_reviews_product($product->id, 10);
-                            @endphp
-
-                            <div
-                                x-data="{ star: 5, comment: '' }"
-                                class="relative overflow-hidden transition-all duration-700 pb-4"
-                                x-ref="container1"
-                            >
-                                <div class="flex px-6 pb-4 nd">
-                                    <span class="float-left">Chọn đánh giá của bạn</span>
-                                    <div class="flex items-center float-left ml-4">
-                                        <x-theme::icons.star
-                                            x-on:click="star = 1"
-                                            x-bind:class="star >= 1 && 'text-yellow-300'"
-                                        />
-                                        <x-theme::icons.star
-                                            x-on:click="star = 2"
-                                            x-bind:class="star >= 2 && 'text-yellow-300'"
-                                        />
-                                        <x-theme::icons.star
-                                            x-on:click="star = 3"
-                                            x-bind:class="star >= 3 && 'text-yellow-300'"
-                                        />
-                                        <x-theme::icons.star
-                                            x-on:click="star = 4"
-                                            x-bind:class="star >= 4 && 'text-yellow-400'"
-                                        />
-                                        <x-theme::icons.star
-                                            x-on:click="star = 5"
-                                            x-bind:class="star >= 5 && 'text-yellow-500'"
-                                        />
-                                        <span
-                                            class="ml-2 bg-green-500 text-white text-sm px-2 relative rounded-sm"
-                                            id="star-tip"
-                                        >Rất hài lòng</span>
-                                        <style>
-                                            #star-tip::after {
-                                                right: 100%;
-                                                top: 50%;
-                                                border: solid transparent;
-                                                content: " ";
-                                                height: 0;
-                                                width: 0;
-                                                position: absolute;
-                                                pointer-events: none;
-                                                border-color: rgba(82, 184, 88, 0);
-                                                border-right-color: #52b858;
-                                                border-width: 6px;
-                                                margin-top: -6px;
-                                            }
-                                        </style>
+                                <button type="button"
+                                        class="w-full px-6 py-4 text-left outline-none focus:outline-none">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold">Khách hàng chấm điểm, đánh giá, nhận xét</span>
                                     </div>
-                                </div>
-                                <div class="px-6 pb-4">
+                                </button>
+
+                                @php
+                                    $reviews = get_list_reviews_product($product->id, 10);
+                                @endphp
+
+                                <div
+                                    x-data="{ star: 5, comment: '' }"
+                                    class="relative overflow-hidden transition-all duration-700 pb-4"
+                                    x-ref="container1"
+                                >
+                                    <div class="flex px-6 pb-4 nd">
+                                        <span class="float-left">Chọn đánh giá của bạn</span>
+                                        <div class="flex items-center float-left ml-4">
+                                            <x-theme::icons.star
+                                                x-on:click="star = 1"
+                                                x-bind:class="star >= 1 && 'text-yellow-300'"
+                                            />
+                                            <x-theme::icons.star
+                                                x-on:click="star = 2"
+                                                x-bind:class="star >= 2 && 'text-yellow-300'"
+                                            />
+                                            <x-theme::icons.star
+                                                x-on:click="star = 3"
+                                                x-bind:class="star >= 3 && 'text-yellow-300'"
+                                            />
+                                            <x-theme::icons.star
+                                                x-on:click="star = 4"
+                                                x-bind:class="star >= 4 && 'text-yellow-400'"
+                                            />
+                                            <x-theme::icons.star
+                                                x-on:click="star = 5"
+                                                x-bind:class="star >= 5 && 'text-yellow-500'"
+                                            />
+                                            <span
+                                                class="ml-2 bg-green-500 text-white text-sm px-2 relative rounded-sm"
+                                                id="star-tip"
+                                            >Rất hài lòng</span>
+                                            <style>
+                                                #star-tip::after {
+                                                    right: 100%;
+                                                    top: 50%;
+                                                    border: solid transparent;
+                                                    content: " ";
+                                                    height: 0;
+                                                    width: 0;
+                                                    position: absolute;
+                                                    pointer-events: none;
+                                                    border-color: rgba(82, 184, 88, 0);
+                                                    border-right-color: #52b858;
+                                                    border-width: 6px;
+                                                    margin-top: -6px;
+                                                }
+                                            </style>
+                                        </div>
+                                    </div>
+                                    <div class="px-6 pb-4">
                                     <textarea
                                         x-model="comment"
                                         placeholder="Nhập đánh giá về sản phẩm"
                                         class="p-3 bg-indigo-50 w-full rounded-md outline-none"
                                     ></textarea>
-                                    <button x-on:click="postReviews(@json($product->id), star, comment)"
-                                            class="flex text-white bg-green-500 border-0 py-4 px-6 mt-2 focus:outline-none hover:bg-green-700 rounded">
-                                        Gửi đánh giá
-                                    </button>
-                                </div>
-                                <div class="px-6 pb-4">
-                                    <div class="flex items-center justify-between py-4 my-4 border-t border-b">
-                                        <span>Nhận xét về sản phẩm ({{ $count_reviews }} đánh giá)</span>
+                                        <button x-on:click="postReviews(@json($product->id), star, comment)"
+                                                class="flex text-white bg-green-500 border-0 py-4 px-6 mt-2 focus:outline-none hover:bg-green-700 rounded">
+                                            Gửi đánh giá
+                                        </button>
                                     </div>
-                                    <div class="pt-4">
-                                        <ul>
-                                            @foreach($reviews as $item)
-                                                <li class="mb-5 border-b border-dotted">
-                                                    <div class="pb-6">
-                                                        <div class="float-left w-16">
-                                                            <div
-                                                                class="w-12 h-12 rounded-full flex items-center justify-center bg-gray-100">{{ $item->customer->name[0] }}</div>
-                                                        </div>
-                                                        <div class="flex flex-wrap">
-                                                            <div class="comment-meta w-full">
-                                                                <div class="float-left">
-                                                                    <div class="flex items-center">
-                                                                        @for($i=0; $i < 5; $i++)
-                                                                            <x-theme::icons.star
-                                                                                :active="$i < $item->star"/>
-                                                                        @endfor
+                                    <div class="px-6 pb-4">
+                                        <div class="flex items-center justify-between py-4 my-4 border-t border-b">
+                                            <span>Nhận xét về sản phẩm ({{ $count_reviews }} đánh giá)</span>
+                                        </div>
+                                        <div class="pt-4">
+                                            <ul>
+                                                @foreach($reviews as $item)
+                                                    <li class="mb-5 border-b border-dotted">
+                                                        <div class="pb-6">
+                                                            <div class="float-left w-16">
+                                                                <div
+                                                                    class="w-12 h-12 rounded-full flex items-center justify-center bg-gray-100">{{ $item->customer->name[0] }}</div>
+                                                            </div>
+                                                            <div class="flex flex-wrap">
+                                                                <div class="comment-meta w-full">
+                                                                    <div class="float-left">
+                                                                        <div class="flex items-center">
+                                                                            @for($i=0; $i < 5; $i++)
+                                                                                <x-theme::icons.star
+                                                                                    :active="$i < $item->star"/>
+                                                                            @endfor
+                                                                        </div>
+                                                                        <h4 class="mt-1 text-sm">{{ $item->customer->name }}</h4>
                                                                     </div>
-                                                                    <h4 class="mt-1 text-sm">{{ $item->customer->name }}</h4>
+                                                                    <div
+                                                                        class="mt-1 text-sm text-green-500 float-right">
+                                                                        {{ date_format($item->created_at, "d/m/Y") }}
+                                                                    </div>
                                                                 </div>
-                                                                <div class="mt-1 text-sm text-green-500 float-right">
-                                                                    {{ date_format($item->created_at, "d/m/Y") }}
+                                                                <div class="mt-2 font-bold text-gray-500">
+                                                                    <p>{{ $item->comment }}</p>
                                                                 </div>
-                                                            </div>
-                                                            <div class="mt-2 font-bold text-gray-500">
-                                                                <p>{{ $item->comment }}</p>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                        @if(method_exists($reviews, 'links'))
-                                            <div>{!! $reviews->links() !!}</div>
-                                        @endif
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                            @if(method_exists($reviews, 'links'))
+                                                <div>{!! $reviews->links() !!}</div>
+                                            @endif
+                                        </div>
+
                                     </div>
-
                                 </div>
-                            </div>
 
-                        </li>
+                            </li>
 
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
                 @endif
 
                 <div class="fb-comments mb-7"
@@ -393,11 +396,11 @@
 
                 @if(count($product->categories)>0)
                     <div class="mb-7">
-                        <div class="text-left outline-none focus:outline-none font-bold mb-2 lg:mb-4">Sản phẩm liên
-                            quan
+                        <div class="text-left outline-none focus:outline-none font-bold mb-2 lg:mb-4">
+                            Sản phẩm liên quan
                         </div>
                         <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
-                            @foreach(get_list_products_relate(Arr::get($product->categories->first(), 'id'), 6) as $item)
+                            @foreach(get_list_products_relate(Arr::get($product->categories->first(), 'id'), 8) as $item)
                                 <div>
                                     <x-theme::card.product :data="$item"/>
                                 </div>
