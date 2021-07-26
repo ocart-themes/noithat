@@ -7,11 +7,11 @@
         <div class="pl-3 flex flex-wrap">
             <div>
                 <div>
-                    <a href="{!! route(ROUTE_PRODUCT_SCREEN_NAME, ['slug' => $data->slug]) !!}" class="font-bold text-gray-500 hover:text-blue-600 line-clamp-2">{{ $data->name }}</a>
+                    <a href="{!! $data->url !!}" class="font-bold text-gray-500 hover:text-blue-600 line-clamp-2">{{ $data->name }}</a>
                 </div>
                 @if(count($data->categories)>0)
                     <div>
-                        <a href="{!! route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, ['slug' => Arr::get($data->categories->first(), 'slug')]) !!}" class="text-sm text-green-500 hover:text-blue-600 line-clamp-1">{{ Arr::get($data->categories->first(), 'name') }}</a>
+                        <a href="{!! Arr::get($data->categories->first(), 'url') !!}" class="text-sm text-green-500 hover:text-blue-600 line-clamp-1">{{ Arr::get($data->categories->first(), 'name') }}</a>
                     </div>
                 @endif
             </div>
