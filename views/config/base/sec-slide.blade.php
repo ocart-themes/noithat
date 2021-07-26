@@ -7,7 +7,9 @@
             @if(!empty($banner) && is_array($banner))
                 @foreach($banner as $item)
                     <div class="item">
-                        <img src="{{ $item->img }}">
+                        <a href="{{ !empty($item->link) ? $item->link : '#' }}">
+                            <img src="{{ $item->img }}">
+                        </a>
                     </div>
                 @endforeach
             @endif
@@ -18,9 +20,9 @@
 <script>
     $(document).ready(function () {
         $('.slide-home').owlCarousel({
-            loop: false,
+            loop: true,
             dots: true,
-            nav: false,
+            nav: true,
             animateOut: 'fadeOut',
             autoPlay: 3000,
             items: 1,
@@ -42,38 +44,49 @@
         width: 100%;
     }
 
-    .owl-nav {
+    .owl-nav button span{
         font-size: 3rem;
     }
 
-    .owl-prev:focus,
-    .owl-next:focus {
+    .owl-nav button:focus{
         outline: none;
+
+    }
+    .owl-nav button:active span{
+        background-color: rgba(255, 255, 255, 0.3);
     }
 
-    .owl-prev {
+    .owl-nav .owl-prev {
         position: absolute;
         top: 50%;
-        left: 5px;
+        left: 0px;
         transform: translateY(-50%);
 
     }
 
-    .owl-next {
+    .owl-nav .owl-next {
         position: absolute;
         top: 50%;
-        right: 5px;
+        right: 0px;
         transform: translateY(-50%);
+    }
+
+    .owl-carousel .owl-nav button{
+        cursor: pointer;
     }
 
     .owl-prev span,
     .owl-next span {
         color: grey;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0 10px;
+        border-radius: 5px;
     }
 
     .owl-prev span:hover,
     .owl-next span:hover {
         color: black;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 
     .owl-carousel button:hover, .owl-carousel button:focus, .owl-carousel button:focus-visible {
