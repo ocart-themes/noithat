@@ -1,5 +1,5 @@
 @php
-    $category_product = parent_recursive(get_categories_feature());
+    $category_product = get_categories_feature();
 @endphp
 @foreach($category_product as $item_category)
     <section class="section-custom sec-product antialiased text-gray-900 font-sans">

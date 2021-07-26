@@ -9,9 +9,9 @@
                                class="border-b border-yellow-500">{{ $item_menu->name }}</a>
                         </h2>
                         @if(!empty($item_menu->children) && count($item_menu->children) > 0)
-                            <span class="float-right">
+                        <span class="float-right">
                         @foreach($item_menu->children as $item)
-                                    <span class="hidden lg:inline-block float-left ml-6 text-md mt-1.5">
+                        <span class="hidden lg:inline-block float-left ml-6 text-md mt-1.5">
                             <a href="{{ route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, $item->slug) }}"
                                class="text-gray-600 hover:text-black">{{ $item->name }}
                             </a>

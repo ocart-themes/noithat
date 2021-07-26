@@ -6,18 +6,18 @@
                     @php
                         $address1 = theme_options()->getOption('address1', null);
                         $address2 = theme_options()->getOption('address2', null);
-                        $hotline = theme_options()->getOption('address2', null);
+                        $hotline = theme_options()->getOption('phone', null);
                     @endphp
                     <h4 class="widget-title mb-3 font-bold text-lg text-white">{!! get_title() !!}</h4>
                     <p>{!! get_deps_footer() !!}</p>
                     @if($address1)
-                    <p>Địa chỉ 1: {!! theme_options()->getOption('address1', null) !!}</p>
+                    <p>Địa chỉ 1: {!! $address1 !!}</p>
                     @endif
                     @if($address2)
-                    <p>Địa chỉ 2: {!! theme_options()->getOption('address2', null) !!}</p>
+                    <p>Địa chỉ 2: {!! $address2 !!}</p>
                     @endif
                     @if($hotline)
-                    <p>Hotline: {!! theme_options()->getOption('phone', null) !!}</p>
+                    <p>Hotline: {!! $hotline !!}</p>
                     @endif
                 </div>
 
