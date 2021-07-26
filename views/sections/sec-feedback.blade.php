@@ -10,6 +10,9 @@
                         class="relative lg:flex rounded-lg shadow-2xl overflow-hidden"
                         key="@json($key + 1)"
                         x-show="activeSlide === @json($key + 1)"
+                        x-transition:enter="transition ease-in-out duration-500"
+                        x-transition:enter-start="opacity-0 transform scale-50"
+                        x-transition:enter-end="opacity-100 transform scale-100"
                     >
                         <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                             <img

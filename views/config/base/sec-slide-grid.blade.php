@@ -1,5 +1,5 @@
 @php
-    $banner = get_banner();
+    $banner = get_banner_grid();
 @endphp
 @if($banner && count($banner) > 0)
 <section class="section-custom py-6">
