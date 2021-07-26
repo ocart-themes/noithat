@@ -9,7 +9,7 @@
             >
         </a>
 
-        <div class="opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out absolute bottom-0 right-0 top-0 bg-white bg-opacity-80 w-1/2 p-2 md:p-3" >
+        <div class="opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out absolute bottom-0 right-0 top-0 bg-white bg-opacity-90 w-1/2 p-2 md:p-3" >
             @if(count($data->categories)>0)
                 <div class="hidden md:inline-block">
                     <div class="line-clamp-2">
