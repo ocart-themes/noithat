@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="footer-bottom bg-gray-900">
+    <div class="footer-bottom bg-gray-900 mb-12 lg:mb-0" >
         <div class="container-custom align-items-center py-4">
             @php
                 $domain = get_domain();
