@@ -24,7 +24,7 @@
         </select>
     </div>
 
-    <div class="container-custom grid grid-cols-1 lg:grid-cols-4 gap-2">
+    <div class="container-custom grid grid-cols-1 lg:grid-cols-4 gap-0 lg:gap-2">
         <div
             class="vietnam-map mt-12 max-w-md hidden lg:block"
         >
@@ -558,26 +558,41 @@
             id="distributionInfo"
             class="col-start-3 col-span-2 mt-8"
         >
-            <div>
-                <div class="mb-7 section-row-title">
-                    <div class="col-sm-6 col-12">
-                        <h2
-                            id="update-title"
-                            class="uppercase font-bold inline-block text-xl"
-                            x-text="nameDistributor">
-                        </h2>
-                    </div>
-                </div>
-                <ul id="update-area" class="distribution-list border-t-4 border-blue-500"
-                    style="max-height:600px;overflow-x:auto;">
+            <div class="border-t-4 border-blue-500 pt-2">
+{{--                <div class="mb-7 section-row-title">--}}
+{{--                    <div class="col-sm-6 col-12">--}}
+{{--                        <h2--}}
+{{--                            id="update-title"--}}
+{{--                            class="uppercase font-bold inline-block text-xl"--}}
+{{--                            x-text="nameDistributor">--}}
+{{--                        </h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <ul
+                    id="update-area"
+                    class="distribution-list"
+                    style="max-height:600px;overflow-x:auto;"
+                >
                     <div id="loading-distri" class="text-center p-6" style="display: none">
                         <x-theme::icons.loading class="animate-spin -ml-1 mr-3 text-blue-500"/>
                     </div>
                     <div
-                        id="distributor-html"
+                        id="distributorItem"
                         class="pr-3"
                     >
                     </div>
+                    <template id="distributorItemHtml">
+                        <li class="py-4 border-b">
+                            <h5 class="distributor-item-text text-blue-700 text-lg">
+                            </h5>
+                            <div class="flex flex-wrap text-base font-medium text-gray-500">
+                                <div class="distributor-item-text w-full md:w-3/4">
+                                </div>
+                                <div class="distributor-item-text w-full md:w-1/4 md:text-right">
+                                </div>
+                            </div>
+                        </li>
+                    </template>
                 </ul>
             </div>
         </div>
@@ -587,48 +602,45 @@
     function distributor() {
         return {
             selected: "hanoi",
-            nameDistributor: "Hà Nội",
+            // nameDistributor: 'Ha Noi',
             distributor: @json(get_distributor('hanoi')),
             init() {
-                console.log('nameDistributor', this.nameDistributor);
                 this.getDistributor();
-                this.nameDistributor = "Hà Nội"
             },
-            abc(res) {
+            addValueDistributorItem(res) {
                 if (res.length) {
                     for (let i = 0; i < res.length; i++) {
-                        var content = `<li class="py-4 border-b">
-                                            <h5 class="text-blue-700 text-lg">
-                                                ${res[i].name}
-                                            </h5>
-                                            <div class="flex flex-wrap text-base font-medium text-gray-500">
-                                                <div class="w-full md:w-3/4">
-                                                    ${res[i].address}
-                                                </div>
-                                                <div class="w-full md:w-1/4 text-right">
-                                                    ${res[i].phone}
-                                                </div>
-                                            </div>
-                                        </li>`
-                        $("#distributor-html").append(content);
+                        if ('content' in document.createElement('template')) {
+                            var tbody = document.querySelector("#distributorItem");
+                            var template = document.querySelector('#distributorItemHtml');
+
+                            var clone = template.content.cloneNode(true);
+
+                            var name = clone.querySelectorAll(".distributor-item-text");
+                            name[0].textContent = res[i].name
+                            name[1].textContent = res[i].address
+                            name[2].textContent = res[i].phone
+
+                            tbody.appendChild(clone);
+
+                        }
                     }
                 }
             },
             getDistributor() {
-                $("#distributor-html").empty();
+                $("#distributorItem").empty();
 
                 this.distributor = [];
                 $('#loading-distri').show();
-                this.nameDistributor = $('#distributor-select').find('option:selected').text();
+                // this.nameDistributor = $('#distributor-select').find('option:selected').text();
                 axios.get('{!! route(ROUTE_LIST_DISTRIBUTOR_NAME) !!}', {
                     params: {
                         location: this.selected
                     }
                 }).then((res) => {
-                    console.log('res', res);
                     this.distributor = res;
 
-                    this.abc(res);
+                    this.addValueDistributorItem(res);
 
                 }).finally(() => {
                     $('#loading-distri').hide();

@@ -121,7 +121,7 @@
                     </a>
                 @endif
 
-                <button x-on:click="openMobile = !openMobile; handleClick()" type="button"
+                <button x-on:click="openMobile = !openMobile" type="button"
                         class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
                         aria-expanded="false">
                     <span class="sr-only">Open menu</span>
@@ -132,13 +132,6 @@
                               d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
-                <script>
-                    function handleClick(e) {
-                        var body = document.body;
-
-                        body.classList.add("ant-scrolling-effect");
-                    }
-                </script>
             </div>
             <!-- End Menu mobile -->
 
@@ -157,7 +150,7 @@
                         <x-slot name="trigger">
                             <button
                                 class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div class="w-16 line-clamp-1">{{ Auth::user()->name }}</div>
+                                <div class="line-clamp-1" style="max-width: 120px">{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
