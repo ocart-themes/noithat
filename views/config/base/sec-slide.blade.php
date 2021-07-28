@@ -24,7 +24,9 @@
             dots: true,
             nav: true,
             animateOut: 'fadeOut',
-            autoPlay: 3000,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
             items: 1,
             margin: 0,
         })

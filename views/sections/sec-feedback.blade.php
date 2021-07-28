@@ -30,7 +30,7 @@
                                 <p>
                                     {{ $item->deps }}
                                 </p>
-                                <p class="mt-6">
+                                <p class="mt-6 animate-bounce">
                                     <a
                                         href="javascript:void(0)"
                                         class="font-medium text-blue-600 hover:text-blue-900"

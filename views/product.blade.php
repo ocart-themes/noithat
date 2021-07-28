@@ -333,10 +333,23 @@
                                         placeholder="Nhập đánh giá về sản phẩm"
                                         class="p-3 bg-indigo-50 w-full rounded-md outline-none"
                                     ></textarea>
-                                        <button x-on:click="postReviews(@json($product->id), star, comment)"
-                                                class="flex text-white bg-green-500 border-0 py-4 px-6 mt-2 focus:outline-none hover:bg-green-700 rounded">
-                                            Gửi đánh giá
-                                        </button>
+                                        @if(Auth::user())
+                                            <button x-on:click="postReviews(@json($product->id), star, comment)"
+                                                    class="block text-white bg-green-500 border-0 py-4 px-6 mt-2 focus:outline-none hover:bg-green-700 rounded">
+                                                Gửi đánh giá
+                                            </button>
+                                        @else
+                                            <a
+                                                href="javascript:void(0)"
+                                                rel="nofollow"
+                                                data-toggle="modal"
+                                                data-target="#form-login-modal"
+                                                class="inline-block text-white bg-green-500 border-0 py-4 px-6 mt-2 focus:outline-none hover:bg-green-700 rounded"
+                                            >
+                                                Gửi đánh giá
+                                            </a>
+                                        @endif
+
                                     </div>
                                     <div class="px-6 pb-4">
                                         <div class="flex items-center justify-between py-4 my-4 border-t border-b">

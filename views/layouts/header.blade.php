@@ -1,8 +1,12 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<header x-data="{ openMobile : false }" id="header" class="relative bg-white sticky top-0 z-40 shadow">
+<header
+    x-data="{ openMobile : false }"
+    id="header"
+    class="relative bg-white sticky top-0 z-40 shadow"
+>
     <div class="container-custom">
-        <div class="flex justify-between items-center py-2 lg:space-x-4">
-            <div class="flex justify-start">
+        <div class="flex justify-between items-center py-2 lg:py-0 lg:space-x-4">
+            <div class="flex items-center">
                 <a href="{!! route('home') !!}">
                     <span class="sr-only">Workflow</span>
                     @php
@@ -10,6 +14,99 @@
                     @endphp
                     <img class="h-8 w-auto sm:h-16" src="{{ $logo }}" alt="">
                 </a>
+
+                <!-- Menu Main -->
+                @php
+                    $menuMain = main_navigation();
+                    $menuMain = parent_recursive($menuMain->toArray());
+                @endphp
+
+                @if(!empty($menuMain))
+                    <nav class="hidden ml-10 lg:flex space-x-6">
+                        @foreach($menuMain as $item)
+                            @php
+                                $children = Arr::get($item, 'children');
+                            @endphp
+                            @if(!empty($children))
+                                <div class="group py-7 inline-block relative">
+                                    <button type="button"
+                                            class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
+                                            aria-expanded="false">
+                                        <span>{{ Arr::get($item, 'title') }}</span>
+                                        <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
+                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                             aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                  clip-rule="evenodd"/>
+                                        </svg>
+
+                                    </button>
+
+                                    <div
+                                        class="absolute z-10 -ml-4 w-screen max-w-md lg:ml-0 lg:left-0 top-full absolute hidden group-hover:block"
+                                    >
+                                        <div
+                                            class="shadow-lg ring-1 ring-black ring-opacity-5 max-h-screen overflow-hidden overflow-y-auto pb-16 bg-white py-4">
+                                            @foreach($children as $i)
+                                                @php
+                                                    $subChildren = Arr::get($i, 'children');
+                                                @endphp
+                                                @if(!empty($subChildren))
+                                                    <a href="{{ Arr::get($i, 'url') }}"
+                                                       class="p-3 flex items-center justify-between hover:bg-gray-100">
+                                                        <div class="text-base font-medium text-gray-900">
+                                                            {{ Arr::get($i, 'title') }}
+                                                        </div>
+                                                        <div
+                                                            class="cursor-pointer w-14 h-6 text-lg flex-shrink-0 flex items-center justify-center -mr-4"
+                                                        >
+                                                            <svg stroke="currentColor" fill="currentColor"
+                                                                 stroke-width="0"
+                                                                 viewBox="0 0 512 512"
+                                                                 class="transition duration-200 ease-in-out transform text-heading"
+                                                                 height="1em" width="1em"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    @foreach($subChildren as $subitemi)
+                                                        <a href="{{ Arr::get($subitemi, 'url') }}"
+                                                           class="p-3 flex items-center rounded-md hover:bg-gray-50"
+                                                        >
+                                                                <span
+                                                                    class="ml-3 text-base font-medium text-gray-900">
+                                                                - {{ Arr::get($subitemi, 'title') }}
+                                                                </span>
+                                                        </a>
+                                                    @endforeach
+                                                @else
+                                                    <a href="{{ Arr::get($i, 'url') }}"
+                                                       class="p-3 flex items-center justify-between hover:bg-gray-100">
+                                                        <div class="text-base font-medium text-gray-900">
+                                                            {{ Arr::get($i, 'title') }}
+                                                        </div>
+                                                    </a>
+                                                @endif
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+                                </div>
+                            @else
+                                <a href="{{ Arr::get($item, 'url') }}"
+                                   class="text-base font-medium text-gray-500 hover:text-gray-900 py-7">
+                                    {{ Arr::get($item, 'title') }}
+                                </a>
+                            @endif
+                        @endforeach
+
+                    </nav>
+            @endif
+
+            <!-- End Menu Main -->
             </div>
 
             <!-- Menu mobile -->
@@ -24,7 +121,7 @@
                     </a>
                 @endif
 
-                <button x-on:click="openMobile = !openMobile" type="button"
+                <button x-on:click="openMobile = !openMobile; handleClick()" type="button"
                         class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
                         aria-expanded="false">
                     <span class="sr-only">Open menu</span>
@@ -35,99 +132,15 @@
                               d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
+                <script>
+                    function handleClick(e) {
+                        var body = document.body;
+
+                        body.classList.add("ant-scrolling-effect");
+                    }
+                </script>
             </div>
             <!-- End Menu mobile -->
-
-            <!-- Menu Main -->
-            @php
-                $menuMain = main_navigation();
-                $menuMain = parent_recursive($menuMain->toArray());
-            @endphp
-
-            @if(!empty($menuMain))
-                <nav class="hidden lg:flex space-x-6">
-                    @foreach($menuMain as $item)
-                        @php
-                        $children = Arr::get($item, 'children');
-                        @endphp
-                        @if(!empty($children))
-                            <div class="group inline-block relative">
-                                <button type="button"
-                                        class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
-                                        aria-expanded="false">
-                                    <span>{{ Arr::get($item, 'title') }}</span>
-                                    <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
-                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                         aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                              clip-rule="evenodd"/>
-                                    </svg>
-
-                                </button>
-
-                                <div
-                                    class="absolute z-10 -ml-4 pt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 absolute hidden group-hover:block"
-                                >
-                                    <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-auto max-h-96">
-                                        <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                            @foreach($children as $i)
-                                                <a href="{{ Arr::get($i, 'url') }}"
-                                                   class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                                    <!-- Heroicon name: outline/cursor-click -->
-                                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                                         xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                         viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                              stroke-width="2"
-                                                              d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
-                                                    </svg>
-                                                    <div class="ml-4">
-                                                        <p class="text-base font-medium text-gray-900">
-                                                            {{ Arr::get($i, 'title') }}
-                                                        </p>
-                                                        {{--                                                    <p class="mt-1 text-sm text-gray-500">--}}
-                                                        {{--                                                        Speak directly to your customers in a more meaningful way.--}}
-                                                        {{--                                                    </p>--}}
-                                                    </div>
-                                                </a>
-                                                @if(!empty(Arr::get($i, 'children')))
-                                                    @foreach(Arr::get($i, 'children') as $ii)
-                                                        <a href="{{ Arr::get($ii, 'url') }}"
-                                                           class="ml-4 -m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                                            <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                                                 xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                 viewBox="0 0 24 24" stroke="currentColor"
-                                                                 aria-hidden="true">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                      stroke-width="2"
-                                                                      d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
-                                                            </svg>
-                                                            <div class="ml-4">
-                                                                <p class="text-base font-medium text-gray-900">
-                                                                    {{ Arr::get($ii, 'title') }}
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                    @endforeach
-                                                @endif
-                                            @endforeach
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @else
-                            <a href="{{ Arr::get($item, 'url') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
-                                {{ Arr::get($item, 'title') }}
-                            </a>
-                        @endif
-                    @endforeach
-
-                </nav>
-        @endif
-
-            <!-- End Menu Main -->
 
             <!-- Login/Cart -->
             <div class="hidden lg:flex items-center justify-end">
@@ -175,14 +188,19 @@
                         </x-slot>
                     </x-dropdown>
                 @else
-                    <a href="{!! route('login') !!}"
-                       class="whitespace-nowrap inline-flex px-2 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
+                    <a
+                        href="javascript:void(0)"
+                        rel="nofollow"
+                        data-toggle="modal"
+                        data-target="#form-login-modal"
+                        class="whitespace-nowrap inline-flex px-2 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+                    >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                              width="22px" class="mr-1">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        Sign in
+                        Đăng nhập
                     </a>
                 @endif
 
@@ -193,83 +211,190 @@
     </div>
 
     <!-- Mobile menu, show/hide based on mobile menu state. -->
-    <div x-show="openMobile" class="absolute top-0 inset-x-0 transition transform origin-top-right z-50"
-         style="display:none;">
-        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 h-screen overflow-y-auto">
-            <div class="pt-1 pb-4 px-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <img class="h-8 w-auto" src="{{ $logo }}"
-                             alt="Workflow">
-                    </div>
-                    <div class="-mr-2">
-                        <button x-on:click="openMobile = !openMobile" type="button"
-                                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        {{--                            <span>Close menu</span>--}}
-                        <!-- Heroicon name: outline/x -->
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
-                        </button>
-                    </div>
+    <div
+        x-show="openMobile"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-50"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-50"
+        class="absolute top-0 inset-x-0 z-50"
+        style="display:none;"
+    >
+        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 h-screen">
+            <div class="flex items-center justify-between px-4 pt-1">
+                <div>
+                    <img class="h-8 w-auto" src="{{ $logo }}"
+                         alt="Workflow">
                 </div>
+                <div class="-mr-2">
+                    <button
+                        x-on:click="openMobile = !openMobile"
+                        type="button"
+                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    >
+
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-y-auto px-4 h-screen pb-4">
                 @if(!empty($menuMain))
-                    <div class="mt-6">
+                    <div class="mt-4">
                         <nav>
                             @foreach($menuMain as $item)
                                 @php
                                     $children = Arr::get($item, 'children');
                                 @endphp
-                                <a href="{{ Arr::get($item, 'url') }}"
-                                   class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                                    <!-- Heroicon name: outline/cursor-click -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
-                                    </svg>
-                                    <span class="ml-3 text-base font-medium text-gray-900">
+                                <div x-data="{openNav: false}">
+                                    @if(!empty($children))
+                                        <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50">
+                                            <div
+                                                class="{{ !empty($children) ? 'flex items-center justify-between' : '' }}">
+                                                <a
+                                                    href="{{ Arr::get($item, 'url') }}"
+                                                >
+                                                    <span class="text-sm font-medium text-gray-900">
+                                                        {{ Arr::get($item, 'title') }}
+                                                    </span>
+                                                </a>
+
+                                                <div
+                                                    x-on:click="openNav = ! openNav"
+                                                    class="cursor-pointer w-16 md:w-20 h-8 text-lg flex-shrink-0 flex items-center justify-center -mr-4"
+                                                >
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                         viewBox="0 0 512 512"
+                                                         class="transition duration-200 ease-in-out transform text-heading"
+                                                         :class="openNav ? '-rotate-180' : ''"
+                                                         height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <a href="{{ Arr::get($item, 'url') }}"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50"
+                                        >
+                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                             {{ Arr::get($item, 'title') }}
                                         </span>
-                                </a>
-                                @if(!empty($children))
-                                    <nav class="ml-6">
-                                        @foreach($children as $subitem)
-                                            <a href="{{ Arr::get($subitem, 'url') }}"
-                                               class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                                                <span class="ml-3 text-base font-medium text-gray-900">
-                                            - {{ Arr::get($subitem, 'title') }}
-                                            </span>
-                                        @endforeach
-                                    </nav>
-                                @endif
+                                        </a>
+                                    @endif
+
+                                    @if(!empty($children))
+                                        <nav
+                                            x-show="openNav"
+                                            class="ml-0 my-1"
+                                        >
+                                            @foreach($children as $subitem)
+                                                @php
+                                                    $subChildren = Arr::get($subitem, 'children');
+                                                @endphp
+                                                <div x-data="{openSubNav: false}">
+                                                    @if(!empty($subChildren))
+                                                        <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50">
+                                                            <div
+                                                                class="{{ !empty($subChildren) ? 'flex items-center justify-between' : '' }}">
+                                                                <a
+                                                                    href="{{ Arr::get($subitem, 'url') }}"
+                                                                >
+                                                                    <span class="text-sm font-medium text-gray-900">
+                                                                        - {{ Arr::get($subitem, 'title') }}
+                                                                    </span>
+                                                                </a>
+
+                                                                <div
+                                                                    x-on:click="openSubNav = ! openSubNav"
+                                                                    class="cursor-pointer w-16 md:w-20 h-8 text-lg flex-shrink-0 flex items-center justify-center -mr-4"
+                                                                >
+                                                                    <svg stroke="currentColor" fill="currentColor"
+                                                                         stroke-width="0"
+                                                                         viewBox="0 0 512 512"
+                                                                         class="transition duration-200 ease-in-out transform text-heading"
+                                                                         :class="openSubNav ? '-rotate-180' : ''"
+                                                                         height="1em" width="1em"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @else
+                                                        <a
+                                                            href="{{ Arr::get($subitem, 'url') }}"
+                                                            class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50"
+                                                        >
+                                                            <span
+                                                                class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                                - {{ Arr::get($subitem, 'title') }}
+                                                            </span>
+                                                        </a>
+                                                    @endif
+                                                    @if(!empty($subChildren))
+                                                        <nav
+                                                            x-show="openSubNav"
+                                                            class="ml-0 my-1"
+                                                        >
+                                                            @foreach($subChildren as $subitemi)
+                                                                <a href="{{ Arr::get($subitemi, 'url') }}"
+                                                                   class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                                                                >
+                                                                    <span
+                                                                        class="ml-3 text-sm font-medium text-gray-900">
+                                                                    - {{ Arr::get($subitemi, 'title') }}
+                                                                    </span>
+                                                                </a>
+                                                            @endforeach
+                                                        </nav>
+                                                    @endif
+                                                </div>
+
+                                            @endforeach
+                                        </nav>
+                                    @endif
+                                </div>
                             @endforeach
 
                         </nav>
                     </div>
                 @endif
-
-            </div>
-            <div class="py-6 px-5 space-y-6">
-                <p>{{ get_deps() }}</p>
-                <p>Hotline: {{ theme_options()->getOption('phone', null) }}</p>
-                <p>Địa chỉ: {{ get_address() }}</p>
-            </div>
-            <div class="py-6 px-5 space-y-6">
-                <div>
-                    <a x-on:click="openMobile = !openMobile" href="{!! route('login') !!}"
-                       class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                        Sign in
-                    </a>
-                    <p class="mt-6 text-center text-base font-medium text-gray-500">
-                        Existing customer?
-                        <a href="#" class="text-indigo-600 hover:text-indigo-500">
-                            Sign up
+                <div class="py-4 space-y-2 text-sm mt-4 border-t">
+                    @if(theme_options()->getOption('seo_description', null))
+                        <p>{{ theme_options()->getOption('seo_description', null) }}</p>
+                    @endif
+                    @if(theme_options()->getOption('phone', null))
+                        <p>Hotline: {{ theme_options()->getOption('phone', null) }}</p>
+                    @endif
+                    @if(theme_options()->getOption('address1', null))
+                        <p>Địa chỉ 1: {{ theme_options()->getOption('address1', null) }}</p>
+                    @endif
+                    @if(theme_options()->getOption('address2', null))
+                        <p>Địa chỉ 2: {{ theme_options()->getOption('address2', null) }}</p>
+                    @endif
+                </div>
+                <div class="space-y-6 mb-12">
+                    <div>
+                        <a x-on:click="openMobile = !openMobile" href="{!! route('login') !!}"
+                           class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                            Sign in
                         </a>
-                    </p>
+                        <p class="mt-6 text-center text-base font-medium text-gray-500">
+                            Existing customer?
+                            <a href="#" class="text-indigo-600 hover:text-indigo-500">
+                                Sign up
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
