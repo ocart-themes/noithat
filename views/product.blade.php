@@ -19,21 +19,23 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <div class="mb-4">
-                            <img class="w-full h-full object-cover object-center rounded"
-                                 x-bind:src="product.images.length ? product.images[index] : '/no-images'"
-                                 alt="ecommerce">
+                            <img
+                                id="imageMainProduct"
+                                class="w-full h-full object-cover object-center rounded"
+                                x-bind:src="product.images.length ? product.images[index]  + `?w=800&h=800` : '/no-images'"
+                                alt="ecommerce image">
                         </div>
-                        <div class="mt-2">
-                            <template x-for="(item, i) in product?.images" :key="item">
-                                <div x-on:click="index = i" class="inline-block w-12 h-12 mr-1">
-                                    <img x-bind:src="item || '/images/no-image.jpg'"
-                                         alt=""
-                                         class="w-full h-full object-cover border border-solid"
-                                         :class="index == i && 'border-red-400'"
-                                    >
-                                </div>
-                            </template>
-                        </div>
+
+                        <div id="imagesProduct" class="mt-2"></div>
+                        <template id="imagesProductHtml">
+                            <div x-on:click="changeIndex($event)"
+                                 class="imagesProductHtmlItem inline-block w-12 h-12 mr-1">
+                                <img
+                                    class="w-full h-full object-cover border border-solid cursor-pointer"
+                                    alt="library images"
+                                >
+                            </div>
+                        </template>
                     </div>
                     <div>
                         <h1 class="text-gray-900 text-lg lg:text-2xl title-font font-medium mb-2"
@@ -94,11 +96,6 @@
                                         <div class="flex flex-wrap md:flex-nowrap items-center md:mr-6 mb-3">
                                             <span class="mr-3 w-full md:w-28"
                                                   x-text="item?.attribute_group?.title"></span>
-                                            {{--                                    <template x-if="item?.attribute_group?.slug == 'mau-sac'">--}}
-                                            {{--                                        <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>--}}
-                                            {{--                                        <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>--}}
-                                            {{--                                        <button class="border-2 border-gray-300 ml-1 bg-blue-600 rounded-full w-6 h-6 focus:outline-none"></button>--}}
-                                            {{--                                    </template>--}}
                                             <template x-if="item.attribute">
                                                 <div class="relative">
                                                     <x-select x-on:change="changeSelected(item)"
@@ -563,6 +560,7 @@
             let product = @json($product);
             let attributes = {};
             let list_attr = [];
+            let _index = 0;
 
             const attribute_groups = product.attribute_groups;
 
@@ -607,6 +605,30 @@
 
             activeAttr(active_attr, attribute_groups, product_related);
 
+            function addValueImagesProduct(res) {
+                if (res && res.length) {
+                    var ImageMain = document.querySelector('#imageMainProduct');
+                    $("#imagesProduct").empty();
+
+                    for (let i = 0; i < res.length; i++) {
+                        if ('content' in document.createElement('template')) {
+                            var tbody = document.querySelector("#imagesProduct");
+                            var template = $($('#imagesProductHtml').html());
+                            var clone = template.clone();
+
+                            const img = clone.find('img')
+                            if(i === 0){
+                                img.addClass('border-red-400');
+                            }
+                            img.data('index', i)
+                            img.attr('src', res[i] + `?w=100&h=100`)
+
+                            tbody.appendChild(clone[0]);
+                        }
+                    }
+                }
+            }
+
             const product_active = findProductActive(active_attr, attribute_groups, product_related, product.slug);
             if (product_active) {
                 product.id = product_active.product.id;
@@ -616,10 +638,11 @@
                 product.sku = product_active.product.sku;
                 product.images = product_active.product.images;
             }
+            addValueImagesProduct(product.images);
 
             return {
                 quantity: 1,
-                index: 0,
+                index: _index,
                 product: product,
                 product_active: product_active,
                 product_related: product_related,
@@ -652,12 +675,17 @@
 
                     this.product_active = findProductActive(active_attr, this.product.attribute_groups, this.product_related, this.product.slug);
                     if (this.product_active) {
+                        this.index = 0;
                         this.product.id = this.product_active.product.id;
                         this.product.price = this.product_active.product.price;
                         this.product.sale_price = this.product_active.product.sale_price;
                         this.product.sell_price = this.product_active.product.sell_price;
                         this.product.sku = this.product_active.product.sku;
                         this.product.images = this.product_active.product.images;
+                        if (this.product.images.length > 0){
+                            addValueImagesProduct(this.product.images);
+                        }
+
                     }
                 },
                 clickAddToCart(buynow = false) {
@@ -677,6 +705,11 @@
                     const slug = this.product.slug + window.location.search;
 
                     addToCart(this.product.id, slug, this.quantity, optionAttrs, buynow);
+                },
+                changeIndex(e) {
+                    this.index = $(e.target).data('index');
+                    $('.imagesProductHtmlItem').find('img').removeClass('border-red-400');
+                    $(e.target).addClass('border-red-400');
                 }
             }
         }
