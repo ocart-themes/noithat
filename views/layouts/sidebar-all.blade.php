@@ -33,14 +33,15 @@
         <div class="pt-4 mb-4 border-t border-gray-200">
             <div class="mb-2 font-bold">Danh mục bài viết</div>
             <ul>
-                @foreach(parent_recursive(get_blog_categories()) as $category)
+                @php $categories = get_blog_categories() @endphp
+                @foreach($categories as $category)
                     <li class="py-0.5">
                         <a href="/post-category/{{ $category->slug }}"
                            data-body="category-container"
                            class="text-sm font-semibold block text-gray-500 hover:text-blue-600">{{ $category->name }}</a>
-                        @if(!empty($category->children) && count($category->children)>0)
+                        @if($category->child_cats->isNotEmpty())
                             <ul class="submenu1-category-product ml-4">
-                                @foreach($category->children as $subitem)
+                                @foreach($category->child_cats as $subitem)
                                     <li class="py-0.5">
                                         <a data-body="category-container"
                                            href="/product-category/{{ $subitem->slug }}"
