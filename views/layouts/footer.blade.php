@@ -1,7 +1,7 @@
 <footer class="text-gray-300 dark-footer skin-dark-footer">
     <div class="bg-gray-800">
         <div class="container-custom py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:justify-items-end">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div class="footer-widget col-span-2">
                     @php
                         $address1 = theme_options()->getOption('address1', null);
