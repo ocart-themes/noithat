@@ -56,7 +56,7 @@
                 <div class="py-4">
                     <div>Bài liên quan</div>
                     <div class="flex flex-wrap -mx-2">
-                        @foreach(get_list_posts_category(Arr::get($post->categories->first(), 'id'), 6) as $post)
+                        @foreach(get_list_posts_relate(Arr::get($post->categories->first(), 'id'), 6) as $post)
                             <div class="w-1/2 xl:w-1/3 p-2">
                                 <x-theme::card.post :data="$post"/>
                             </div>
