@@ -25,6 +25,23 @@
             <div class="content-mce mb-4">
                 {!! $post->content !!}
             </div>
+            <style>
+                .content-mce h1{
+                    font-size: 1.6rem;
+                    line-height: 1.4em;
+                    margin: 25px 0 15px;
+                }
+                .content-mce h2{
+                    font-size: 1.5rem;
+                    line-height: 1.4em;
+                    margin: 25px 0 15px;
+                }
+                .content-mce h3, .content-mce h4, .content-mce h5{
+                    font-size: 1.4rem;
+                    line-height: 1.4em;
+                    margin: 25px 0 15px;
+                }
+            </style>
             <div class="text-right pb-4 border-b border-gray-100">
                 <em>Nguồn: admin</em>
             </div>
