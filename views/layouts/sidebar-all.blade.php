@@ -7,7 +7,7 @@
                     <li class="py-0.5">
                         <a
                                 data-body="category-container"
-                                href="/product-category/{{ $category->slug }}"
+                                href="{{ $category->url }}"
                                 class="text-sm font-semibold block text-gray-500 hover:text-blue-600">
                             {{ $category->name }}
                         </a>
@@ -16,7 +16,7 @@
                             @foreach($category->children as $subitem)
                                 <li class="py-0.5">
                                     <a data-body="category-container"
-                                        href="/product-category/{{ $subitem->slug }}"
+                                        href="{{ $subitem->url }}"
                                         class="text-sm font-semibold block text-gray-500 hover:text-blue-600">
                                         {{ $subitem->name }}
                                     </a>
@@ -36,7 +36,7 @@
                 @php $categories = get_blog_categories() @endphp
                 @foreach($categories as $category)
                     <li class="py-0.5">
-                        <a href="/post-category/{{ $category->slug }}"
+                        <a href="{{ $category->url }}"
                            data-body="category-container"
                            class="text-sm font-semibold block text-gray-500 hover:text-blue-600">{{ $category->name }}</a>
                         @if($category->child_cats->isNotEmpty())
@@ -44,7 +44,7 @@
                                 @foreach($category->child_cats as $subitem)
                                     <li class="py-0.5">
                                         <a data-body="category-container"
-                                           href="/product-category/{{ $subitem->slug }}"
+                                           href="{{ $subitem->url }}"
                                            class="text-sm font-semibold block text-gray-500 hover:text-blue-600">
                                             {{ $subitem->name }}
                                         </a>

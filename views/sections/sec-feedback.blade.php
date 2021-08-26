@@ -32,7 +32,7 @@
                                 </p>
                                 <p class="mt-6 animate-bounce">
                                     <a
-                                        href="javascript:void(0)"
+                                        href="@if(!empty($item->link)) {{ $item->link }} @else void:javascript(0) @endif"
                                         class="font-medium text-blue-600 hover:text-blue-900"
                                     >
                                         {{ $item->title }} &rarr;

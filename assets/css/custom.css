@@ -117,6 +117,17 @@
     }
 }
 
+.content-mce ul, .content-mce ol{
+    list-style: auto !important;
+    margin-left: 20px !important;
+    padding-left: 20px !important;
+}
+
+.content-mce ul li, .content-mce ol li{
+    margin: 5px 0;
+    padding-left: 5px;
+}
+
 .vietnam-map path {
     fill: #e6e6e6;
     stroke: #fff;
