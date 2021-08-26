@@ -247,7 +247,7 @@
                             <div class="relative overflow-hidden transition-all max-h-0 duration-700" style=""
                                  x-ref="container1"
                                  x-bind:style="selected == 1 ? 'max-height: 6000px;overflow-y: auto;' : ''">
-                                <div class="px-6 pb-4">
+                                <div class="content-mce px-6 pb-4">
                                     {!! $product->content !!}
                                 </div>
                             </div>
