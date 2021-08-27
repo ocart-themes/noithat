@@ -27,18 +27,23 @@
             </div>
             <style>
                 .content-mce h1{
-                    font-size: 1.6rem;
-                    line-height: 1.4em;
+                    font-size: 2.5rem;
+                    line-height: 3rem;
                     margin: 25px 0 15px;
                 }
                 .content-mce h2{
-                    font-size: 1.5rem;
-                    line-height: 1.4em;
+                    font-size: 2rem;
+                    line-height: 2.5rem;
                     margin: 25px 0 15px;
                 }
-                .content-mce h3, .content-mce h4, .content-mce h5{
-                    font-size: 1.4rem;
-                    line-height: 1.4em;
+                .content-mce h3{
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    margin: 25px 0 15px;
+                }
+                .content-mce h4, .content-mce h5{
+                    font-size: 1.2rem;
+                    line-height: 1.5rem;
                     margin: 25px 0 15px;
                 }
             </style>
