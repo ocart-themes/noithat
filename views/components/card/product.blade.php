@@ -5,7 +5,7 @@
             <img
                 class="w-full object-cover"
                 src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}"
-                alt=""
+                alt="{{ $data->name }}"
             >
         </a>
         <div class="p-2 md:p-3">

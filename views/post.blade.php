@@ -27,24 +27,24 @@
             </div>
             <style>
                 .content-mce h1{
-                    font-size: 2.5rem;
+                    font-size: 2.2rem;
                     line-height: 3rem;
                     margin: 25px 0 15px;
                 }
                 .content-mce h2{
-                    font-size: 2rem;
-                    line-height: 2.5rem;
-                    margin: 25px 0 15px;
+                    font-size: 1.8rem;
+                    line-height: 2.2rem;
+                    margin: 20px 0 10px;
                 }
                 .content-mce h3{
-                    font-size: 1.5rem;
+                    font-size: 1.4rem;
                     line-height: 2rem;
-                    margin: 25px 0 15px;
+                    margin: 10px 0 5px;
                 }
                 .content-mce h4, .content-mce h5{
                     font-size: 1.2rem;
                     line-height: 1.5rem;
-                    margin: 25px 0 15px;
+                    margin: 10px 0 5px;
                 }
             </style>
             <div class="text-right pb-4 border-b border-gray-100">
