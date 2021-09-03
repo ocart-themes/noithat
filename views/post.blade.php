@@ -46,6 +46,12 @@
                     line-height: 1.5rem;
                     margin: 10px 0 5px;
                 }
+                .content-mce ul{
+                    list-style-type: disc !important;
+                }
+                .content-mce ol{
+                    list-style-type: decimal !important;
+                }
             </style>
             <div class="text-right pb-4 border-b border-gray-100">
                 <em>Nguồn: admin</em>

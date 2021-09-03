@@ -271,6 +271,12 @@
                                         line-height: 1.5rem;
                                         margin: 10px 0 5px;
                                     }
+                                    .content-mce ul{
+                                        list-style-type: disc !important;
+                                    }
+                                    .content-mce ol{
+                                        list-style-type: decimal !important;
+                                    }
                                 </style>
                             </div>
 
