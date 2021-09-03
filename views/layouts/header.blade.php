@@ -47,7 +47,7 @@
                                         class="absolute z-10 -ml-4 w-screen max-w-md lg:ml-0 lg:left-0 top-full absolute hidden group-hover:block"
                                     >
                                         <div
-                                            class="shadow-lg ring-1 ring-black ring-opacity-5 max-h-screen overflow-hidden overflow-y-auto pb-16 bg-white py-4">
+                                            class="shadow-lg ring-1 ring-black ring-opacity-5 max-h-screen overflow-hidden overflow-y-auto pb-12 bg-white py-4">
                                             @foreach($children as $i)
                                                 @php
                                                     $subChildren = Arr::get($i, 'children');

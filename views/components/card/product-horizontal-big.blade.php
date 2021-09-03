@@ -5,7 +5,7 @@
             <img
                 class="h-full w-full object-cover"
                 src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'large', asset('/images/no-image.jpg')) }}"
-                alt=""
+                alt="{{ $data->name }}"
             >
         </a>
 
