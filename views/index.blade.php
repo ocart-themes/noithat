@@ -1,4 +1,6 @@
 <x-guest-layout xmlns:x-theme="http://www.w3.org/1999/html">
+    <h1 class="overflow-hidden opacity-0 w-0 h-0">{!! get_title() !!}</h1>
+
     @php
         $sections = get_config_sections();
     @endphp
