@@ -60,7 +60,7 @@
     <div class="footer-bottom bg-gray-900 mb-12 lg:mb-0" >
         <div class="container-custom align-items-center py-4">
             @php
-                $domain = get_domain();
+                $domain = theme_options()->getOption('domain_web', '');
             @endphp
             <p class="mb-0">© 2021 {{ $domain }} Designd By <a href="https://sevenweb.vn">SevenWeb</a> All Rights
                 Reserved</p>

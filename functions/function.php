@@ -5,7 +5,7 @@
 ]);
 
 TnMedia::addSize('medium', '400', '400');
-TnMedia::addSize('large', '1080', '1080');
+TnMedia::addSize('large', '850', '850');
 
 if (is_active_plugin('contact')) {
     add_filter(CONTACT_FORM_TEMPLATE_VIEW, function () {
