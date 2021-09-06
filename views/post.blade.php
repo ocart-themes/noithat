@@ -12,39 +12,112 @@
     </div>
 
     <div class="container-custom flex flex-wrap pb-2">
-        <div class="lg:w-3/4 w-full md:order-last">
+        <div class="lg:w-3/4 w-full md:order-last px-0 lg:pl-4">
+            @if(!empty($post->link_youtube))
+                <div class="mb-8" style="height: 550px">
+                    <iframe
+                        class="w-full h-full border border-solid border-grey-500"
+                        src="https://www.youtube.com/embed/{{ $post->link_youtube }}">
+                    </iframe>
+                </div>
+            @endif
             <div class="mb-4">
-                <h1 class="text-2xl text-blue-600 font-bold">{{ $post->name }}</h1>
+                <h1 class="text-2xl md:text-3xl text-blue-600 font-bold">{{ $post->name }}</h1>
             </div>
             @if($post->description)
-                <div class="mb-4 p-4 bg-gray-100">
+                <div class="mb-4 p-4 bg-gray-100 rounded-md">
                     {!! $post->description !!}
                 </div>
             @endif
 
             <div class="content-mce mb-4">
-                {!! $post->content !!}
+                @php
+                    $doc = new DOMDocument();
+                    $doc->loadHTML('<?xml encoding="utf-8" ?>' . '<body><div class="generate-index-content mb-4 p-4 bg-gray-100 rounded-md"><div class="font-bold text-xl py-1">Xem nhanh</div></div>' . $post->content . '</body>');
+
+                    // create document fragment
+                    $frag = $doc->createDocumentFragment();
+                    // create initial list
+                    $frag->appendChild($doc->createElement('ol'));
+                    $head = &$frag->firstChild;
+                    $xpath = new DOMXPath($doc);
+                    $last = 1;
+
+                    // get all H1, H2, …, H6 elements
+                    foreach ($xpath->query('//*[self::h1 or self::h2 or self::h3]') as $headline) {
+                        // get level of current headline
+                        sscanf($headline->tagName, 'h%u', $curr);
+
+                        // move head reference if necessary
+                        if ($curr < $last) {
+                            // move upwards
+                            for ($i=$curr; $i<$last; $i++) {
+                                $head = &$head->parentNode->parentNode;
+                            }
+                        } else if ($curr > $last && $head->lastChild) {
+                            // move downwards and create new lists
+                            for ($i=$last; $i<$curr; $i++) {
+                                $head->lastChild->appendChild($doc->createElement('ul'));
+                                $head = &$head->lastChild->lastChild;
+                            }
+                        }
+                        $last = $curr;
+
+                        // add list item
+                        $li = $doc->createElement('li');
+                        $head->appendChild($li);
+                        $a = $doc->createElement('a', $headline->textContent);
+                        $head->lastChild->appendChild($a);
+
+                        // build ID
+                        $levels = array();
+                        $tmp = &$head;
+                        // walk subtree up to fragment root node of this subtree
+                        while (!is_null($tmp) && $tmp != $frag) {
+                            $levels[] = $tmp->childNodes->length;
+                            $tmp = &$tmp->parentNode->parentNode;
+                        }
+                        $id = 'sect'.implode('.', array_reverse($levels));
+                        // set destination
+                        $a->setAttribute('href', '#'.$id);
+                        // add anchor to headline
+                        $a = $doc->createElement('a');
+                        $a->setAttribute('name', $id);
+                        $a->setAttribute('id', $id);
+                        $headline->insertBefore($a, $headline->firstChild);
+                    }
+
+                    // append fragment to document
+                    if (!empty($xpath->query('//*[self::h1 or self::h2 or self::h3]')->count())){
+                        $doc->getElementsByTagName('body')->item(0)->firstChild->appendChild($frag);
+                    }else{
+                        $doc->getElementsByTagName('body')->item(0)->removeChild($doc->getElementsByTagName('body')->item(0)->firstChild);
+                    }
+                    // echo markup
+                    $content = $doc->saveHTML();
+                @endphp
+                {!! $content !!}
             </div>
             <style>
                 .content-mce h1{
                     font-size: 2.2rem;
-                    line-height: 3rem;
+                    line-height: 2.5rem;
                     margin: 25px 0 15px;
                 }
                 .content-mce h2{
                     font-size: 1.8rem;
                     line-height: 2.2rem;
-                    margin: 20px 0 10px;
+                    margin: 25px 0 15px;
                 }
                 .content-mce h3{
-                    font-size: 1.4rem;
+                    font-size: 1.5rem;
                     line-height: 2rem;
-                    margin: 10px 0 5px;
+                    margin: 25px 0 15px;
                 }
                 .content-mce h4, .content-mce h5{
                     font-size: 1.2rem;
-                    line-height: 1.5rem;
-                    margin: 10px 0 5px;
+                    line-height: 1.4rem;
+                    margin: 25px 0 15px;
                 }
                 .content-mce ul{
                     list-style-type: disc !important;
@@ -52,9 +125,17 @@
                 .content-mce ol{
                     list-style-type: decimal !important;
                 }
+                .content-mce .generate-index-content a:hover{
+                    color: blue;
+                }
+                .content-mce .generate-index-content ol{
+                    list-style-type: none !important;
+                    margin-left: 0 !important;
+                    padding-left: 0 !important;
+                }
             </style>
             <div class="text-right pb-4 border-b border-gray-100">
-                <em>Nguồn: admin</em>
+                <em>Nguồn: {{ $post->auth->name }}</em>
             </div>
             @if(count($post->categories)>0)
                 <div class="py-4 border-b border-gray-100">
@@ -81,10 +162,10 @@
             <div class="fb-comments" data-href="{!! route(ROUTE_BLOG_POST_SCREEN_NAME, ['slug' => $post->slug]) !!}" data-width="100%" data-numposts="5"></div>
 
             @if(count($post->categories)>0)
-                <div class="py-4">
-                    <div>Bài liên quan</div>
+                <div class="py-4 border-t border-gray-100">
+                    {{--                    <div class="text-xl mb-2">Tin liên quan</div>--}}
                     <div class="flex flex-wrap -mx-2">
-                        @foreach(get_list_posts_relate(Arr::get($post->categories->first(), 'id'), 6) as $post)
+                        @foreach(get_list_posts_category(Arr::get($post->categories->first(), 'id'), 6) as $post)
                             <div class="w-1/2 xl:w-1/3 p-2">
                                 <x-theme::card.post :data="$post"/>
                             </div>
