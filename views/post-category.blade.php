@@ -12,8 +12,8 @@
             @if(count($posts)>0)
                 <div class="flex flex-wrap -mx-2 md:-mx-4">
                     @foreach($posts as $post)
-                        <div class="w-1/2 xl:w-1/3 p-2 md:p-4 pt-0">
-                            <x-theme::card.post :data="$post"/>
+                        <div class="w-1/2 xl:w-1/3 p-2 md:p-2 pt-0">
+                        <x-theme::card.post :data="$post"/>
                         </div>
                     @endforeach
                 </div>

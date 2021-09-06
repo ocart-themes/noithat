@@ -71,12 +71,18 @@
                         </div>
                         <div class="mb-4 pt-4 border-t border-gray-200">
                             <template x-if="product.sell_price && product.sell_price > 0">
-                                <span class="title-font font-bold text-2xl text-red-600"><span
-                                        x-text="product.sell_price"></span>đ</span>
+                                <span
+                                    class="title-font font-bold text-2xl text-red-600"
+                                >
+                                    <span x-text="product.sell_price.toLocaleString()"></span>
+                                    <span class="font-semibold underline">đ</span>
+                                </span>
                             </template>
                             <template x-if="product.price > product.sell_price">
-                                <span class="title-font font-medium text-md text-gray-500 line-through ml-4"><span
-                                        x-text="product.price"></span>đ</span>
+                                <span class="title-font font-medium text-md text-gray-500 line-through ml-4">
+                                    <span x-text="product.price.toLocaleString()"></span>
+                                    <span class="font-semibold">đ</span>
+                                </span>
                             </template>
                             <template
                                 x-if="!(product.sell_price && product.sell_price > 0) && !(product.price > product.sell_price)">
