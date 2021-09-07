@@ -117,14 +117,45 @@
     }
 }
 
-.content-mce ul, .content-mce ol{
-    list-style: auto !important;
-    margin-left: 20px !important;
-    padding-left: 20px !important;
+.content-mce table td, .content-mce table th{
+    border: 1px solid #aaa;
+    border-collapse: collapse;
 }
 
-.content-mce ul li, .content-mce ol li{
-    margin: 5px 0;
+.content-mce table caption, .content-mce table td, .content-mce table th {
+    padding: 15px 7px;
+    font: inherit;
+}
+
+.content-mce table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.content-mce h1{
+    font-size: 2.2rem;
+    line-height: 3rem;
+    margin: 25px 0 15px;
+}
+.content-mce h2{
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin: 20px 0 10px;
+}
+.content-mce h3{
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin: 10px 0 5px;
+}
+.content-mce h4, .content-mce h5{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin: 10px 0 5px;
+}
+.content-mce ul{
+    list-style-type: disc !important;
+}
+.content-mce ol{
+    list-style-type: decimal !important;
 }
 
 .vietnam-map path {

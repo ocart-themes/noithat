@@ -12,7 +12,7 @@
                     @php
                         $logo = get_logo();
                     @endphp
-                    <img class="h-8 w-auto sm:h-16" src="{{ $logo }}" alt="">
+                    <img class="h-8 w-auto sm:h-16" src="{{ $logo }}?h=300" alt="">
                 </a>
 
                 <!-- Menu Main -->
