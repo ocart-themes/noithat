@@ -117,6 +117,10 @@
     }
 }
 
+.content-mce table{
+    width: 100%;
+}
+
 .content-mce table td, .content-mce table th{
     border: 1px solid #aaa;
     border-collapse: collapse;
