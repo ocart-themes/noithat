@@ -12,7 +12,7 @@
                     @php
                         $logo = get_logo();
                     @endphp
-                    <img class="h-8 w-auto sm:h-16" src="{{ $logo }}?h=300" alt="">
+                    <img class="h-10 w-auto sm:h-16" src="{{ $logo }}?h=300" alt="">
                 </a>
 
                 <!-- Menu Main -->
@@ -29,9 +29,10 @@
                             @endphp
                             @if(!empty($children))
                                 <div class="group py-7 inline-block relative">
-                                    <button type="button"
-                                            class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
-                                            aria-expanded="false">
+                                    <a
+                                        href="{{ Arr::get($item, 'url') }}"
+                                        class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
+                                        aria-expanded="false">
                                         <span>{{ Arr::get($item, 'title') }}</span>
                                         <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
                                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -41,7 +42,7 @@
                                                   clip-rule="evenodd"/>
                                         </svg>
 
-                                    </button>
+                                    </a>
 
                                     <div
                                         class="absolute z-10 -ml-4 w-screen max-w-md lg:ml-0 lg:left-0 top-full absolute hidden group-hover:block"

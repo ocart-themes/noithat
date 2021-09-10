@@ -21,6 +21,7 @@
                                         {{ $subitem->name }}
                                     </a>
                                 </li>
+
                             @endforeach
                         </ul>
                         @endif

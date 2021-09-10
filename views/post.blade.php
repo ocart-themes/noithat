@@ -13,11 +13,11 @@
 
     <div class="container-custom flex flex-wrap pb-2">
         <div class="lg:w-3/4 w-full md:order-last px-0 lg:pl-4">
-            @if(!empty($post->link_youtube))
+            @if(!empty($post->code_video_youtube))
                 <div class="mb-8" style="height: 550px">
                     <iframe
                         class="w-full h-full border border-solid border-grey-500"
-                        src="https://www.youtube.com/embed/{{ $post->link_youtube }}">
+                        src="https://www.youtube.com/embed/{{ $post->code_video_youtube }}">
                     </iframe>
                 </div>
             @endif
@@ -99,32 +99,6 @@
                 {!! $content !!}
             </div>
             <style>
-                .content-mce h1{
-                    font-size: 2.2rem;
-                    line-height: 2.5rem;
-                    margin: 25px 0 15px;
-                }
-                .content-mce h2{
-                    font-size: 1.8rem;
-                    line-height: 2.2rem;
-                    margin: 25px 0 15px;
-                }
-                .content-mce h3{
-                    font-size: 1.5rem;
-                    line-height: 2rem;
-                    margin: 25px 0 15px;
-                }
-                .content-mce h4, .content-mce h5{
-                    font-size: 1.2rem;
-                    line-height: 1.4rem;
-                    margin: 25px 0 15px;
-                }
-                .content-mce ul{
-                    list-style-type: disc !important;
-                }
-                .content-mce ol{
-                    list-style-type: decimal !important;
-                }
                 .content-mce .generate-index-content a:hover{
                     color: blue;
                 }
@@ -167,7 +141,10 @@
                     <div class="flex flex-wrap -mx-2">
                         @foreach(get_list_posts_category(Arr::get($post->categories->first(), 'id'), 6) as $post)
                             <div class="w-1/2 xl:w-1/3 p-2">
-                                <x-theme::card.post :data="$post"/>
+                                <x-theme::card.post
+                                    :data="$post"
+                                    video="{{ !empty($post->format_type) && $post->format_type === 'video' ? true : false }}"
+                                />
                             </div>
                         @endforeach
                     </div>

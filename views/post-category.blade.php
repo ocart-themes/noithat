@@ -10,7 +10,7 @@
     <div class="container-custom flex flex-wrap pb-2">
         <div class="lg:w-3/4 w-full md:order-last px-0 lg:pl-4">
             @if(!empty($category->content))
-            <div class="p-2 -mx-2 md:-mx-4">{!! $category->content !!}</div>
+                <div class="p-2 -mx-2 md:-mx-4">{!! $category->content !!}</div>
             @endif
             @if(count($posts)>0)
                 <div class="flex flex-wrap -mx-2 md:-mx-4">
@@ -18,6 +18,7 @@
                         <div class="w-1/2 xl:w-1/3 p-2 md:p-2 pt-0">
                             <x-theme::card.post
                                 :data="$post"
+                                video="{{ !empty($post->format_type) && $post->format_type === 'video' ? true : false }}"
                             />
                         </div>
                     @endforeach

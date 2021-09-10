@@ -43,7 +43,7 @@
                             <input type="hidden" name="country" value="VN">
                         </div>
                         <div>
-                            <h2  class="text-4xl font-bold text-blue-600 capitalize mb-4">Shipping method</h2>
+                            <h2  class="text-4xl font-bold text-blue-600 capitalize mb-4">Vận chuyển</h2>
                             <div>
                                 <ul class="border-l border-r border-b">
                                     @foreach($shippingMethods as $shippingMethod)
@@ -59,7 +59,7 @@
                                                 @if ($shippingMethod['price'] > 0)
                                                     {{ format_price($shippingMethod['price']) }}
                                                 @else
-                                                    <strong>{{ trans('Free shipping') }}</strong>
+                                                    <strong>{{ trans('Miễn phí vận chuyển') }}</strong>
                                                 @endif
                                             </label>
                                         </li>
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div>
-                            <h2 class="text-4xl font-bold text-blue-600 capitalize mb-4">Paymment method</h2>
+                            <h2 class="text-4xl font-bold text-blue-600 capitalize mb-4">Thanh toán</h2>
                             <div>
                                 <ul x-data="{tab: '{{ setting('default_payment_method') }}'}">
                                     @if (setting('payment_cod_status') == 1)
@@ -103,9 +103,9 @@
                                     @endif
                                     @php
                                         $payload = [
-        'amount' => get_cart_pricetotal(),
-        'currency' => Str::upper(get_application_currency()->title),
-        'name' => null];
+                                            'amount' => get_cart_pricetotal(),
+                                            'currency' => Str::upper(get_application_currency()->title),
+                                            'name' => null];
                                         echo apply_filters(PAYMENT_FILTER_ADDITIONAL_PAYMENT_METHODS, null, $payload)
                                     @endphp
                                 </ul>
@@ -145,11 +145,11 @@
                         @endforeach
                     </div>
                     <div class="flex justify-between items-center mt-2">
-                        <div class="font-bold text-lg">{{ trans('Subtotal') }}</div>
+                        <div class="font-bold text-lg">Tổng phụ</div>
                         <div class="font-bold text-xl text-red-600">{{ format_price(get_cart_subtotal()) }}</div>
                     </div>
                     <div class="flex justify-between items-center mt-2 mb-4">
-                        <div class="font-bold text-lg">{{ trans('Shipping fee') }}</div>
+                        <div class="font-bold text-lg">Phí vận chuyển</div>
                         <div class="font-bold text-xl text-red-600">{{ format_price($shippingAmount) }}</div>
                     </div>
                     <hr>
