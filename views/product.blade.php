@@ -433,10 +433,16 @@
                     </div>
                 @endif
 
-                <div class="fb-comments mb-7"
-                     data-href="{!! route(ROUTE_PRODUCT_SCREEN_NAME, ['slug' => $product->slug]) !!}" data-width="100%"
-                     data-numposts="5" style="background: white;display: block;width: 100%"></div>
-                <style></style>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="VKxCFr5E"></script>
+                <div id="fb-root"></div>
+                <div
+                    class="fb-comments px-3.5 mb-7"
+                    data-href="{!! $product->url !!}"
+                    data-width="100%"
+                    data-numposts="5"
+                    style="background: white;display: block;width: 100%"
+                >
+                </div>
 
                 @if(count($product->categories)>0)
                     @php

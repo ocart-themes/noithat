@@ -133,7 +133,16 @@
                         </span>
             </div>
 
-            <div class="fb-comments" data-href="{!! route(ROUTE_BLOG_POST_SCREEN_NAME, ['slug' => $post->slug]) !!}" data-width="100%" data-numposts="5"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="VKxCFr5E"></script>
+            <div id="fb-root"></div>
+            <div
+                class="fb-comments"
+                data-href="{!! $post->url !!}"
+                data-width="100%"
+                data-numposts="5"
+                style="background: white;display: block;width: 100%"
+            >
+            </div>
 
             @if(count($post->categories)>0)
                 <div class="py-4 border-t border-gray-100">

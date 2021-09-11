@@ -314,13 +314,10 @@
     {!! get_meta_head() !!}
 <!-- End Meta Head -->
 
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="VKxCFr5E"></script>
-
     @stack('head')
 
 </head>
 <body id="body">
-<div id="fb-root"></div>
 @stack('body')
 
 <div class="font-sans text-gray-900 antialiased">
