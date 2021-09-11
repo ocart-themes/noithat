@@ -22,7 +22,7 @@
                             <img
                                 id="imageMainProduct"
                                 class="w-full h-full object-cover object-center rounded"
-                                x-bind:src="product.images.length ? product.images[index]  + `?w=800&h=800` : '/no-images'"
+                                x-bind:src="product.images.length ? product.images[index]  + `?w=850&h=850` : '/no-images'"
                                 alt="ecommerce image">
                         </div>
 
@@ -661,7 +661,7 @@
                                 img.addClass('border-red-400');
                             }
                             img.data('index', i)
-                            img.attr('src', res[i] + `?w=100&h=100`)
+                            img.attr('src', res[i] + `?w=150&h=150`)
 
                             tbody.appendChild(clone[0]);
                         }

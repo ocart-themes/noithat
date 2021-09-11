@@ -3,8 +3,9 @@
     <div class="relative group h-full block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
         <a href="{!! $data->url !!}">
             <img
-                class="h-full w-full object-cover"
-                src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'large', asset('/images/no-image.jpg')) }}"
+                class="h-full w-full object-cover lazyload"
+                data-src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'large', asset('/images/no-image.jpg')) }}"
+                src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'thumb', asset('/images/no-image.jpg')) }}"
                 alt="{{ $data->name }}"
             >
         </a>

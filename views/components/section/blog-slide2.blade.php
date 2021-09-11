@@ -29,9 +29,8 @@
             spaceBetween: 12,
             slidesPerView: 1,
             freeMode: true,
-            loop: true,
             autoplay: {
-                delay: 3000,
+                delay: 5000,
             },
             watchSlidesVisibility: true,
             watchSlidesProgress: true,

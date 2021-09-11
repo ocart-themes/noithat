@@ -287,6 +287,9 @@
                 line-height: 22px;
                 letter-spacing: normal;
             }
+            .swiper-button-next, .swiper-button-prev {
+                width: 30px !important;
+            }
         }
     </style>
 
@@ -300,6 +303,9 @@
     <!-- Swiper JS -->
     <script src="{!! asset('access/swiper/js/swiper-bundle.min.js?v=1') !!}"></script>
 
+    <!-- LazyLoad JS -->
+    <script src="{!! asset('access/lazyload/lazysizes.min.js?v=1') !!}" async=""></script>
+
     <script>
         const bodyLoading = {
             show() {
@@ -312,7 +318,7 @@
     </script>
     <!-- Meta Head -->
     {!! get_meta_head() !!}
-<!-- End Meta Head -->
+    <!-- End Meta Head -->
 
     @stack('head')
 
@@ -332,9 +338,9 @@
     <x-theme::modal.youtube/>
 
     @if(is_active_plugin('contact'))
-        <x-theme::form.contact-modal/>
-@endif
-<!-- Cart Sidebar -->
+    <x-theme::form.contact-modal/>
+    @endif
+    <!-- Cart Sidebar -->
 </div>
 
 <div id="loading" style="display:none" class="fixed w-full h-full top-0 left-0 z-50 flex items-center justify-center">
@@ -348,7 +354,8 @@
 
 @stack('bodybelow')
 
-<script>$(function(){
+<script>
+    $(function(){
         $(document).pjax('a:not(.blank)', '#body');
         $.pjax.defaults.timeout = 1200;
 

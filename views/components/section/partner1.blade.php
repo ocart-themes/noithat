@@ -13,7 +13,7 @@
         <div class="container-custom">
             <div class="flex flex-wrap">
                 @foreach($partner as $item)
-                    <div class="w-1/2 sm:w-1/2 xl:w-1/3 p-1">
+                    <div class="w-1/3 sm:w-1/2 xl:w-1/3 p-1">
                         <div class="bg-gray-100 p-2 sm:py-4 sm:px-0">
                             <img class="w-auto max-h-12 mx-auto" src="{{ $item->img }}" alt="partner">
                         </div>

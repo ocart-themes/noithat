@@ -87,13 +87,11 @@
             spaceBetween: 30,
             slidesPerView: 3,
             freeMode: true,
-            loop: true,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
         });
         var blogSlide1{{$keySlide}} = new Swiper(".swiper{{$keySlide}}", {
             spaceBetween: 10,
-            loop: true,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",

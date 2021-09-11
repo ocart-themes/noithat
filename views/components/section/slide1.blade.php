@@ -8,12 +8,13 @@
                     <div class="swiper-slide">
                         <a
                             href="{{ theme_options()->getOption('link_slide1', 'javascript:void(0)') }}"
-                            class="inline-block"
+                            class="inline-block w-full"
                         >
                             <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner home"
-                                class="mx-auto"
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=150', asset('/images/no-image.jpg')) }}"
+                                alt="banner home 1"
+                                class="mx-auto lazyload w-full h-40 sm:h-56 md:h-72 lg:h-96"
                             >
                         </a>
                     </div>
@@ -22,12 +23,13 @@
                     <div class="swiper-slide">
                         <a
                             href="{{ theme_options()->getOption('link_slide1_2', 'javascript:void(0)') }}"
-                            class="inline-block"
+                            class="inline-block w-full"
                         >
                             <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner"
-                                class="mx-auto"
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=150', asset('/images/no-image.jpg')) }}"
+                                alt="banner home 2"
+                                class="mx-auto lazyload w-full h-40 sm:h-56 md:h-72 lg:h-96"
                             >
                         </a>
                     </div>
@@ -36,12 +38,13 @@
                     <div class="swiper-slide">
                         <a
                             href="{{ theme_options()->getOption('link_slide1_3', 'javascript:void(0)') }}"
-                            class="inline-block"
+                            class="inline-block w-full"
                         >
                             <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner"
-                                class="mx-auto"
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=150', asset('/images/no-image.jpg')) }}"
+                                alt="banner home 3"
+                                class="mx-auto lazyload w-full h-40 sm:h-56 md:h-72 lg:h-96"
                             >
                         </a>
                     </div>
@@ -55,9 +58,8 @@
         var slide1{{$keySlide}} = new Swiper(".swiperSlide1{{$keySlide}}", {
             spaceBetween: 1,
             slidesPerView: 1,
-            loop: true,
             autoplay: {
-                delay: 3000,
+                delay: 5000,
             },
             navigation: {
                 nextEl: ".swiper-button-next",

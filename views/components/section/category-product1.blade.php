@@ -9,12 +9,15 @@
                         <div class="text-center rounded-t-full hover:shadow-xl">
                             <a href="{!! $category->url !!}"
                                class="inline-block w-full">
-                                <img
-                                    src="{{ TnMedia::getImageUrl($category->image, 'medium', asset('/images/no-image.jpg')) }}"
-                                    class="w-full block m-auto rounded-full lg:p-3"
-                                    alt="{{ $category->name }}"
-                                    style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);"
+                                <div class="relative" style="padding-bottom: calc( 1 * 100% )">
+                                    <img
+                                        src="{{ TnMedia::getImageUrl($category->image, 'thumb', asset('/images/no-image.jpg')) }}"
+                                        class="w-full h-full block m-auto rounded-full lg:p-3 absolute"
+                                        alt="{{ $category->name }}"
+                                        style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);"
                                     >
+                                </div>
+
                                 <div class="text-gray-600 font-bold line-clamp-1 text-xs md:text-base">
                                     {{ $category->name }}
                                 </div>
@@ -30,10 +33,10 @@
             spaceBetween: 15,
             slidesPerView: 4,
             freeMode: true,
-            loop: true,
             autoplay: {
-                delay: 3000,
+                delay: 2000,
             },
+            loop: true,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
             breakpoints: {

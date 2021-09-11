@@ -50,9 +50,8 @@
             freeMode: true,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
-            loop: true,
             autoplay: {
-                delay: 3000,
+                delay: 5000,
             },
             navigation: {
                 nextEl: ".swiper-button-next",

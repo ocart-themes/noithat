@@ -1,95 +1,83 @@
 <section class="section-custom py-6">
     <div class="container-custom">
         <div class="grid grid-cols-2 sm:grid-cols-9 gap-2 md:gap-2.5 mx-auto">
-            <div class="mx-auto col-span-full sm:col-span-5">
-                @if(!empty(theme_options()->getOption('grid1', null)))
+            <div class="mx-auto col-span-full sm:col-span-5 w-full">
                 <a
-                    class="h-full group flex justify-center relative overflow-hidden"
+                    class="h-full group flex justify-center relative overflow-hidden effect"
                     href="{{ theme_options()->getOption('link_grid1', 'javascript:void(0)') }}"
                 >
-                    <div class="effect">
-                        <img
-                            src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                            alt="banner gird"
-                            class="bg-gray-300 object-cover w-full h-full"/>
-                    </div>
+                    <img
+                        data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1', null), 'large', asset('/images/no-image.jpg')) }}"
+                        src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1', null), 'thumb', asset('/images/no-image.jpg')) }}"
+                        alt="banner gird 1"
+                        class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                    />
                 </a>
-                @endif
             </div>
-            <div class="mx-auto col-span-1 sm:col-span-2">
-                @if(!empty(theme_options()->getOption('grid1_2', null)))
+            <div class="mx-auto col-span-1 sm:col-span-2 w-full">
                     <a
-                        class="h-full group flex justify-center relative overflow-hidden"
+                        class="h-full group flex justify-center relative overflow-hidden effect"
                         href="{{ theme_options()->getOption('link_grid1_2', 'javascript:void(0)') }}"
                     >
-                        <div class="effect">
-                            <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_2', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner gird"
-                                class="bg-gray-300 object-cover w-full h-full"/>
-                        </div>
+                        <img
+                            data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_2', null), 'medium', asset('/images/no-image.jpg')) }}"
+                            src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_2', null), 'thumb', asset('/images/no-image.jpg')) }}"
+                            alt="banner gird 2"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                        />
                     </a>
-                @endif
             </div>
-            <div class="mx-auto col-span-1 sm:col-span-2">
-                @if(!empty(theme_options()->getOption('grid1_3', null)))
+            <div class="mx-auto col-span-1 sm:col-span-2 w-full">
                     <a
-                        class="h-full group flex justify-center relative overflow-hidden"
+                        class="h-full group flex justify-center relative overflow-hidden effect"
                         href="{{ theme_options()->getOption('link_grid1_3', 'javascript:void(0)') }}"
                     >
-                        <div class="effect">
-                            <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_3', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner gird"
-                                class="bg-gray-300 object-cover w-full h-full"/>
-                        </div>
+                        <img
+                            data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_3', null), 'medium', asset('/images/no-image.jpg')) }}"
+                            src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_3', null), 'thumb', asset('/images/no-image.jpg')) }}"
+                            alt="banner gird 3"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                        />
                     </a>
-                @endif
             </div>
-            <div class="mx-auto col-span-1 sm:col-span-2">
-                @if(!empty(theme_options()->getOption('grid1_4', null)))
+            <div class="mx-auto col-span-1 sm:col-span-2 w-full">
                     <a
-                        class="h-full group flex justify-center relative overflow-hidden"
+                        class="h-full group flex justify-center relative overflow-hidden effect"
                         href="{{ theme_options()->getOption('link_grid1_4', 'javascript:void(0)') }}"
                     >
-                        <div class="effect">
-                            <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_4', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner gird"
-                                class="bg-gray-300 object-cover w-full h-full"/>
-                        </div>
+                        <img
+                            data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_4', null), 'medium', asset('/images/no-image.jpg')) }}"
+                            src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_4', null), 'thumb', asset('/images/no-image.jpg')) }}"
+                            alt="banner gird 4"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                        />
                     </a>
-                @endif
             </div>
-            <div class="mx-auto col-span-1 sm:col-span-2">
-                @if(!empty(theme_options()->getOption('grid1_5', null)))
+            <div class="mx-auto col-span-1 sm:col-span-2 w-full">
                     <a
-                        class="h-full group flex justify-center relative overflow-hidden"
+                        class="h-full group flex justify-center relative overflow-hidden effect"
                         href="{{ theme_options()->getOption('link_grid1_5', 'javascript:void(0)') }}"
                     >
-                        <div class="effect">
-                            <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_5', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner gird"
-                                class="bg-gray-300 object-cover w-full h-full"/>
-                        </div>
+                        <img
+                            data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_5', null), 'medium', asset('/images/no-image.jpg')) }}"
+                            src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_5', null), 'thumb', asset('/images/no-image.jpg')) }}"
+                            alt="banner gird 5"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                        />
                     </a>
-                @endif
             </div>
-            <div class="mx-auto col-span-full sm:col-span-5">
-                @if(!empty(theme_options()->getOption('grid1_6', null)))
+            <div class="mx-auto col-span-full sm:col-span-5 w-full">
                     <a
-                        class="h-full group flex justify-center relative overflow-hidden"
+                        class="h-full group flex justify-center relative overflow-hidden effect"
                         href="{{ theme_options()->getOption('link_grid1_6', 'javascript:void(0)') }}"
                     >
-                        <div class="effect">
-                            <img
-                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_6', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
-                                alt="banner gird"
-                                class="bg-gray-300 object-cover w-full h-full"/>
-                        </div>
+                        <img
+                            data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_6', null), 'large', asset('/images/no-image.jpg')) }}"
+                            src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_6', null), 'thumb', asset('/images/no-image.jpg')) }}"
+                            alt="banner gird 6"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                        />
                     </a>
-                @endif
             </div>
         </div>
     </div>
