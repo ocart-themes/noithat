@@ -22,7 +22,7 @@
                                     <div class="w-20">
                                         <img class="h-24"
                                              src="{{ TnMedia::getImageUrl($item->options->image, 'medium', asset('/images/no-image.jpg')) }}"
-                                             alt="">
+                                             alt="{{ $item->name }}">
                                     </div>
                                     <div class="flex flex-col justify-between ml-4 flex-grow">
                                         <a href="/product/{{ $item->options->slug }}"
