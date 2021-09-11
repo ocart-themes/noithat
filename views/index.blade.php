@@ -5,14 +5,6 @@
         $sections = json_decode(theme_options()->getOption('section_list', []), true);
     @endphp
 
-    @if(is_array($sections) && in_array('sec1', $sections))
-        <x-theme::section.slide1 keySlide="sec1"/>
-    @endif
-
-    @if(is_array($sections) && in_array('sec2', $sections))
-        <x-theme::section.grid1/>
-    @endif
-
     @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec3', $sections))
         <x-theme::section.category-product1/>
     @endif

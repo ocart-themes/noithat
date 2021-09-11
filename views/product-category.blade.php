@@ -8,11 +8,14 @@
     </div>
 
     <div class="container-custom flex flex-wrap pb-2">
-        <div class="lg:w-3/4 w-full md:order-last">
+        <div class="lg:w-3/4 w-full md:order-last px-0 lg:pl-4">
+            @if(!empty($category->content))
+                <div class="p-2 -mx-2 md:-mx-4">{!! $category->content !!}</div>
+            @endif
             @if(count($products)>0)
-                <div class="flex flex-wrap -mx-2">
+                <div class="flex flex-wrap -mx-2 md:-mx-4">
                     @foreach($products as $product)
-                        <div class="w-1/2 xl:w-1/3 p-2 pt-0">
+                        <div class="w-1/2 xl:w-1/3 p-2 md:p-2 pt-0">
                             <x-theme::card.product :data="$product"/>
                         </div>
                     @endforeach
