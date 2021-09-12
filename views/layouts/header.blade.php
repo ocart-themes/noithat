@@ -12,7 +12,10 @@
                     @php
                         $logo = get_logo();
                     @endphp
-                    <img class="h-10 w-auto sm:h-16" src="{{ $logo }}?h=300" alt="logo">
+                    <img
+                        class="h-10 w-auto sm:h-16 md:max-w-xs logo-header"
+                        src="{{ $logo }}?w=300&h=300"
+                        alt="logo">
                 </a>
 
                 <!-- Menu Main -->
@@ -219,7 +222,10 @@
         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 h-screen">
             <div class="flex items-center justify-between px-4 pt-1">
                 <div>
-                    <img class="h-8 w-auto" src="{{ $logo }}?h=300" alt="logo">
+                    <img
+                        class="h-8 w-auto logo-header"
+                        src="{{ $logo }}?w=300&h=300"
+                        alt="logo">
                 </div>
                 <div class="-mr-2">
                     <button

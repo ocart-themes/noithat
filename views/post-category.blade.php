@@ -9,8 +9,13 @@
 
     <div class="container-custom flex flex-wrap pb-2">
         <div class="lg:w-3/4 w-full md:order-last px-0 lg:pl-4">
+            @if(!empty($category->description))
+                <div class="p-2 -mx-2 md:-mx-4">
+                    <div class="p-4 bg-gray-100 rounded-md">{!! $category->description !!}</div>
+                </div>
+            @endif
             @if(!empty($category->content))
-                <div class="p-2 -mx-2 md:-mx-4">{!! $category->content !!}</div>
+                <div class="content-mce p-2 -mx-2 md:-mx-4">{!! $category->content !!}</div>
             @endif
             @if(count($posts)>0)
                 <div class="flex flex-wrap -mx-2 md:-mx-4">
@@ -27,7 +32,9 @@
                     <div class="py-4">{!! $posts->links() !!}</div>
                 @endif
             @else
-                <div class="p-2 md:p-4 mb-2 bg-gray-100">Chưa có bài viết nào!</div>
+                <div class="p-2 -mx-2 md:-mx-4">
+                    <div class="p-4 bg-gray-100 rounded-md">Chưa có bài viết nào!</div>
+                </div>
             @endif
         </div>
 

@@ -221,8 +221,8 @@
                                 <figcaption class="inline-block">Tags:</figcaption>
                                 @foreach($product->tags as $key => $item)
                                     <a
-                                        href="https://hasa.botble.com/product-tags/clothes"
-                                        class="text-xs inline-block py-1 px-2 mb-1 mr-1 border border-gray-500 rounded-2xl hover:text-blue-700 hover:border-blue-700"
+                                        href="{{ $item->url }}"
+                                        class="text-xs inline-block py-0.5 px-2 mb-1 mr-1 border border-gray-500 rounded-2xl hover:text-blue-700 hover:border-blue-700"
                                     >
                                         {{ $item->name }}
                                     </a>

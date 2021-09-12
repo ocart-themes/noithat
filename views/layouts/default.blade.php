@@ -290,6 +290,13 @@
             .swiper-button-next, .swiper-button-prev {
                 width: 30px !important;
             }
+            .card-post .post-video-icon .xts-play_icon{
+                width: 40px;
+                height: 40px;
+            }
+            .logo-header{
+                max-width: 150px;
+            }
         }
     </style>
 

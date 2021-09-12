@@ -3,19 +3,16 @@
         <ol class="list-reset py-4 border-b border-gray-200 flex text-grey">
             <li class="pr-2"><a href="{!! route('home') !!}" class="no-underline text-blue-600">Home</a></li>
             <li>/</li>
-            <li class="px-2 line-clamp-1"><span class="no-underline text-gray-500">{{ $category->name }}</span></li>
+            <li class="px-2 line-clamp-1"><span class="no-underline text-gray-500">{{ $tag->name }}</span></li>
         </ol>
     </div>
 
     <div class="container-custom flex flex-wrap pb-2">
         <div class="lg:w-3/4 w-full md:order-last px-0 lg:pl-4">
-            @if(!empty($category->description))
-                <div class="p-2 -mx-2 md:-mx-4">
-                    <div class="p-4 bg-gray-100 rounded-md">{!! $category->description !!}</div>
+            @if(!empty($tag->description))
+                <div class="mb-4 p-2 -mx-2 md:-mx-4">
+                    <div class="p-4 bg-gray-100 rounded-md">{!! $tag->description !!}</div>
                 </div>
-            @endif
-            @if(!empty($category->content))
-                <div class="content-mce p-2 -mx-2 md:-mx-4">{!! $category->content !!}</div>
             @endif
             @if(count($products)>0)
                 <div class="flex flex-wrap -mx-2 md:-mx-4">
