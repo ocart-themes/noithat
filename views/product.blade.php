@@ -157,7 +157,8 @@
                                     class="items-center whitespace-nowrap inline-flex bg-blue-50 border-0 py-2 px-6 focus:outline-none rounded"
                                 >
                                     <x-theme::icons.plus-circle class="w-6"/>
-                                    <span class="w-full">Thêm vào giỏ</span>
+                                    <span class="hidden md:inline-block w-full">Thêm vào giỏ</span>
+                                    <span class="inline-block md:hidden w-full">Giỏ</span>
                                 </button>
                             </div>
                         </div>
@@ -830,4 +831,3 @@
         }
     </style>
 </x-guest-layout>
-
