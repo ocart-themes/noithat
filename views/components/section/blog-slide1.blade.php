@@ -1,6 +1,6 @@
 @props(['keySlide'=> 'default'])
 
-<section class="sec-blog-slide1 mx-auto" style="max-width: 1400px;">
+<section class="sec-blog-slide1 mx-4 lg:mx-auto" style="max-width: 1400px;">
     @php
         $posts = get_list_posts_feature(7);
     @endphp

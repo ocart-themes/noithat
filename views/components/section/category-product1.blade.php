@@ -11,8 +11,9 @@
                                class="inline-block w-full">
                                 <div class="relative" style="padding-bottom: calc( 1 * 100% )">
                                     <img
-                                        src="{{ TnMedia::getImageUrl($category->image, 'thumb', asset('/images/no-image.jpg')) }}"
-                                        class="w-full h-full block m-auto rounded-full lg:p-3 absolute"
+                                        data-src="{{ TnMedia::getImageUrl($category->image, 'thumb', asset('/images/no-image.jpg')) }}"
+                                        src="{{ asset('/images/no-image.jpg') }}"
+                                        class="w-full h-full block m-auto rounded-full lg:p-3 absolute lazyload"
                                         alt="{{ $category->name }}"
                                         style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);"
                                     >

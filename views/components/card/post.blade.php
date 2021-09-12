@@ -15,7 +15,7 @@
                     <img
                         class="w-full h-full object-cover {{ $rounded }} absolute lazyload"
                         data-src="{{ TnMedia::getImageUrl($data->image, $sizeImage, asset('/images/no-image.jpg')) }}"
-                        src="{{ TnMedia::getImageUrl($data->image, 'thumb', asset('/images/no-image.jpg')) }}"
+                        src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ $data->name }}"
                     >
                 </a>

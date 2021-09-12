@@ -3,9 +3,10 @@
     <div class="inline-block">
         <div class="float-left w-10 h-10">
             <img
-                src="{{ TnMedia::getImageUrl($data->image, 'thumb', asset('/images/no-image.jpg')) }}"
+                data-src="{{ TnMedia::getImageUrl($data->image, 'thumb', asset('/images/no-image.jpg')) }}"
+                src="{{ asset('/images/no-image.jpg') }}"
                 alt="{{ $data->name }}"
-                class="rounded-full m-w-10 w-full h-full"
+                class="rounded-full m-w-10 w-full h-full lazyload"
             >
         </div>
         <div class="pl-3 flex flex-wrap">

@@ -219,7 +219,7 @@
         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 h-screen">
             <div class="flex items-center justify-between px-4 pt-1">
                 <div>
-                    <img class="h-8 w-auto" src="{{ $logo }}" alt="logo">
+                    <img class="h-8 w-auto" src="{{ $logo }}?h=300" alt="logo">
                 </div>
                 <div class="-mr-2">
                     <button

@@ -7,9 +7,10 @@
                 class="inline-block"
             >
                 <img
-                    src="{{ TnMedia::getImageUrl(theme_options()->getOption('banner1', null) . '?w=850', asset('/images/no-image.jpg')) }}"
+                    data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('banner1', null) . '?w=850', asset('/images/no-image.jpg')) }}"
+                    src="{{ asset('/images/no-image.jpg') }}"
                     alt="banner"
-                    class="mx-auto"
+                    class="mx-auto lazyload"
                 >
             </a>
         </div>

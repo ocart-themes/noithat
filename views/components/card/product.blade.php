@@ -5,7 +5,7 @@
             <img
                 class="w-full object-cover lazyload"
                 data-src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}"
-                src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'thumb', asset('/images/no-image.jpg')) }}"
+                src="{{ asset('/images/no-image.jpg') }}"
                 alt="{{ $data->name }}"
             >
         </a>
