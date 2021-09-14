@@ -11,7 +11,7 @@
         <div id="layout-content-main" class="lg:w-3/4 w-full md:order-last  px-0 lg:pl-4">
             <div x-data="page()" class="p-2 -mx-2 md:-mx-4">
                 <div x-html="name" class="font-bold mb-2"></div>
-                <div class="mb-4">{{ $total }} bài viết được tìm thấy theo "<span x-html="name"></span>"</div>
+                <div class="mb-4">{{ $posts->total() }} bài viết được tìm thấy theo "<span x-html="name"></span>"</div>
             </div>
 
             <div class="flex flex-wrap -mx-2 md:-mx-4">
