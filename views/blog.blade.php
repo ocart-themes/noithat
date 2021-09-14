@@ -8,20 +8,38 @@
     </div>
 
     <div class="container-custom flex flex-wrap pb-2">
-        <div class="lg:w-3/4 w-full md:order-last">
+        <div id="layout-content-main" class="lg:w-3/4 w-full md:order-last  px-0 lg:pl-4">
+            <div x-data="page()" class="p-2 -mx-2 md:-mx-4">
+                <div x-html="name" class="font-bold mb-2"></div>
+                <div class="mb-4">{{ count($posts) }} bài viết được tìm thấy theo "<span x-html="name"></span>"</div>
+            </div>
+
             <div class="flex flex-wrap -mx-2 md:-mx-4">
                 @foreach($posts as $post)
-                    <div class="w-1/2 xl:w-1/3 p-2 md:p-4 pt-0">
-                        <x-theme::card.post :data="$post"/>
+                    <div class="w-1/2 xl:w-1/3 p-2 md:p-2 pt-0">
+                        <x-theme::card.post
+                            :data="$post"
+                            video="{{ !empty($post->format_type) && $post->format_type === 'video' ? true : false }}"
+                        />
                     </div>
-                    <div>{!! $posts->links() !!}</div>
-
                 @endforeach
             </div>
+            @if(method_exists($posts, 'links'))
+                <div>{!! $posts->links() !!}</div>
+            @endif
         </div>
 
         @include(Theme::getThemeNamespace('layouts.sidebar-all'))
-
     </div>
+    <script>
+        function page() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const _name = urlParams.get('name');
+            return {
+                name: _name
+            };
+        }
+    </script>
 
 </x-guest-layout>

@@ -335,11 +335,12 @@
 
 <div class="font-sans text-gray-900 antialiased">
     @include(Theme::getThemeNamespace('layouts.header'))
-    <div id="body" class="content" data-pjax-container="body">{{ $slot }}</div>
+    <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
     @include(Theme::getThemeNamespace('layouts.footer'))
 
     @include(Theme::getThemeNamespace('components.layout.list-sharing'))
 
+    <!-- Modal -->
     <x-theme::form.login-modal/>
 
     <x-theme::modal.youtube/>
@@ -347,7 +348,9 @@
     @if(is_active_plugin('contact'))
     <x-theme::form.contact-modal/>
     @endif
-    <!-- Cart Sidebar -->
+
+    <x-theme::modal.search/>
+    <!-- End Modal -->
 </div>
 
 <div id="loading" style="display:none" class="fixed w-full h-full top-0 left-0 z-50 flex items-center justify-center">

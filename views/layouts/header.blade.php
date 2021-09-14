@@ -115,6 +115,15 @@
 
             <!-- Menu mobile -->
             <div class="-mr-2 -my-2 lg:hidden">
+                <a
+                    href="javascript:void(0)"
+                    rel="nofollow"
+                    class="relative z-20 mr-2 bg-white rounded-md inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+                    data-toggle="modal"
+                    data-target="#search-modal"
+                >
+                    <x-theme::icons.search class="w-6"/>
+                </a>
 
                 @if(is_active_plugin('ecommerce'))
                     <a href="{!! route(ROUTE_SHOPPING_CART_SCREEN_NAME) !!}"
@@ -141,6 +150,16 @@
 
             <!-- Login/Cart -->
             <div class="hidden lg:flex items-center justify-end">
+                <a
+                    href="javascript:void(0)"
+                    rel="nofollow"
+                    class="relative z-20 mr-6"
+                    data-toggle="modal"
+                    data-target="#search-modal"
+                >
+                    <x-theme::icons.search class="w-6"/>
+                </a>
+
                 @if(is_active_plugin('ecommerce'))
                     <a href="{!! route(ROUTE_SHOPPING_CART_SCREEN_NAME) !!}" class="relative z-20 mr-8">
                         <x-theme::icons.shopping-cart class="w-6"/>
