@@ -355,6 +355,14 @@
         .mb-8 {
             margin-bottom: 2rem;
         }
+        .text-center {
+            text-align: center;
+        }
+        .rounded-t-full {
+            border-top-left-radius: 9999px;
+            border-top-right-radius: 9999px;
+        }
+
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
@@ -399,9 +407,6 @@
         @media (min-width: 1024px) {
             .lg\:h-96 {
                 height: 24rem;
-            }
-            .lg\:p-3 {
-                padding: 0.75rem;
             }
             .lg\:py-0 {
                 padding-top: 0px;
