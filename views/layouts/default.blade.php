@@ -577,7 +577,7 @@
         }
     </style>
     <!-- Swiper JS -->
-    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}" async=""></script>
+    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
 
     <script>
         const bodyLoading = {
