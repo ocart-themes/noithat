@@ -15,7 +15,9 @@
                     <img
                         class="h-10 w-auto sm:h-16 md:max-w-xs logo-header"
                         src="{{ $logo }}?w=300&h=300"
-                        alt="logo">
+                        alt="logo"
+                        style="min-width: 40px"
+                    >
                 </a>
 
                 <!-- Menu Main -->
@@ -244,7 +246,9 @@
                     <img
                         class="h-8 w-auto logo-header"
                         src="{{ $logo }}?w=300&h=300"
-                        alt="logo">
+                        alt="logo"
+                        style="min-width: 40px"
+                    >
                 </div>
                 <div class="-mr-2">
                     <button
