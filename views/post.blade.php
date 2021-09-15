@@ -30,6 +30,15 @@
                 </div>
             @endif
 
+            <div class="block mb-4">
+                <img
+                    class="w-full lazyload rounded-md"
+                    data-src="{{ TnMedia::getImageUrl($post->image, 'large', asset('/images/no-image.jpg')) }}"
+                    src="{{ asset('/images/no-image.jpg') }}"
+                    alt="{{ $post->name }}"
+                >
+            </div>
+
             <div class="content-mce mb-4">
                 @php
                     $doc = new DOMDocument();
@@ -120,15 +129,7 @@
                 </div>
             @endif
             <div class="py-4 border-b border-gray-100">
-                Tag:
-                @foreach($post->tags as $key => $item)
-                    <a
-                        href="{{ $item->url }}"
-                        class="text-xs inline-block py-0.5 px-2 mb-1 mr-1 border border-gray-500 rounded-2xl hover:text-blue-700 hover:border-blue-700"
-                    >
-                        {{ $item->name }}
-                    </a>
-                @endforeach
+                Tag: Tin tức
             </div>
             <div class="py-4 border-b border-gray-100 flex">
                 Chia sẻ: <span class="flex ml-3 border-gray-200">

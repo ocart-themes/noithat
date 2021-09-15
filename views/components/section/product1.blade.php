@@ -1,4 +1,4 @@
-<section class="section-custom sec-product1 antialiased text-gray-900 font-sans">
+<section {!! $attributes->merge(['class' => 'section-custom sec-product1 antialiased text-gray-900 font-sans']) !!}>
     @php
         $products_feature = get_list_products_feature(8);
     @endphp
