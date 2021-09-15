@@ -13,11 +13,11 @@
     {!! SeoHelper::render() !!}
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="preload" media="none" onload="if(media!=='all')media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="preload">
 
     <!-- Styles -->
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-    <link rel="stylesheet" href="{{ Theme::asset('css/style.css?v=2.1') }}" rel="preload" media="none" onload="if(media!=='all')media='all'">
+    <link rel="stylesheet" href="{{ Theme::asset('css/style.css?v=2.1') }}" rel="preload">
     <style>
         .sec-blog-header{
             position: relative;
