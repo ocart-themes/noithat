@@ -6,7 +6,7 @@
 >
     <div class="container-custom">
         <div class="flex justify-between items-center py-2 lg:py-0 lg:space-x-4">
-            <div class="flex items-center">
+            <div class="items-center">
                 <a href="{!! route('home') !!}">
                     <span class="sr-only">Workflow</span>
                     @php
@@ -19,7 +19,8 @@
                         style="min-width: 40px"
                     >
                 </a>
-
+            </div>
+            <div class="hidden lg:block items-center">
                 <!-- Menu Main -->
                 @php
                     $menuMain = main_navigation();
@@ -27,7 +28,7 @@
                 @endphp
 
                 @if(!empty($menuMain))
-                    <nav class="hidden ml-10 lg:flex space-x-6">
+                    <nav class="ml-10 lg:flex space-x-6">
                         @foreach($menuMain as $item)
                             @php
                                 $children = Arr::get($item, 'children');
