@@ -126,144 +126,143 @@
             </button>
         </li>
     </ul>
-</div>
+    <!-- The rest of your scripts -->
+    <script>
+        var listSharing = $('#list-sharing-desktop');
+        var btn = $('#gotop');
 
-<!-- The rest of your scripts -->
-<script>
-    var listSharing = $('#list-sharing-desktop');
-    var btn = $('#gotop');
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                listSharing.addClass('opacity-100');
+            } else {
+                listSharing.removeClass('opacity-100');
+            }
+        });
 
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 300) {
-            listSharing.addClass('opacity-100');
-        } else {
-            listSharing.removeClass('opacity-100');
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, '300');
+        });
+    </script>
+    <!-- Style List Sharing -->
+    <style>
+        .list-sharing {
+            position: fixed;
+            bottom: 45px;
+            right: 0;
+            visibility: visible;
+            transition: all .3s ease;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
         }
-    });
 
-    btn.on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({scrollTop: 0}, '300');
-    });
-</script>
-<!-- Style List Sharing -->
-<style>
-    .list-sharing {
-        position: fixed;
-        bottom: 45px;
-        right: 0;
-        visibility: visible;
-        transition: all .3s ease;
-        -webkit-transition: all .3s ease;
-        -moz-transition: all .3s ease;
-        -o-transition: all .3s ease;
-    }
-
-    .list-sharing-ul {
-        padding: 0;
-        list-style-type: none;
-    }
-
-    .list-sharing-ul .list-sharing-item {
-        width: 44px;
-        margin-bottom: 5px;
-        margin-right: 10px;
-    }
-
-    .list-sharing-ul .list-sharing-item .list-sharing-item-icon {
-        position: relative;
-        display: inline-block;
-        text-align: center;
-        width: 44px;
-        height: 44px;
-        line-height: 44px;
-        color: #fff;
-        border-radius: 50%;
-        cursor: pointer;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 11%);
-        background-size: auto;
-        background-repeat: no-repeat;
-        background-position: 50%;
-    }
-
-    .list-sharing-ul .list-sharing-item .list-sharing-item-icon circle {
-        opacity: 0.8;
-    }
-
-    .list-sharing-ul .list-sharing-item .list-sharing-item-icon .tooltip-list-sharing-item-text {
-        position: absolute;
-        top: 4px;
-        right: 55px;
-        z-index: 9;
-        height: 32px;
-        text-transform: none;
-        letter-spacing: 0 !important;
-        line-height: 26px;
-        padding: 3px 10px;
-        width: auto;
-        border-radius: 5px;
-        font-size: 13px;
-        color: #fff;
-        text-align: center;
-        white-space: nowrap;
-        cursor: pointer;
-        background-color: #000;
-        visibility: hidden;
-        opacity: 0;
-        -webkit-transition: all .2s linear;
-        transition: all .2s linear;
-    }
-
-    .list-sharing-ul .list-sharing-item .list-sharing-item-icon .tooltip-list-sharing-item-text:after {
-        content: "";
-        width: 0;
-        height: 0;
-        border: 5px solid transparent;
-        border-left-color: #000;
-        position: absolute;
-        left: 100%;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        -webkit-transition: all .2s linear;
-        transition: all .2s linear;
-    }
-
-    .list-sharing-ul .list-sharing-item .list-sharing-item-icon:hover .tooltip-list-sharing-item-text {
-        opacity: 1;
-        visibility: visible;
-    }
-    @media (max-width: 991px) {
-        .list-sharing{
-            bottom: -1px;
-            left: 0;
-            border-top: 1px solid #e7e7e7;
+        .list-sharing-ul {
+            padding: 0;
+            list-style-type: none;
         }
-        .list-sharing-ul{
-            display: flex;
-            align-items: center;
-            background: white;
+
+        .list-sharing-ul .list-sharing-item {
+            width: 44px;
+            margin-bottom: 5px;
+            margin-right: 10px;
         }
-        .list-sharing-ul .list-sharing-item{
-            margin-bottom: 7px;
-            margin-top: 5px;
-            flex: 1;
+
+        .list-sharing-ul .list-sharing-item .list-sharing-item-icon {
+            position: relative;
+            display: inline-block;
             text-align: center;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 11%);
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: 50%;
         }
-        .list-sharing-ul .list-sharing-item .list-sharing-item-icon{
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
+
+        .list-sharing-ul .list-sharing-item .list-sharing-item-icon circle {
+            opacity: 0.8;
         }
-        .list-sharing-ul .list-sharing-item .list-sharing-item-icon svg{
-            display: unset;
-        }
-        .list-sharing-ul .list-sharing-item{
+
+        .list-sharing-ul .list-sharing-item .list-sharing-item-icon .tooltip-list-sharing-item-text {
+            position: absolute;
+            top: 4px;
+            right: 55px;
+            z-index: 9;
+            height: 32px;
+            text-transform: none;
+            letter-spacing: 0 !important;
+            line-height: 26px;
+            padding: 3px 10px;
             width: auto;
-            margin-right: 0;
+            border-radius: 5px;
+            font-size: 13px;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            cursor: pointer;
+            background-color: #000;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: all .2s linear;
+            transition: all .2s linear;
         }
 
-    }
+        .list-sharing-ul .list-sharing-item .list-sharing-item-icon .tooltip-list-sharing-item-text:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-left-color: #000;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            -webkit-transition: all .2s linear;
+            transition: all .2s linear;
+        }
 
-</style>
-<!-- End Style List Sharing -->
+        .list-sharing-ul .list-sharing-item .list-sharing-item-icon:hover .tooltip-list-sharing-item-text {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 991px) {
+            .list-sharing{
+                bottom: -1px;
+                left: 0;
+                border-top: 1px solid #e7e7e7;
+            }
+            .list-sharing-ul{
+                display: flex;
+                align-items: center;
+                background: white;
+            }
+            .list-sharing-ul .list-sharing-item{
+                margin-bottom: 7px;
+                margin-top: 5px;
+                flex: 1;
+                text-align: center;
+            }
+            .list-sharing-ul .list-sharing-item .list-sharing-item-icon{
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+            }
+            .list-sharing-ul .list-sharing-item .list-sharing-item-icon svg{
+                display: unset;
+            }
+            .list-sharing-ul .list-sharing-item{
+                width: auto;
+                margin-right: 0;
+            }
+
+        }
+
+    </style>
+    <!-- End Style List Sharing -->
+</div>

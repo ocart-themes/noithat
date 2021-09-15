@@ -13,12 +13,12 @@
     {!! SeoHelper::render() !!}
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="preload">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel=preload>
 
     <!-- Styles -->
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-    <link rel="stylesheet" href="{{ Theme::asset('css/style.css?v=2.1') }}" rel="preload">
-    <style>
+    <link rel="stylesheet" href="{{ Theme::asset('css/style.css?v=2.1') }}" type="text/css">
+    <style rel=preload>
         .sec-blog-header{
             position: relative;
         }
@@ -302,11 +302,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{!! asset('access/jquery/jquery.min.js') !!}" defer></script>
+    <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
-
-    <!-- LazyLoad JS -->
-    <script src="{!! asset('access/lazyload/lazysizes.min.js?v=1') !!}" async></script>
 
     <script>
         const bodyLoading = {
@@ -417,6 +414,9 @@
         })
     })
 </script>
+
+<!-- LazyLoad JS -->
+<script src="{!! asset('access/lazyload/lazysizes.min.js?v=1') !!}" async></script>
 
 <!-- Meta Footer -->
 {!! theme_options()->getOption('meta_footer', '') !!}
