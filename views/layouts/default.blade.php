@@ -24,12 +24,39 @@
             --tw-ring-offset-shadow: 0 0 #0000;
             --tw-ring-shadow: 0 0 #0000;
         }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
         img, video {
             max-width: 100%;
             height: auto;
             display: block;
             vertical-align: middle;
         }
+        img, svg, video, canvas, audio, iframe, embed, object {
+            display: block;
+            vertical-align: middle;
+        }
+        button, input, optgroup, select, textarea {
+            padding: 0;
+            line-height: inherit;
+            color: inherit;
+        }
+        button, [role="button"] {
+            cursor: pointer;
+        }
+        button {
+            background-color: transparent;
+            background-image: none;
+        }
+        button, input, optgroup, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
         .container-custom {
             margin-left: auto;
             margin-right: auto;
@@ -37,11 +64,22 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
+        @media (min-width: 640px) {
+            .container-custom {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
         .section-custom {
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
-
+        @media (min-width: 1024px) {
+            .section-custom {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
         .py-2 {
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
@@ -88,6 +126,9 @@
         .text-xs {
             font-size: 0.75rem;
             line-height: 1rem;
+        }
+        .font-semibold {
+            font-weight: 600;
         }
         .font-medium {
             font-weight: 500;
@@ -210,11 +251,101 @@
         .rounded-md {
             border-radius: 0.375rem;
         }
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+        .text-gray-600 {
+            --tw-text-opacity: 1;
+            color: rgba(75, 85, 99, var(--tw-text-opacity));
+        }
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .gap-2 {
+            gap: 0.5rem;
+        }
+        .grid {
+            display: grid;
+        }
+        .effect {
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+        .object-cover {
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+        .p-2 {
+            padding: 0.5rem;
+        }
+        .line-clamp-2 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+        .text-gray-700 {
+            --tw-text-opacity: 1;
+            color: rgba(55, 65, 81, var(--tw-text-opacity));
+        }
+        .mb-0 {
+            margin-bottom: 0px;
+        }
+        .my-1 {
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .w-3 {
+            width: 0.75rem;
+        }
+        .h-3 {
+            height: 0.75rem;
+        }
+        .text-gray-300 {
+            --tw-text-opacity: 1;
+            color: rgba(209, 213, 219, var(--tw-text-opacity));
+        }
+        .fill-current {
+            fill: currentColor;
+        }
+        .justify-between {
+            justify-content: space-between;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgba(255, 255, 255, var(--tw-text-opacity));
+        }
+        .px-1 {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+        }
+        .rounded-sm {
+            border-radius: 0.125rem;
+        }
+        .bg-red-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
+        }
+        .text-blue-600 {
+            --tw-text-opacity: 1;
+            color: rgba(37, 99, 235, var(--tw-text-opacity));
+        }
+        .w-7 {
+            width: 1.75rem;
+        }
         @media (min-width: 640px) {
-            .container-custom {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
             .sm\:h-16{
                 height: 4rem;
             }
@@ -231,12 +362,27 @@
                 font-size: 1rem;
                 line-height: 1.5rem;
             }
+            .md\:text-2xl {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+            .md\:p-3 {
+                padding: 0.75rem;
+            }
+            .md\:mt-2 {
+                margin-top: 0.5rem;
+            }
+            .md\:w-4 {
+                width: 1rem;
+            }
+            .md\:h-4 {
+                height: 1rem;
+            }
+            .md\:block {
+                display: block;
+            }
         }
         @media (min-width: 1024px) {
-            .section-custom {
-                padding-top: 3rem;
-                padding-bottom: 3rem;
-            }
             .lg\:h-96 {
                 height: 24rem;
             }
@@ -257,6 +403,12 @@
             }
             .lg\:hidden {
                 display: none;
+            }
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+            .lg\:gap-4 {
+                gap: 1rem;
             }
         }
     </style>
