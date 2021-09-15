@@ -324,7 +324,7 @@
         }
     </script>
     <!-- Meta Head -->
-    {!! get_meta_head() !!}
+    {!! theme_options()->getOption('meta_header', '') !!}
     <!-- End Meta Head -->
 
     @stack('head')
@@ -423,7 +423,9 @@
     })
 </script>
 
-{!! get_meta_footer() !!}
+<!-- Meta Footer -->
+{!! theme_options()->getOption('meta_footer', '') !!}
+<!-- End Meta Footer -->
 
 @stack('footer')
 

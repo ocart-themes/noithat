@@ -27,6 +27,28 @@ Event::listen(RouteMatched::class, function () {
             'placeholder' => trans('Domain Web'),
         ]
     ])->setField([
+        'id' => 'meta_header',
+        'section_id' => 'opt-general',
+        'type' => Field::TEXTAREA,
+        'name' => 'meta_header',
+        'label' => trans('Meta Header'),
+        'attr' => [
+            'placeholder' => trans('Code'),
+            'inline' => true,
+            'rows' => 3,
+        ]
+    ])->setField([
+        'id' => 'meta_footer',
+        'section_id' => 'opt-general',
+        'type' => Field::TEXTAREA,
+        'name' => 'meta_footer',
+        'label' => trans('Meta Footer'),
+        'attr' => [
+            'placeholder' => trans('Code'),
+            'inline' => true,
+            'rows' => 3,
+        ]
+    ])->setField([
         'id' => 'address1',
         'section_id' => 'opt-general',
         'type' => Field::TEXT,
