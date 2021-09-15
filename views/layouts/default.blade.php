@@ -202,7 +202,7 @@
         }
         .bg-white {
             --tw-bg-opacity: 1;
-            background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+            background-color: rgba(255, 255, 255, 0);
         }
         .z-20 {
             z-index: 20;
@@ -383,7 +383,10 @@
             border-top-left-radius: 9999px;
             border-top-right-radius: 9999px;
         }
-
+        .shadow-md {
+            --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
