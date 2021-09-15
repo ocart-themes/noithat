@@ -13,12 +13,149 @@
     {!! SeoHelper::render() !!}
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel=preload>
+    <link rel=preload href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+    <style type="text/css">
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container-custom {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 80rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 640px) {
+            .container-custom {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        .section-custom {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        @media (min-width: 1024px) {
+            .section-custom {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+        .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+        }
+        .bg-gray-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+        }
+        .bg-gray-300 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+        }
+
+        .bg-gray-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+        }
+
+        .bg-gray-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+        }
+        .bg-red-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
+        }
+        .bg-green-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+        }
+        .bg-blue-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+        }
+
+        .bg-blue-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+        }
+        .bg-indigo-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(49, 46, 129, var(--tw-bg-opacity));
+        }
+        .bg-opacity-80 {
+            --tw-bg-opacity: 0.8;
+        }
+
+        .bg-opacity-90 {
+            --tw-bg-opacity: 0.9;
+        }
+        .border-transparent {
+            border-color: transparent;
+        }
+        .border-yellow-500 {
+            --tw-border-opacity: 1;
+            border-color: rgba(245, 158, 11, var(--tw-border-opacity));
+        }
+        .border-blue-400 {
+            --tw-border-opacity: 1;
+            border-color: rgba(96, 165, 250, var(--tw-border-opacity));
+        }
+
+        .border-blue-500 {
+            --tw-border-opacity: 1;
+            border-color: rgba(59, 130, 246, var(--tw-border-opacity));
+        }
+        .rounded-sm {
+            border-radius: 0.125rem;
+        }
+        .rounded-md {
+            border-radius: 0.375rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .rounded-full {
+            border-radius: 9999px;
+        }
+        .rounded-t-full {
+            border-top-left-radius: 9999px;
+            border-top-right-radius: 9999px;
+        }
+        .border-4 {
+            border-width: 4px;
+        }
+        .border {
+            border-width: 1px;
+        }
+    </style>
     <!-- Styles -->
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-    <link rel="stylesheet" href="{{ Theme::asset('css/style.css?v=2.1') }}" type="text/css">
-    <style rel=preload>
+    <link rel="preload" href="{{ Theme::asset('css/style.css?v=2.1') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <style type="text/css">
         .sec-blog-header{
             position: relative;
         }
