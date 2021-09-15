@@ -23,6 +23,27 @@
             --tw-ring-color: rgba(59, 130, 246, 0.5);
             --tw-ring-offset-shadow: 0 0 #0000;
             --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+        }
+        *, ::before, ::after {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb;
+        }
+        :root {
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+        }
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            font-family: inherit;
+            line-height: inherit;
+            margin: 0;
         }
         a {
             color: inherit;
