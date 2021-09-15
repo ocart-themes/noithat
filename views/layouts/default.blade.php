@@ -613,6 +613,7 @@
     <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
 {{--    @include(Theme::getThemeNamespace('layouts.footer'))--}}
 
+    <footer>1111</footer>
 {{--    @include(Theme::getThemeNamespace('components.layout.list-sharing'))--}}
 
 {{--    <!-- Modal -->--}}
