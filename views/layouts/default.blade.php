@@ -13,7 +13,7 @@
     {!! SeoHelper::render() !!}
 
     <!-- Fonts -->
-    <link rel=preload href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap">
 
     <style type="text/css">
         * {
