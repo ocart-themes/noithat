@@ -345,12 +345,26 @@
         .w-7 {
             width: 1.75rem;
         }
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
             }
             .sm\:h-56 {
                 height: 14rem;
+            }
+            .sm\:px-6 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
             }
 
         }
