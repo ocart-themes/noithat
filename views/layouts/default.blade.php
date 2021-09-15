@@ -462,7 +462,7 @@
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css?v=1') !!}" />
+    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" />
     <style type="text/css">
         .swiper-container {
             margin-left: auto;
@@ -577,7 +577,7 @@
         }
     </style>
     <!-- Swiper JS -->
-    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js?v=1') !!}"></script>
+    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}" async=""></script>
 
     <script>
         const bodyLoading = {
