@@ -102,7 +102,7 @@
 
             @if($deps)
                 <div
-                    class="@if($dark || $type === 'thumb-bg') text-white @else text-gray-500 @endif text-xs md:text-base line-clamp-2 md:line-clamp-3 my-4 py-0"
+                    class="@if($dark || $type === 'thumb-bg') text-white @else text-gray-500 @endif text-xs md:text-base line-clamp-2 md:line-clamp-3 my-2 py-0"
                 >
                     {!! $data->description !!}
                 </div>

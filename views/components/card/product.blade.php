@@ -1,9 +1,13 @@
-@props(['data' => null])
+@props(['data' => null, 'ratio' => 1])
 @if($data)
     <div class="h-full block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden transition ease-in-out duration-500 transform lg:hover:-translate-y-3">
-        <a href="{!! $data->url !!}" class="effect">
+        <a
+            href="{!! $data->url !!}"
+            class="effect"
+            style="padding-bottom: calc( {{ $ratio }} * 100% );"
+        >
             <img
-                class="w-full object-cover lazyload"
+                class="w-full h-full object-cover absolute lazyload"
                 data-src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}"
                 src="{{ asset('/images/no-image.jpg') }}"
                 alt="{{ $data->name }}"
