@@ -583,7 +583,7 @@
     <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
 
     <!-- LazyLoad JS -->
-    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" async=""></script>
+    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
 
     <script>
         const bodyLoading = {
