@@ -454,7 +454,7 @@
     </style>
     <!-- Styles -->
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-    <link rel="preload" href="{{ Theme::asset('css/style.css?v=2.1') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
