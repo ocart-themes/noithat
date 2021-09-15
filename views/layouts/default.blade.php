@@ -305,11 +305,6 @@
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}"></script>
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css?v=1') !!}" />
-    <!-- Swiper JS -->
-    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js?v=1') !!}"></script>
-
     <!-- LazyLoad JS -->
     <script src="{!! asset('access/lazyload/lazysizes.min.js?v=1') !!}" async=""></script>
 
