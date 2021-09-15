@@ -582,6 +582,9 @@
     <!-- Swiper JS -->
     <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
 
+    <!-- LazyLoad JS -->
+    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" async=""></script>
+
     <script>
         const bodyLoading = {
             show() {
@@ -691,9 +694,6 @@
         })
     })
 </script>
-
-<!-- LazyLoad JS -->
-<script src="{!! asset('access/lazyload/lazysizes.min.js?v=1') !!}" async></script>
 
 <!-- Meta Footer -->
 {!! theme_options()->getOption('meta_footer', '') !!}
