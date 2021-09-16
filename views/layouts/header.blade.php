@@ -28,7 +28,7 @@
                 @endphp
 
                 @if(!empty($menuMain))
-                    <nav class="ml-10 lg:flex space-x-6">
+                    <nav class="lg:flex space-x-6">
                         @foreach($menuMain as $item)
                             @php
                                 $children = Arr::get($item, 'children');
