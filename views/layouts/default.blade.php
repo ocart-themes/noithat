@@ -636,7 +636,7 @@
 
 <!-- Scripts -->
 
-    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <!-- Swiper CSS -->
 {{--    <style type="text/css">--}}
@@ -728,6 +728,9 @@
 {{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
 <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
+<!-- LazyLoad JS -->
+<script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
+
 <script>
     const bodyLoading = {
         show() {
@@ -797,9 +800,6 @@
         })
     })
 </script>
-
-<!-- LazyLoad JS -->
-<script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
 
 <!-- Meta Footer -->
 {!! theme_options()->getOption('meta_footer', '') !!}
