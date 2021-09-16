@@ -390,6 +390,9 @@
         .google-speed{
             display: none;
         }
+        .w-auto {
+            width: auto;
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
@@ -429,6 +432,9 @@
             }
             .md\:block {
                 display: block;
+            }
+            .md\:max-w-xs {
+                max-width: 20rem;
             }
         }
         @media (min-width: 1024px) {
