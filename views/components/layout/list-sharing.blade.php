@@ -174,7 +174,7 @@
             text-align: center;
             width: 44px;
             height: 44px;
-            line-height: 44px;
+            /*line-height: 44px;*/
             color: #fff;
             border-radius: 50%;
             cursor: pointer;
@@ -190,13 +190,13 @@
 
         .list-sharing-ul .list-sharing-item .list-sharing-item-icon .tooltip-list-sharing-item-text {
             position: absolute;
-            top: 4px;
+            top: 11px;
             right: 55px;
             z-index: 9;
-            height: 32px;
+            /*height: 32px;*/
             text-transform: none;
             letter-spacing: 0 !important;
-            line-height: 26px;
+            /*line-height: 26px;*/
             padding: 3px 10px;
             width: auto;
             border-radius: 5px;
@@ -251,7 +251,7 @@
             .list-sharing-ul .list-sharing-item .list-sharing-item-icon{
                 width: 30px;
                 height: 30px;
-                line-height: 30px;
+                /*line-height: 30px;*/
             }
             .list-sharing-ul .list-sharing-item .list-sharing-item-icon svg{
                 display: unset;

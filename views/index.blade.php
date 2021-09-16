@@ -1,5 +1,5 @@
 <x-guest-layout xmlns:x-theme="http://www.w3.org/1999/html">
-        <h1 class="overflow-hidden opacity-0 w-0 h-0">{!! get_title() !!}</h1>
+    <h1 class="overflow-hidden opacity-0 w-0 h-0">{!! get_title() !!}</h1>
 
     @php
         $sections = json_decode(theme_options()->getOption('section_list', []), true);
