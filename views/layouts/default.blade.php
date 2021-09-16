@@ -304,6 +304,12 @@
         .p-2 {
             padding: 0.5rem;
         }
+        .line-clamp-1 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+        }
         .line-clamp-2 {
             overflow: hidden;
             display: -webkit-box;
