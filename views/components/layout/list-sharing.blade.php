@@ -1,4 +1,4 @@
-<div id="list-sharing-desktop" class="list-sharing z-40 lg:z-50 block md:inline-block opacity-100">
+<div id="list-sharing-desktop" class="list-sharing z-50">
     <ul class="list-sharing-ul">
         @if(!empty(theme_options()->getOption('phone', null)))
             <li class="list-sharing-item">
