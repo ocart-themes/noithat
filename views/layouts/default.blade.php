@@ -606,8 +606,6 @@
 
     <!-- Scripts -->
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
     <!-- Swiper CSS -->
     <style type="text/css">
@@ -652,6 +650,11 @@
     <!-- Swiper JS -->
     <script src="{!! asset('access/swiper/js/swiper-bundle.js') !!}"></script>
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- LazyLoad JS -->
+    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
     <script>
         const bodyLoading = {
@@ -761,9 +764,6 @@
         })
     })
 </script>
-
-<!-- LazyLoad JS -->
-<script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
 
 <!-- Meta Footer -->
 {!! theme_options()->getOption('meta_footer', '') !!}
