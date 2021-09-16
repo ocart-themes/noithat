@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-pjax-version" content="{{ mix('themes/noithat/css/style.css') }}">
+    <meta name="robots" content="noodp,index,follow">
 
     @if(!empty(get_favicon()))
         <link rel="icon" type="image/png" href="{{ get_favicon() }}">
@@ -634,9 +635,8 @@
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
 
 <!-- Scripts -->
-    <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
-    <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
+
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <!-- Swiper CSS -->
 {{--    <style type="text/css">--}}
@@ -682,16 +682,6 @@
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 {{--    <script src="{!! asset('access/swiper/js/swiper-bundle.js') !!}"></script>--}}
 
-    <script>
-        const bodyLoading = {
-            show() {
-                $('#loading').show();
-            },
-            hide() {
-                $('#loading').hide();
-            }
-        }
-    </script>
     <!-- Meta Head -->
     {!! theme_options()->getOption('meta_header', '') !!}
 <!-- End Meta Head -->
@@ -733,6 +723,21 @@
 </div>
 
 @stack('bodybelow')
+
+{{--<script src="{!! asset('access/jquery/jquery.min.js') !!}" defer></script>--}}
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
+<script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
+
+<script>
+    const bodyLoading = {
+        show() {
+            $('#loading').show();
+        },
+        hide() {
+            $('#loading').hide();
+        }
+    }
+</script>
 
 <script>
     $(function(){
