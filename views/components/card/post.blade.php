@@ -1,7 +1,8 @@
 @props(['data' => null,'class' => '', 'type' => 'thumb-top', 'thumbnail' => true,'deps' => false, 'sizeImage' => 'medium', 'author' => false, 'postMeta' => true, 'classTitle' => 'md:text-base md:mb-2', 'categoryBg' => 'bg-red-500', 'ratio' => 0.594, 'contentgrow' => 1, 'categoryType' => 1, 'transform' => true, 'thumbRadius' => false, 'dark' => false, 'rounded' => 'rounded-md', 'video' => false ])
 @if($data)
     <div
-        class="card-post {{ $class }} @if($type === 'thumb-right' || $type === 'thumb-left') flex @endif @if($type === 'thumb-bottom') flex flex-col-reverse @endif @if($type === 'thumb-bg') thumb-bg flex relative @endif h-full block overflow-hidden transition ease-in-out duration-500 transform @if($transform) lg:hover:-translate-y-3 @endif"
+        class="card-post {{ $class }} @if($type === 'thumb-right' || $type === 'thumb-left') flex @endif @if($type === 'thumb-bottom') flex flex-col-reverse @endif @if($type === 'thumb-bg') thumb-bg flex relative @endif h-full relative block overflow-hidden"
+{{--        transition ease-in-out duration-500 transform @if($transform) lg:hover:-translate-y-3 @endif--}}
     >
         @if($thumbnail)
             <div

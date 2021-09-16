@@ -430,8 +430,11 @@
         .mr-6 {
             margin-right: 1.5rem;
         }
-        mr-8 {
+        .mr-8 {
             margin-right: 2rem;
+        }
+        .left-8 {
+            left: 2rem;
         }
         .px-2 {
             padding-left: 0.5rem;
