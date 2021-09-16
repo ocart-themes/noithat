@@ -13,7 +13,7 @@
     {!! SeoHelper::render() !!}
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <style type="text/css">
         body {
@@ -46,10 +46,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
-    <script src="{!! asset('access/jquery.pjax.js') !!}"></script>
+    <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css?v=1') !!}" />
+    <link rel="preload" href="{!! asset('access/swiper/css/swiper-bundle.min.css?v=1') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <!-- Swiper JS -->
     <script src="{!! asset('access/swiper/js/swiper-bundle.min.js?v=1') !!}"></script>
 
