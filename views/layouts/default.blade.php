@@ -426,7 +426,9 @@
         .font-sans {
             font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
-
+        .h-14 {
+            height: 3.5rem;
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
@@ -495,6 +497,9 @@
             }
             .lg\:gap-4 {
                 gap: 1rem;
+            }
+            .lg\:h-20 {
+                height: 5rem;
             }
         }
     </style>
