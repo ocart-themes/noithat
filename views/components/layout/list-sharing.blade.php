@@ -159,7 +159,8 @@
 
     .list-sharing-ul .list-sharing-item {
         width: 44px;
-        margin-bottom: 5px;
+        height: 44px;
+        margin-bottom: 10px;
         margin-right: 10px;
     }
 
