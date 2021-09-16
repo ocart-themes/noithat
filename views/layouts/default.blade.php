@@ -13,7 +13,7 @@
     {!! SeoHelper::render() !!}
 
     <!-- Fonts -->
-    <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap">
+    <link rel=preload href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <style type="text/css">
         * {
@@ -429,6 +429,9 @@
         .h-14 {
             height: 3.5rem;
         }
+        .mr-6 {
+            margin-right: 1.5rem;
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
@@ -630,9 +633,6 @@
     <!-- Swiper JS -->
     <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
 
-    <!-- LazyLoad JS -->
-    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
-
     <script>
         const bodyLoading = {
             show() {
@@ -741,6 +741,9 @@
         })
     })
 </script>
+
+<!-- LazyLoad JS -->
+<script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
 
 <!-- Meta Footer -->
 {!! theme_options()->getOption('meta_footer', '') !!}

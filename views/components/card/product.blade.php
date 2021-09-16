@@ -48,9 +48,9 @@
                         <span class="font-bold text-sm md:text-base">Liên hệ</span>
                     </div>
                 @endif
-{{--                <button onclick="addToCart({{ $data->id, $data->slug }})" class="hidden md:block flex text-blue-600 p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:text-green-500" title="Thêm vào giỏ hàng">--}}
-{{--                    <x-theme::icons.shopping-cart class="w-7"/>--}}
-{{--                </button>--}}
+                <button onclick="addToCart({{ $data->id, $data->slug }})" class="hidden md:block flex text-blue-600 p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:text-green-500" title="Thêm vào giỏ hàng">
+                    <x-theme::icons.shopping-cart class="w-7"/>
+                </button>
 
             </div>
         </div>
