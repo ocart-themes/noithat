@@ -675,7 +675,7 @@
 
 @include(Theme::getThemeNamespace('layouts.header'))
 <div id="body-content" class="content google-speed" data-pjax-container="body">{{ $slot }}</div>
-<div class="google-speed">
+<div>
 @include(Theme::getThemeNamespace('layouts.footer'))
 
 @include(Theme::getThemeNamespace('components.layout.list-sharing'))
