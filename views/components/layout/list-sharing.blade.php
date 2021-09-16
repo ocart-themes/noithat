@@ -186,7 +186,6 @@
         .list-sharing{
             bottom: -1px;
             left: 0;
-            border-top: 1px solid #e7e7e7;
         }
         .list-sharing-ul{
             display: flex;
