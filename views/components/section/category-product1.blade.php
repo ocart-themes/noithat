@@ -33,13 +33,10 @@
         var categoryProduct{{$keySlide}} = new Swiper(".swiperCategoryProduct{{$keySlide}}", {
             spaceBetween: 15,
             slidesPerView: 4,
-            freeMode: true,
             autoplay: {
                 delay: 7000,
             },
             loop: true,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
             breakpoints: {
                 991: {
                     slidesPerView: 9,

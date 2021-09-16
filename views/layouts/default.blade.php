@@ -652,7 +652,7 @@
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- LazyLoad JS -->
-    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
+    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
@@ -678,7 +678,7 @@
 
 @include(Theme::getThemeNamespace('layouts.header'))
 <div id="body-content" class="content google-speed" data-pjax-container="body">{{ $slot }}</div>
-<div>
+<div class="google-speed">
 @include(Theme::getThemeNamespace('layouts.footer'))
 
 @include(Theme::getThemeNamespace('components.layout.list-sharing'))
