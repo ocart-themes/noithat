@@ -443,6 +443,9 @@
         .border-transparent {
             border-color: transparent;
         }
+        .grid-cols-6 {
+            grid-template-columns: repeat(6,minmax(0,1fr));
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
@@ -517,6 +520,12 @@
             }
             .lg\:bg-auto {
                 background-size: auto;
+            }
+            .lg\:grid-cols-9 {
+                grid-template-columns: repeat(9,minmax(0,1fr));
+            }
+            .lg\:gap-4 {
+                gap: 1rem;
             }
         }
 
