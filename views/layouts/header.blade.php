@@ -13,10 +13,9 @@
                         $logo = get_logo();
                     @endphp
                     <img
-                        class="h-10 w-auto sm:h-16 md:max-w-xs logo-header"
+                        class="w-10 h-10 sm:w-16 sm:h-16 md:max-w-xs logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
-                        style="min-width: 40px"
                     >
                 </a>
             </div>
@@ -227,10 +226,9 @@
             <div class="flex items-center justify-between px-4 pt-1">
                 <div>
                     <img
-                        class="h-8 w-auto logo-header"
+                        class="w-8 h-8 logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
-                        style="min-width: 40px"
                     >
                 </div>
                 <div class="-mr-2">

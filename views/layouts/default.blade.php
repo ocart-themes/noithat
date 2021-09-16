@@ -124,6 +124,9 @@
         .h-0 {
             height: 0px;
         }
+        .w-10 {
+            width: 2.5rem;
+        }
         .h-10 {
             height: 2.5rem;
         }
@@ -456,6 +459,9 @@
             opacity: 0;
         }
         @media (min-width: 640px) {
+            .sm\:w-16{
+                width: 4rem;
+            }
             .sm\:h-16{
                 height: 4rem;
             }
