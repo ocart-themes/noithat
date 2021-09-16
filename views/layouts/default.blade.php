@@ -449,6 +449,12 @@
         .grid-cols-6 {
             grid-template-columns: repeat(6,minmax(0,1fr));
         }
+        .opacity-100 {
+            opacity: 1;
+        }
+        .opacity-0 {
+            opacity: 0;
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
@@ -492,6 +498,9 @@
             .md\:max-w-xs {
                 max-width: 20rem;
             }
+            .md\:inline-block {
+                display: inline-block;
+            }
         }
         @media (min-width: 1024px) {
             .lg\:h-96 {
@@ -530,6 +539,10 @@
             .lg\:gap-4 {
                 gap: 1rem;
             }
+            .lg\:z-50 {
+                z-index: 50;
+            }
+
         }
 
         .thumb-bg .post-thumbnail a:after{
