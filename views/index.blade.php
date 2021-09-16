@@ -50,7 +50,7 @@
     @if(is_array($sections) && in_array('sec12', $sections))
         <x-theme::section.contact1/>
     @endif
-    <h1 class="overflow-hidden opacity-0 w-0 h-0">{!! get_title() !!}</h1>
+    <h1 class="">{!! get_title() !!}</h1>
     <style>
         section:nth-child(even) {
             background: #ececec63;
