@@ -415,6 +415,18 @@
         .w-auto {
             width: auto;
         }
+        .antialiased {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .text-gray-900 {
+            --tw-text-opacity: 1;
+            color: rgba(17, 24, 39, var(--tw-text-opacity));
+        }
+        .font-sans {
+            font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
@@ -633,15 +645,14 @@
     @stack('head')
 
 </head>
-<body id="body">
+<body id="body" class="font-sans text-gray-900 antialiased">
 @stack('body')
 
-<div class="font-sans text-gray-900 antialiased">
-    @include(Theme::getThemeNamespace('layouts.header'))
-    <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
+@include(Theme::getThemeNamespace('layouts.header'))
+<div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
 {{--    @include(Theme::getThemeNamespace('layouts.footer'))--}}
 
-    <footer>1111</footer>
+<footer>1111</footer>
 {{--    @include(Theme::getThemeNamespace('components.layout.list-sharing'))--}}
 
 {{--    <!-- Modal -->--}}
@@ -655,7 +666,6 @@
 
 {{--    <x-theme::modal.search/>--}}
 {{--    <!-- End Modal -->--}}
-</div>
 
 <div id="loading" style="display:none" class="fixed w-full h-full top-0 left-0 z-50 flex items-center justify-center">
     <div class="relative inline-flex">

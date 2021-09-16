@@ -2,7 +2,7 @@
 <header
     x-data="{ openMobile : false }"
     id="header"
-    class="relative bg-white sticky top-0 z-40 shadow"
+    class="relative bg-white sticky top-0 z-40 shadow h-14 lg:h-20"
 >
     <div class="container-custom">
         <div class="flex justify-between items-center py-2 lg:py-0 lg:space-x-4">
@@ -16,7 +16,6 @@
                         class="h-10 w-auto sm:h-16 md:max-w-xs logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
-                        style="min-width: 64px"
                     >
                 </a>
             </div>
@@ -248,7 +247,6 @@
                         class="h-8 w-auto logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
-                        style="min-width: 40px"
                     >
                 </div>
                 <div class="-mr-2">
