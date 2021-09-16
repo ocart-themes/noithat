@@ -432,6 +432,19 @@
         .mr-6 {
             margin-right: 1.5rem;
         }
+        mr-8 {
+            margin-right: 2rem;
+        }
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        .border {
+            border-width: 1px;
+        }
+        .border-transparent {
+            border-color: transparent;
+        }
         @media (min-width: 640px) {
             .sm\:h-16{
                 height: 4rem;
