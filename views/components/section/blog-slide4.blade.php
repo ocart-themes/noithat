@@ -51,7 +51,7 @@
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
             autoplay: {
-                delay: 5000,
+                delay: 7000,
             },
             navigation: {
                 nextEl: ".swiper-button-next",

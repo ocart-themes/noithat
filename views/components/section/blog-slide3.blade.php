@@ -99,7 +99,7 @@
     <script>
         var blogSlide3{{$keySlide}} = new Swiper(".swiper{{$keySlide}}", {
             autoplay: {
-                delay: 5000,
+                delay: 7000,
             },
             navigation: {
                 nextEl: ".swiper-button-next",

@@ -35,7 +35,7 @@
             slidesPerView: 4,
             freeMode: true,
             autoplay: {
-                delay: 3000,
+                delay: 7000,
             },
             loop: true,
             watchSlidesVisibility: true,
