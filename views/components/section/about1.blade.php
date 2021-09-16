@@ -1,4 +1,4 @@
-<section class="sec-about1 hidden lg:block section-custom antialiased font-sans">
+<section class="sec-about1 hidden lg:block section-custom antialiased">
     <div class="container-custom">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">

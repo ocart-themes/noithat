@@ -1,6 +1,6 @@
 @props(['keySlide'=> 'default'])
 
-<section class="section-custom sec-category-product bg-white lg:bg-auto antialiased font-sans">
+<section class="section-custom sec-category-product bg-white lg:bg-auto antialiased">
     <div class="container-custom">
         <div class="{{ 'swiperCategoryProduct'.$keySlide }} swiper-main swiper-container mySwiperGecko my-swiper-main overflow-hidden">
             <div class="swiper-wrapper">

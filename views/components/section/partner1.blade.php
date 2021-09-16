@@ -2,7 +2,7 @@
     $partner = json_decode(theme_options()->getOption('images_partner1', []));
 @endphp
 @if(!empty($partner))
-    <section class="section-custom antialiased font-sans">
+    <section class="section-custom antialiased">
         <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-4">
             <h2 class="text-xl md:text-2xl font-bold">{{ theme_options()->getOption('title_partner1', '') }}</h2>
             <p class="text-gray-600">

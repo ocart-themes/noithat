@@ -3,7 +3,7 @@ $product3 = json_decode(theme_options()->getOption('product3', []));
 @endphp
 @foreach($product3 as $item_menu)
     @if(!empty($item_menu->id))
-        <section class="section-custom sec-product antialiased text-gray-900 font-sans">
+        <section class="section-custom sec-product antialiased text-gray-900">
             <div class="container-custom">
                 <div class="sec-heading flex mb-4 lg:block w-full float-left">
                     <h2 class="flex-1 text-base md:text-2xl font-bold float-left line-clamp-1 mr-2">

@@ -65,7 +65,7 @@
                 <div class="@if($thumbnail && $type === 'thumb-top' || $type === 'thumb-bg') absolute top-0 left-8 @endif inline-block">
                     <a
                         href="{!! route(ROUTE_BLOG_POST_CATEGORY_SCREEN_NAME, ['slug' => $data->categories->first()->slug]) !!}"
-                        class="@if($categoryType === 1) {{ $categoryBg }} text-white rounded-b-md px-2 lg:px-5 py-0.5 lg:py-1 inline-flex @endif text-xs lg:uppercase font-bold font-sans hover:underline line-clamp-1"
+                        class="@if($categoryType === 1) {{ $categoryBg }} text-white rounded-b-md px-2 lg:px-5 py-0.5 lg:py-1 inline-flex @endif text-xs lg:uppercase font-bold hover:underline line-clamp-1"
                     >
                         <span class="@if($categoryType !== 1) mr-2 w-5 h-2.5 inline-block bg-blue-600 @endif"></span>
                         <span class="@if($categoryType !== 1) text-blue-600 @endif">{{ $data->categories->first()->name }}</span>
