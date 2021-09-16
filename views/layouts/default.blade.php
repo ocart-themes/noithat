@@ -603,11 +603,10 @@
     </style>
     <!-- Styles -->
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
     <!-- Swiper CSS -->
@@ -649,10 +648,10 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" />
-
+    <link rel="preload" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <!-- Swiper JS -->
-    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
+    <script src="{!! asset('access/swiper/js/swiper-bundle.js') !!}"></script>
+    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <script>
         const bodyLoading = {
@@ -675,30 +674,30 @@
 @stack('body')
 
 @include(Theme::getThemeNamespace('layouts.header'))
-<div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
-{{--    @include(Theme::getThemeNamespace('layouts.footer'))--}}
+<div id="body-content" class="content google-speed" data-pjax-container="body">{{ $slot }}</div>
+<div class="google-speed">
+@include(Theme::getThemeNamespace('layouts.footer'))
 
-<footer class="google-speed">1111</footer>
-{{--    @include(Theme::getThemeNamespace('components.layout.list-sharing'))--}}
+@include(Theme::getThemeNamespace('components.layout.list-sharing'))
 
-{{--    <!-- Modal -->--}}
-{{--    <x-theme::form.login-modal/>--}}
+<!-- Modal -->
+    <x-theme::form.login-modal/>
 
-{{--    <x-theme::modal.youtube/>--}}
+    <x-theme::modal.youtube/>
 
-{{--    @if(is_active_plugin('contact'))--}}
-{{--    <x-theme::form.contact-modal/>--}}
-{{--    @endif--}}
+    @if(is_active_plugin('contact'))
+        <x-theme::form.contact-modal/>
+    @endif
 
-{{--    <x-theme::modal.search/>--}}
-{{--    <!-- End Modal -->--}}
-
-<div id="loading" style="display:none" class="google-speed fixed w-full h-full top-0 z-50 flex items-center justify-center">
-    <div class="relative inline-flex">
+    <x-theme::modal.search/>
+    <!-- End Modal -->
+    <div id="loading" style="display:none" class="google-speed fixed w-full h-full top-0 z-50 flex items-center justify-center">
+        <div class="relative inline-flex">
             <span class="flex items-center justify-center h-24 w-24">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-0 w-0 bg-purple-500"></span>
             </span>
+        </div>
     </div>
 </div>
 
