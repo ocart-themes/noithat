@@ -1,4 +1,4 @@
-<div id="list-sharing-desktop" class="list-sharing opacity-0 z-40 lg:z-50 block md:inline-block opacity-100">
+<div id="list-sharing-desktop" class="list-sharing z-40 lg:z-50 block md:inline-block opacity-100">
     <ul class="list-sharing-ul">
         @if(!empty(theme_options()->getOption('phone', null)))
             <li class="list-sharing-item">
@@ -121,23 +121,23 @@
         </li>
     </ul>
     <!-- The rest of your scripts -->
-    <script>
-        var listSharing = $('#list-sharing-desktop');
-        var btn = $('#gotop');
+{{--    <script>--}}
+{{--        var listSharing = $('#list-sharing-desktop');--}}
+{{--        var btn = $('#gotop');--}}
 
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 300) {
-                listSharing.addClass('opacity-100');
-            } else {
-                listSharing.removeClass('opacity-100');
-            }
-        });
+{{--        $(window).scroll(function () {--}}
+{{--            if ($(window).scrollTop() > 300) {--}}
+{{--                listSharing.addClass('opacity-100');--}}
+{{--            } else {--}}
+{{--                listSharing.removeClass('opacity-100');--}}
+{{--            }--}}
+{{--        });--}}
 
-        btn.on('click', function (e) {
-            e.preventDefault();
-            $('html, body').animate({scrollTop: 0}, '300');
-        });
-    </script>
+{{--        btn.on('click', function (e) {--}}
+{{--            e.preventDefault();--}}
+{{--            $('html, body').animate({scrollTop: 0}, '300');--}}
+{{--        });--}}
+{{--    </script>--}}
 </div>
 <!-- Style List Sharing -->
 <style>
