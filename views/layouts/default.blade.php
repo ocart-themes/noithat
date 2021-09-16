@@ -55,7 +55,7 @@
     <!-- LazyLoad JS -->
     <script src="{!! asset('access/lazyload/lazysizes.min.js?v=1') !!}" async=""></script>
 
-    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{{--    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">--}}
 
     <script>
         const bodyLoading = {
