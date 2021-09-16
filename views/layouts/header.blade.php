@@ -40,14 +40,7 @@
                                         class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
                                         aria-expanded="false">
                                         <span>{{ Arr::get($item, 'title') }}</span>
-                                        <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                             aria-hidden="true">
-                                            <path fill-rule="evenodd"
-                                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                  clip-rule="evenodd"/>
-                                        </svg>
-
+                                        <x-theme::icons.chevron-down class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"/>
                                     </a>
 
                                     <div
@@ -68,15 +61,8 @@
                                                         <div
                                                             class="cursor-pointer w-14 h-6 text-lg flex-shrink-0 flex items-center justify-center -mr-4"
                                                         >
-                                                            <svg stroke="currentColor" fill="currentColor"
-                                                                 stroke-width="0"
-                                                                 viewBox="0 0 512 512"
-                                                                 class="transition duration-200 ease-in-out transform text-heading"
-                                                                 height="1em" width="1em"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                <path
-                                                                    d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
-                                                            </svg>
+                                                            <x-theme::icons.chevron-down class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"/>
+
                                                         </div>
                                                     </a>
                                                     @foreach($subChildren as $subitemi)
@@ -292,14 +278,8 @@
                                                     x-on:click="openNav = ! openNav"
                                                     class="cursor-pointer w-16 md:w-20 h-8 text-lg flex-shrink-0 flex items-center justify-center -mr-4"
                                                 >
-                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                                         viewBox="0 0 512 512"
-                                                         class="transition duration-200 ease-in-out transform text-heading"
-                                                         :class="openNav ? '-rotate-180' : ''"
-                                                         height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
-                                                    </svg>
+                                                    <x-theme::icons.chevron-down class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"/>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -339,15 +319,12 @@
                                                                     x-on:click="openSubNav = ! openSubNav"
                                                                     class="cursor-pointer w-16 md:w-20 h-8 text-lg flex-shrink-0 flex items-center justify-center -mr-4"
                                                                 >
-                                                                    <svg stroke="currentColor" fill="currentColor"
-                                                                         stroke-width="0"
-                                                                         viewBox="0 0 512 512"
-                                                                         class="transition duration-200 ease-in-out transform text-heading"
-                                                                         :class="openSubNav ? '-rotate-180' : ''"
-                                                                         height="1em" width="1em"
-                                                                         xmlns="http://www.w3.org/2000/svg">
-                                                                        <path
-                                                                            d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+                                                                    <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
+                                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                                         aria-hidden="true">
+                                                                        <path fill-rule="evenodd"
+                                                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                              clip-rule="evenodd"/>
                                                                     </svg>
                                                                 </div>
                                                             </div>

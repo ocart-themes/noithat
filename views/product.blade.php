@@ -247,7 +247,7 @@
                                     x-on:click="selected !== 1 ? selected = 1 : selected = null">
                                 <div class="flex items-center justify-between">
                                     <span class="font-bold">Chi tiết sản phẩm</span>
-                                    <x-theme::icons.chevron-down/>
+                                    <x-theme::icons.chevron-down class="h-6 w-6 p-1 rounded-full font-bold bg-blue-50"/>
                                 </div>
                             </button>
 

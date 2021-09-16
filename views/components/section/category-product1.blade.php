@@ -36,7 +36,6 @@
             autoplay: {
                 delay: 7000,
             },
-            loop: true,
             breakpoints: {
                 991: {
                     slidesPerView: 9,
