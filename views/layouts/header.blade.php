@@ -2,10 +2,10 @@
 <header
     x-data="{ openMobile : false }"
     id="header"
-    class="relative bg-white sticky top-0 z-40 shadow h-14 lg:h-20"
+    class="relative bg-white sticky top-0 z-40 shadow"
 >
     <div class="container-custom">
-        <div class="flex justify-between items-center py-2 lg:py-0 lg:space-x-4">
+        <div class="flex justify-between items-center py-2 lg:py-0 lg:space-x-4 h-14 lg:h-20">
             <div class="items-center">
                 <a href="{!! route('home') !!}">
                     <span class="sr-only">Workflow</span>
