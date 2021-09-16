@@ -52,18 +52,18 @@
 {{--            </div>--}}
 {{--        </div>--}}
     </div>
-    <script>
-        var categoryProduct{{$keySlide}} = new Swiper(".swiperCategoryProduct{{$keySlide}}", {
-            spaceBetween: 15,
-            slidesPerView: 4,
-            autoplay: {
-                delay: 7000,
-            },
-            breakpoints: {
-                991: {
-                    slidesPerView: 9,
-                }
-            }
-        });
-    </script>
+{{--    <script>--}}
+{{--        var categoryProduct{{$keySlide}} = new Swiper(".swiperCategoryProduct{{$keySlide}}", {--}}
+{{--            spaceBetween: 15,--}}
+{{--            slidesPerView: 4,--}}
+{{--            autoplay: {--}}
+{{--                delay: 7000,--}}
+{{--            },--}}
+{{--            breakpoints: {--}}
+{{--                991: {--}}
+{{--                    slidesPerView: 9,--}}
+{{--                }--}}
+{{--            }--}}
+{{--        });--}}
+{{--    </script>--}}
 </section>
