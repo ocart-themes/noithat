@@ -108,10 +108,6 @@
         bottom: 45px;
         right: 0;
         visibility: visible;
-        transition: all .3s ease;
-        -webkit-transition: all .3s ease;
-        -moz-transition: all .3s ease;
-        -o-transition: all .3s ease;
     }
 
     .list-sharing-ul {
@@ -136,9 +132,6 @@
         border-radius: 50%;
         cursor: pointer;
         box-shadow: 0 2px 5px 0 rgb(0 0 0 / 11%);
-        background-size: auto;
-        background-repeat: no-repeat;
-        background-position: 50%;
     }
 
     .list-sharing-ul .list-sharing-item .list-sharing-item-icon circle {
