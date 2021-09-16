@@ -517,6 +517,9 @@
             .lg\:h-20 {
                 height: 5rem;
             }
+            .lg\:bg-auto {
+                background-size: auto;
+            }
         }
     </style>
     <!-- Styles -->
