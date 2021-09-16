@@ -16,7 +16,7 @@
                         class="h-10 w-auto sm:h-16 md:max-w-xs logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
-                        style="width: 64px; height: 64px"
+                        style="min-width: 40px"
                     >
                 </a>
             </div>
