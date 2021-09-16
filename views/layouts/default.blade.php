@@ -632,7 +632,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
     <!-- LazyLoad JS -->
-    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" async=""></script>
+    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
 
     <!-- Swiper CSS -->
 {{--    <style type="text/css">--}}
