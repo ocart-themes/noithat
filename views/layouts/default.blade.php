@@ -631,6 +631,8 @@
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
+    <!-- LazyLoad JS -->
+    <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" async=""></script>
 
     <!-- Swiper CSS -->
 {{--    <style type="text/css">--}}
@@ -783,9 +785,6 @@
         })
     })
 </script>
-
-<!-- LazyLoad JS -->
-<script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
 
 <!-- Meta Footer -->
 {!! theme_options()->getOption('meta_footer', '') !!}
