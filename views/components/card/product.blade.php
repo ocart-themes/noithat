@@ -1,6 +1,6 @@
 @props(['data' => null, 'ratio' => 1])
 @if($data)
-    <div class="h-full block shadow-md hover:shadow-xl rounded-lg overflow-hidden transition ease-in-out duration-500 transform lg:hover:-translate-y-3">
+    <div class="h-full block shadow-md hover:shadow-xl rounded-lg overflow-hidden">
         <a
             href="{!! $data->url !!}"
             class="effect"
