@@ -13,14 +13,13 @@
     {!! SeoHelper::render() !!}
 
     <!-- Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <style type="text/css">
         body {
             background-color: #f0f0f2;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
         }
         div {
@@ -49,12 +48,14 @@
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
     <!-- Swiper CSS -->
-    <link rel="preload" href="{!! asset('access/swiper/css/swiper-bundle.min.css?v=1') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css?v=1') !!}"/>
     <!-- Swiper JS -->
     <script src="{!! asset('access/swiper/js/swiper-bundle.min.js?v=1') !!}"></script>
 
     <!-- LazyLoad JS -->
     <script src="{!! asset('access/lazyload/lazysizes.min.js?v=1') !!}" async=""></script>
+
+    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <script>
         const bodyLoading = {
