@@ -521,48 +521,7 @@
                 background-size: auto;
             }
         }
-    </style>
-    <!-- Styles -->
-    {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
-    <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
-
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" />
-    <style type="text/css">
-        .swiper-container {
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .swiper-button-next {
-            background-image: url({{ Theme::asset('img/next.svg') }});
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-            background-position: center;
-        }
-
-        .swiper-button-prev {
-            background-image: url({{ Theme::asset('img/prev.svg') }});
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-            background-position: center;
-        }
-
-        .swiper-button-next::after, .swiper-button-prev::after {
-            display: none;
-        }
-
-        .swiper-button-next, .swiper-button-prev {
-            width: 44px !important;
-        }
         .thumb-bg .post-thumbnail a:after{
             position: absolute;
             content: "";
@@ -632,11 +591,7 @@
             background: #fff;
             border-radius: 50%;
         }
-
         @media (max-width: 768px) {
-            .swiper-button-next, .swiper-button-prev {
-                width: 30px !important;
-            }
             .card-post .post-video-icon .xts-play_icon{
                 width: 40px;
                 height: 40px;
@@ -646,6 +601,56 @@
             }
         }
     </style>
+    <!-- Styles -->
+    {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
+    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
+    <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
+
+    <!-- Swiper CSS -->
+    <style type="text/css">
+        .swiper-container {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .swiper-button-next {
+            background-image: url({{ Theme::asset('img/next.svg') }});
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+        }
+
+        .swiper-button-prev {
+            background-image: url({{ Theme::asset('img/prev.svg') }});
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+        }
+
+        .swiper-button-next::after, .swiper-button-prev::after {
+            display: none;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            width: 44px !important;
+        }
+
+
+        @media (max-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                width: 30px !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" />
+
     <!-- Swiper JS -->
     <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
 
@@ -673,7 +678,7 @@
 <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
 {{--    @include(Theme::getThemeNamespace('layouts.footer'))--}}
 
-<footer>1111</footer>
+<footer class="google-speed">1111</footer>
 {{--    @include(Theme::getThemeNamespace('components.layout.list-sharing'))--}}
 
 {{--    <!-- Modal -->--}}
@@ -688,7 +693,7 @@
 {{--    <x-theme::modal.search/>--}}
 {{--    <!-- End Modal -->--}}
 
-<div id="loading" style="display:none" class="fixed w-full h-full top-0 left-0 z-50 flex items-center justify-center">
+<div id="loading" style="display:none" class="google-speed fixed w-full h-full top-0 z-50 flex items-center justify-center">
     <div class="relative inline-flex">
             <span class="flex items-center justify-center h-24 w-24">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
