@@ -204,6 +204,22 @@
             --tw-bg-opacity: 1;
             background-color: rgba(255, 255, 255, 0);
         }
+        .bg-gray-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+        }
+        .hover\:bg-gray-100:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+        }
+        .text-green-500 {
+            --tw-text-opacity: 1;
+            color: rgba(16, 185, 129, var(--tw-text-opacity));
+        }
+        .focus\:text-green-500:focus {
+            --tw-text-opacity: 1;
+            color: rgba(16, 185, 129, var(--tw-text-opacity));
+        }
         .z-20 {
             z-index: 20;
         }
