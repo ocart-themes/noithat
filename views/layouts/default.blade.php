@@ -665,7 +665,7 @@
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-custom.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="preload" href="{!! asset('access/swiper/css/swiper-custom.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <style type="text/css">
         .swiper-container {
             margin-left: auto;
