@@ -10,9 +10,7 @@
     <div class="container-custom">
         <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
             @foreach($products_new as $product)
-                <div>
-                    <x-theme::card.product :data="$product"/>
-                </div>
+                <x-theme::card.product :data="$product"/>
             @endforeach
         </div>
     </div>

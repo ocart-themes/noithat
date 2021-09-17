@@ -10,13 +10,11 @@
 
     <div class="container-custom">
         @php
-            $posts = get_list_posts_feature(3);
+            $posts = get_list_posts_feature(6);
         @endphp
         <div class="w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
             @foreach($posts as $post)
-                <div>
-                    <x-theme::card.post :data="$post"/>
-                </div>
+                <x-theme::card.post :data="$post"/>
             @endforeach
         </div>
     </div>

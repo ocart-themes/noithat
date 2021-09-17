@@ -13,12 +13,12 @@ $product3 = json_decode(theme_options()->getOption('product3', []));
                     @if(!empty($item_menu->children) && count($item_menu->children) > 0)
                         <span class="float-right">
                     @foreach($item_menu->children as $item)
-                                <span class="hidden lg:inline-block float-left ml-6 text-md mt-1.5">
-                        <a href="{{ route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, $item->slug) }}"
-                           class="text-gray-600 hover:text-black">{{ $item->name }}
-                        </a>
-                    </span>
-                            @endforeach
+                        <span class="hidden lg:inline-block float-left ml-6 text-md mt-1.5">
+                            <a href="{{ route(ROUTE_PRODUCT_CATEGORY_SCREEN_NAME, $item->slug) }}"
+                               class="text-gray-600 hover:text-black">{{ $item->name }}
+                            </a>
+                        </span>
+                    @endforeach
                     </span>
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">

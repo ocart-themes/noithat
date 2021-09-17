@@ -2,7 +2,7 @@
 
 <section class="section-custom sec-category-product bg-white lg:bg-auto antialiased">
     <div class="container-custom">
-        <div class="w-full grid grid-cols-6 lg:grid-cols-9 gap-2 lg:gap-4">
+        <div class="w-full grid grid-cols-5 lg:grid-cols-10 gap-2 lg:gap-4">
             @foreach(get_categories_feature() as $category)
                 <div class="text-center rounded-t-full hover:shadow-xl">
                     <a href="{!! $category->url !!}"
