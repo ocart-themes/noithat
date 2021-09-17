@@ -16,6 +16,7 @@
                     <img
                         class="w-full h-full object-cover {{ $rounded }} absolute lozad"
                         data-src="{{ TnMedia::getImageUrl($data->image, $sizeImage, asset('/images/no-image.jpg')) }}"
+                        data-srcset="{{ TnMedia::getImageUrl($data->image . '?w=200', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl($data->image, $sizeImage, asset('/images/no-image.jpg')) }} 2000w"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ $data->name }}"
                     >
