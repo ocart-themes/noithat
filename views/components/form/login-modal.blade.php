@@ -1,5 +1,5 @@
 <x-modal
-    contentClasses="w-11/12 md:w-5/12"
+    contentClasses="w-11/12 md:w-4/12"
     target="form-login-modal"
     class="z-50"
 >

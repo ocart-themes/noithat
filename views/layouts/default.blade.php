@@ -7,7 +7,7 @@
     <meta name="robots" content="noodp,index,follow">
 
     @if(!empty(get_favicon()))
-        <link rel="icon" type="image/png" href="{{ get_favicon() }}">
+    <link rel="icon" type="image/png" href="{{ get_favicon() }}">
     @endif
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -656,62 +656,59 @@
     </style>
     <!-- Styles -->
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
-
-<!-- Scripts -->
-    {{--    <style type="text/css">--}}
-    {{--        .swiper-container {--}}
-    {{--            margin-left: auto;--}}
-    {{--            margin-right: auto;--}}
-    {{--            position: relative;--}}
-    {{--            overflow: hidden;--}}
-    {{--            z-index: 1;--}}
-    {{--        }--}}
-
-    {{--        .swiper-button-next {--}}
-    {{--            background-image: url({{ Theme::asset('img/next.svg') }});--}}
-    {{--            background-repeat: no-repeat;--}}
-    {{--            background-size: 100% auto;--}}
-    {{--            background-position: center;--}}
-    {{--        }--}}
-
-    {{--        .swiper-button-prev {--}}
-    {{--            background-image: url({{ Theme::asset('img/prev.svg') }});--}}
-    {{--            background-repeat: no-repeat;--}}
-    {{--            background-size: 100% auto;--}}
-    {{--            background-position: center;--}}
-    {{--        }--}}
-
-    {{--        .swiper-button-next::after, .swiper-button-prev::after {--}}
-    {{--            display: none;--}}
-    {{--        }--}}
-
-    {{--        .swiper-button-next, .swiper-button-prev {--}}
-    {{--            width: 44px !important;--}}
-    {{--        }--}}
-
-
-    {{--        @media (max-width: 768px) {--}}
-    {{--            .swiper-button-next, .swiper-button-prev {--}}
-    {{--                width: 30px !important;--}}
-    {{--            }--}}
-    {{--        }--}}
-    {{--    </style>--}}
-    {{--    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>--}}
-<!-- Swiper JS -->
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    {{--    <script src="{!! asset('access/swiper/js/swiper-bundle.js') !!}"></script>--}}
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <style type="text/css">
+        .swiper-container {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .swiper-button-next {
+            background-image: url({{ Theme::asset('img/next.svg') }});
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+        }
+
+        .swiper-button-prev {
+            background-image: url({{ Theme::asset('img/prev.svg') }});
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+        }
+
+        .swiper-button-next::after, .swiper-button-prev::after {
+            display: none;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            width: 44px !important;
+        }
+
+
+        @media (max-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                width: 30px !important;
+            }
+        }
+    </style>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
+    <!-- Swiper JS -->
+    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
     {{--<!-- lozad JS -->--}}
     <script src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 
-    <!-- Swiper CSS -->
-
     <!-- Meta Head -->
     {!! theme_options()->getOption('meta_header', '') !!}
-<!-- End Meta Head -->
+    <!-- End Meta Head -->
 
     @stack('head')
 
@@ -743,10 +740,6 @@
 
     <x-theme::modal.youtube/>
 
-    @if(is_active_plugin('contact'))
-        <x-theme::form.contact-modal/>
-    @endif
-
     <x-theme::modal.search/>
     <!-- End Modal -->
     <div id="loading" style="display:none" class="fixed w-full h-full top-0 z-50 flex items-center justify-center">
@@ -757,6 +750,7 @@
             </span>
         </div>
     </div>
+
 </div>
 
 @stack('bodybelow')
@@ -789,6 +783,7 @@
                 e.target.src = '/images/no-image.jpg';
             });
         })
+
         const observer = lozad(); // lazy loads elements with default selector as '.lozad'
         observer.observe()
     })
