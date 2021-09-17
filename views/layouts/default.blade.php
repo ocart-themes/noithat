@@ -710,27 +710,29 @@
 @include(Theme::getThemeNamespace('layouts.header'))
 <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
 
+<div class="google-speed">
 @include(Theme::getThemeNamespace('layouts.footer'))
 
 @include(Theme::getThemeNamespace('components.layout.list-sharing'))
 
 <!-- Modal -->
-<x-theme::form.login-modal/>
+    <x-theme::form.login-modal/>
 
-{{--<x-theme::modal.youtube/>--}}
+    <x-theme::modal.youtube/>
 
-{{--@if(is_active_plugin('contact'))--}}
-{{--    <x-theme::form.contact-modal/>--}}
-{{--@endif--}}
+    @if(is_active_plugin('contact'))
+        <x-theme::form.contact-modal/>
+    @endif
 
-<x-theme::modal.search/>
-<!-- End Modal -->
-<div id="loading" style="display:none" class="fixed w-full h-full top-0 z-50 flex items-center justify-center">
-    <div class="relative inline-flex">
+    <x-theme::modal.search/>
+    <!-- End Modal -->
+    <div id="loading" style="display:none" class="fixed w-full h-full top-0 z-50 flex items-center justify-center">
+        <div class="relative inline-flex">
             <span class="flex items-center justify-center h-24 w-24">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-0 w-0 bg-purple-500"></span>
             </span>
+        </div>
     </div>
 </div>
 
