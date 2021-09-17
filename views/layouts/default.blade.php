@@ -768,7 +768,8 @@
         })
 
         const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-        observer.observe();
+        observer.observe()
+
     })
 
     @if(is_active_plugin('ecommerce'))
