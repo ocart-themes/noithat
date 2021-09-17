@@ -8,7 +8,6 @@
         <div class="flex justify-between items-center py-2 lg:py-0 lg:space-x-4 h-14 lg:h-20">
             <div class="items-center">
                 <a href="{!! route('home') !!}">
-                    <span class="sr-only">Workflow</span>
                     @php
                         $logo = get_logo();
                     @endphp
@@ -40,7 +39,7 @@
                                         href="{{ Arr::get($item, 'url') }}"
                                         class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
                                         aria-expanded="false">
-                                        <span>{{ Arr::get($item, 'title') }}</span>
+                                        {{ Arr::get($item, 'title') }}
                                         <x-theme::icons.chevron-down class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"/>
                                     </a>
 
@@ -56,15 +55,10 @@
                                                 @if(!empty($subChildren))
                                                     <a href="{{ Arr::get($i, 'url') }}"
                                                        class="p-3 flex items-center justify-between hover:bg-gray-100">
-                                                        <div class="text-base font-medium text-gray-900">
-                                                            {{ Arr::get($i, 'title') }}
-                                                        </div>
-                                                        <div
-                                                            class="cursor-pointer w-14 h-6 text-lg flex-shrink-0 flex items-center justify-center -mr-4"
-                                                        >
-                                                            <x-theme::icons.chevron-down class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"/>
+                                                        {{ Arr::get($i, 'title') }}
 
-                                                        </div>
+                                                        <x-theme::icons.chevron-down class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"/>
+
                                                     </a>
                                                     @foreach($subChildren as $subitemi)
                                                         <a href="{{ Arr::get($subitemi, 'url') }}"
@@ -79,9 +73,7 @@
                                                 @else
                                                     <a href="{{ Arr::get($i, 'url') }}"
                                                        class="p-3 flex items-center justify-between hover:bg-gray-100">
-                                                        <div class="text-base font-medium text-gray-900">
-                                                            {{ Arr::get($i, 'title') }}
-                                                        </div>
+                                                        {{ Arr::get($i, 'title') }}
                                                     </a>
                                                 @endif
                                             @endforeach
