@@ -702,7 +702,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
     <!-- Swiper JS -->
-    <script src="{!! asset('access/swiper/js/swiper.min.js') !!}"></script>
+    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
     {{--<!-- lozad JS -->--}}
     <script src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 
