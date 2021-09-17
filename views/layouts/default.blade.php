@@ -635,53 +635,56 @@
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
 
 <!-- Scripts -->
+    {{--    <style type="text/css">--}}
+    {{--        .swiper-container {--}}
+    {{--            margin-left: auto;--}}
+    {{--            margin-right: auto;--}}
+    {{--            position: relative;--}}
+    {{--            overflow: hidden;--}}
+    {{--            z-index: 1;--}}
+    {{--        }--}}
+
+    {{--        .swiper-button-next {--}}
+    {{--            background-image: url({{ Theme::asset('img/next.svg') }});--}}
+    {{--            background-repeat: no-repeat;--}}
+    {{--            background-size: 100% auto;--}}
+    {{--            background-position: center;--}}
+    {{--        }--}}
+
+    {{--        .swiper-button-prev {--}}
+    {{--            background-image: url({{ Theme::asset('img/prev.svg') }});--}}
+    {{--            background-repeat: no-repeat;--}}
+    {{--            background-size: 100% auto;--}}
+    {{--            background-position: center;--}}
+    {{--        }--}}
+
+    {{--        .swiper-button-next::after, .swiper-button-prev::after {--}}
+    {{--            display: none;--}}
+    {{--        }--}}
+
+    {{--        .swiper-button-next, .swiper-button-prev {--}}
+    {{--            width: 44px !important;--}}
+    {{--        }--}}
+
+
+    {{--        @media (max-width: 768px) {--}}
+    {{--            .swiper-button-next, .swiper-button-prev {--}}
+    {{--                width: 30px !important;--}}
+    {{--            }--}}
+    {{--        }--}}
+    {{--    </style>--}}
+    {{--    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>--}}
+<!-- Swiper JS -->
+    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    {{--    <script src="{!! asset('access/swiper/js/swiper-bundle.js') !!}"></script>--}}
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
+    {{--<!-- lozad JS -->--}}
+    <script src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 
     <!-- Swiper CSS -->
-{{--    <style type="text/css">--}}
-{{--        .swiper-container {--}}
-{{--            margin-left: auto;--}}
-{{--            margin-right: auto;--}}
-{{--            position: relative;--}}
-{{--            overflow: hidden;--}}
-{{--            z-index: 1;--}}
-{{--        }--}}
-
-{{--        .swiper-button-next {--}}
-{{--            background-image: url({{ Theme::asset('img/next.svg') }});--}}
-{{--            background-repeat: no-repeat;--}}
-{{--            background-size: 100% auto;--}}
-{{--            background-position: center;--}}
-{{--        }--}}
-
-{{--        .swiper-button-prev {--}}
-{{--            background-image: url({{ Theme::asset('img/prev.svg') }});--}}
-{{--            background-repeat: no-repeat;--}}
-{{--            background-size: 100% auto;--}}
-{{--            background-position: center;--}}
-{{--        }--}}
-
-{{--        .swiper-button-next::after, .swiper-button-prev::after {--}}
-{{--            display: none;--}}
-{{--        }--}}
-
-{{--        .swiper-button-next, .swiper-button-prev {--}}
-{{--            width: 44px !important;--}}
-{{--        }--}}
-
-
-{{--        @media (max-width: 768px) {--}}
-{{--            .swiper-button-next, .swiper-button-prev {--}}
-{{--                width: 30px !important;--}}
-{{--            }--}}
-{{--        }--}}
-{{--    </style>--}}
-{{--    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>--}}
-    <!-- Swiper JS -->
-    <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-{{--    <script src="{!! asset('access/swiper/js/swiper-bundle.js') !!}"></script>--}}
 
     <!-- Meta Head -->
     {!! theme_options()->getOption('meta_header', '') !!}
@@ -735,10 +738,6 @@
 </div>
 
 @stack('bodybelow')
-
-
-{{--<!-- lozad JS -->--}}
-<script defer src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 
 <script>
     $(function(){
@@ -797,6 +796,9 @@
             $(idModal).click();
         })
     })
+
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
 </script>
 
 <!-- Meta Footer -->
