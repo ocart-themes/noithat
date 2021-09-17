@@ -7,7 +7,7 @@
             style="padding-bottom: calc( {{ $ratio }} * 100% );"
         >
             <img
-                class="w-full h-full object-cover absolute lazyload"
+                class="w-full h-full object-cover absolute lozad"
                 data-src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'medium', asset('/images/no-image.jpg')) }}"
                 src="{{ asset('/images/no-image.jpg') }}"
                 alt="{{ $data->name }}"

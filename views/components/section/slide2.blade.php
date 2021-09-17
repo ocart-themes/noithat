@@ -14,7 +14,7 @@
                                 data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
                                 src="{{ asset('/images/no-image.jpg') }}"
                                 alt="banner home 1"
-                                class="mx-auto lazyload w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                                class="mx-auto lozad w-full h-40 sm:h-56 md:h-72 lg:h-96"
                             >
                         </a>
                     </div>
@@ -29,7 +29,7 @@
                                 data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
                                 src="{{ asset('/images/no-image.jpg') }}"
                                 alt="banner home 2"
-                                class="mx-auto lazyload w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                                class="mx-auto lozad w-full h-40 sm:h-56 md:h-72 lg:h-96"
                             >
                         </a>
                     </div>
@@ -44,7 +44,7 @@
                                 data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=1400', asset('/images/no-image.jpg')) }}"
                                 src="{{ asset('/images/no-image.jpg') }}"
                                 alt="banner home 3"
-                                class="mx-auto lazyload w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                                class="mx-auto lozad w-full h-40 sm:h-56 md:h-72 lg:h-96"
                             >
                         </a>
                     </div>

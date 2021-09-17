@@ -11,7 +11,7 @@
             >
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                     <img
-                        class="absolute h-full w-full object-cover lazyload"
+                        class="absolute h-full w-full object-cover lozad"
                         data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=600', asset('/images/no-image.jpg')) }}"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ theme_options()->getOption('title_testimonial1', '') }}"
@@ -47,7 +47,7 @@
             >
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                     <img
-                        class="absolute h-full w-full object-cover lazyload"
+                        class="absolute h-full w-full object-cover lozad"
                         data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_2', null) . '?w=600', asset('/images/no-image.jpg')) }}"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ theme_options()->getOption('title_testimonial1_2', '') }}"
@@ -83,7 +83,7 @@
             >
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                     <img
-                        class="absolute h-full w-full object-cover lazyload"
+                        class="absolute h-full w-full object-cover lozad"
                         data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_3', null) . '?w=600', asset('/images/no-image.jpg')) }}"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ theme_options()->getOption('title_testimonial1_3', '') }}"

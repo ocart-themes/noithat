@@ -10,7 +10,7 @@
                         data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1', null), 'large', asset('/images/no-image.jpg')) }}"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="banner gird 1"
-                        class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                        class="bg-gray-300 object-cover w-full h-40 lg:h-64 lozad"
                     />
                 </a>
             </div>
@@ -23,7 +23,7 @@
                             data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_2', null), 'medium', asset('/images/no-image.jpg')) }}"
                             src="{{ asset('/images/no-image.jpg') }}"
                             alt="banner gird 2"
-                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lozad"
                         />
                     </a>
             </div>
@@ -36,7 +36,7 @@
                             data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_3', null), 'medium', asset('/images/no-image.jpg')) }}"
                             src="{{ asset('/images/no-image.jpg') }}"
                             alt="banner gird 3"
-                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lozad"
                         />
                     </a>
             </div>
@@ -49,7 +49,7 @@
                             data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_4', null), 'medium', asset('/images/no-image.jpg')) }}"
                             src="{{ asset('/images/no-image.jpg') }}"
                             alt="banner gird 4"
-                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lozad"
                         />
                     </a>
             </div>
@@ -62,7 +62,7 @@
                             data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_5', null), 'medium', asset('/images/no-image.jpg')) }}"
                             src="{{ asset('/images/no-image.jpg') }}"
                             alt="banner gird 5"
-                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lozad"
                         />
                     </a>
             </div>
@@ -75,7 +75,7 @@
                             data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('grid1_6', null), 'large', asset('/images/no-image.jpg')) }}"
                             src="{{ asset('/images/no-image.jpg') }}"
                             alt="banner gird 6"
-                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lazyload"
+                            class="bg-gray-300 object-cover w-full h-40 lg:h-64 lozad"
                         />
                     </a>
             </div>

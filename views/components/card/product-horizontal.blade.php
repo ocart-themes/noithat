@@ -6,7 +6,7 @@
                 data-src="{{ TnMedia::getImageUrl(Arr::first($data->images),'thumb', asset('/images/no-image.jpg')) }}"
                 src="{{ asset('/images/no-image.jpg') }}"
                 alt="{{ $data->name }}"
-                class="rounded-full m-w-10 w-full h-full lazyload"
+                class="rounded-full m-w-10 w-full h-full lozad"
             >
         </div>
         <div class="pl-3 flex flex-wrap">

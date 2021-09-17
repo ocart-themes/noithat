@@ -11,7 +11,7 @@
                             <img
                                 data-src="{{ TnMedia::getImageUrl($category->image, 'thumb', asset('/images/no-image.jpg')) }}"
                                 src="{{ asset('/images/no-image.jpg') }}"
-                                class="w-full h-full block m-auto rounded-full lg:p-3 absolute lazyload"
+                                class="w-full h-full block m-auto rounded-full lg:p-3 absolute lozad"
                                 alt="{{ $category->name }}"
                                 style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);"
                             >
@@ -36,7 +36,7 @@
 {{--                                    <img--}}
 {{--                                        data-src="{{ TnMedia::getImageUrl($category->image, 'thumb', asset('/images/no-image.jpg')) }}"--}}
 {{--                                        src="{{ asset('/images/no-image.jpg') }}"--}}
-{{--                                        class="w-full h-full block m-auto rounded-full lg:p-3 absolute lazyload"--}}
+{{--                                        class="w-full h-full block m-auto rounded-full lg:p-3 absolute lozad"--}}
 {{--                                        alt="{{ $category->name }}"--}}
 {{--                                        style="background-image: linear-gradient(180deg, #ffffff, #f8f8f800);"--}}
 {{--                                    >--}}

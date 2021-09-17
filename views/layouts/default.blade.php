@@ -737,7 +737,7 @@
 @stack('bodybelow')
 
 
-{{--<!-- LazyLoad JS -->--}}
+{{--<!-- lozad JS -->--}}
 <script defer src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 
 <script>

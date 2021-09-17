@@ -14,7 +14,7 @@
                     class="block"
                 >
                     <img
-                        class="w-full h-full object-cover {{ $rounded }} absolute lazyload"
+                        class="w-full h-full object-cover {{ $rounded }} absolute lozad"
                         data-src="{{ TnMedia::getImageUrl($data->image, $sizeImage, asset('/images/no-image.jpg')) }}"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ $data->name }}"

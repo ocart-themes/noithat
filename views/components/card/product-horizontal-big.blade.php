@@ -3,7 +3,7 @@
     <div class="relative group h-full block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
         <a href="{!! $data->url !!}">
             <img
-                class="h-full w-full object-cover absolute lazyload"
+                class="h-full w-full object-cover absolute lozad"
                 data-src="{{ TnMedia::getImageUrl(Arr::first($data->images), 'large', asset('/images/no-image.jpg')) }}"
                 src="{{ asset('/images/no-image.jpg') }}"
                 alt="{{ $data->name }}"

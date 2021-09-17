@@ -10,7 +10,7 @@
                     data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('banner2', null) . '?w=850', asset('/images/no-image.jpg')) }}"
                     src="{{ asset('/images/no-image.jpg') }}"
                     alt="banner"
-                    class="mx-auto lazyload"
+                    class="mx-auto lozad"
                 >
             </a>
         </div>

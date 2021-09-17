@@ -32,7 +32,7 @@
 
             <div class="block mb-4">
                 <img
-                    class="w-full lazyload rounded-md"
+                    class="w-full lozad rounded-md"
                     data-src="{{ TnMedia::getImageUrl($post->image, asset('/images/no-image.jpg')) }}"
                     src="{{ TnMedia::getImageUrl($post->image, 'thumb', asset('/images/no-image.jpg')) }}"
                     alt="{{ $post->name }}"

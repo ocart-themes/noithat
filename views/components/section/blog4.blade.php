@@ -93,7 +93,7 @@
                         data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('banner_blog_4', null) . '?w=400', asset('/images/no-image.jpg')) }}"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="banner"
-                        class="mx-auto w-full lazyload"
+                        class="mx-auto w-full lozad"
                     >
                 </a>
                 @endif
@@ -106,7 +106,7 @@
                         data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('banner_blog_4_2', null) . '?w=400', asset('/images/no-image.jpg')) }}"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="banner"
-                        class="mx-auto w-full lazyload"
+                        class="mx-auto w-full lozad"
                     >
                 </a>
                 @endif
