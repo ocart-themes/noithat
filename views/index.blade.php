@@ -14,7 +14,7 @@
     @endif
 
     @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec3', $sections))
-        <x-theme::section.category-product1/>
+        <x-theme::section.category-product2/>
     @endif
 
     @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec4', $sections))
