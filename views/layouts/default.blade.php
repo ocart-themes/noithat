@@ -304,6 +304,9 @@
         .grid-cols-2 {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+        .grid-cols-5 {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
         .gap-2 {
             gap: 0.5rem;
         }
@@ -542,6 +545,9 @@
             }
             .lg\:grid-cols-9 {
                 grid-template-columns: repeat(9,minmax(0,1fr));
+            }
+            .lg\:grid-cols-10 {
+                grid-template-columns: repeat(10,minmax(0,1fr));
             }
             .lg\:gap-4 {
                 gap: 1rem;
