@@ -15,16 +15,16 @@
                 <h3 class="text-xs md:text-base font-semibold text-gray-700 line-clamp-4 hover:text-blue-700 mt-4">{{ $data->name }}</h3>
             </a>
 
-            @if(is_active_plugin('ec_review'))
-                @php
-                    $avg = $data->reviews_avg; //get_average_star_of_product($data->id);
-                @endphp
-                <div class="flex items-center my-1 md:mt-2 md: mb-0">
-                    @for($i=0; $i < 5; $i++)
-                        <x-theme::icons.star :active="$i < $avg"/>
-                    @endfor
-                </div>
-            @endif
+{{--            @if(is_active_plugin('ec_review'))--}}
+{{--                @php--}}
+{{--                    $avg = $data->reviews_avg; //get_average_star_of_product($data->id);--}}
+{{--                @endphp--}}
+{{--                <div class="flex items-center my-1 md:mt-2 md: mb-0">--}}
+{{--                    @for($i=0; $i < 5; $i++)--}}
+{{--                        <x-theme::icons.star :active="$i < $avg"/>--}}
+{{--                    @endfor--}}
+{{--                </div>--}}
+{{--            @endif--}}
 
             <div class="block text-sm text-gray-500 line-clamp-5 mt-2">{!! $data->description !!}</div>
             <div class="flex justify-between items-center md:mt-2">
