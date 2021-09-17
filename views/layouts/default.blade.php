@@ -767,6 +767,9 @@
                 e.target.src = '/images/no-image.jpg';
             });
         })
+
+        const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+        observer.observe();
     })
 
     @if(is_active_plugin('ecommerce'))
@@ -796,9 +799,6 @@
             $(idModal).click();
         })
     })
-
-    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-    observer.observe();
 </script>
 
 <!-- Meta Footer -->
