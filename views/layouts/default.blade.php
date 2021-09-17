@@ -468,6 +468,9 @@
         .order-first {
             order: -9999;
         }
+        .h-28 {
+            height: 7rem;
+        }
         @media (min-width: 640px) {
             .sm\:w-16{
                 width: 4rem;
@@ -573,6 +576,10 @@
             .lg\:block {
                 display: block;
             }
+            .lg\:h-40 {
+                height: 10rem;
+            }
+
         }
 
         .thumb-bg .post-thumbnail a:after{
@@ -658,7 +665,7 @@
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Swiper CSS -->
-    <link rel="preload" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-custom.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <style type="text/css">
         .swiper-container {
             margin-left: auto;
@@ -689,8 +696,14 @@
         .swiper-button-next, .swiper-button-prev {
             width: 44px !important;
         }
-
-
+        .h-28 {
+            height: 7rem;
+        }
+        @media (min-width: 1024px) {
+            .lg\:h-40 {
+                height: 10rem;
+            }
+        }
         @media (max-width: 768px) {
             .swiper-button-next, .swiper-button-prev {
                 width: 30px !important;
@@ -702,7 +715,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
     <!-- Swiper JS -->
-    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
+    <script src="{!! asset('access/swiper/js/swiper-custom.min.js') !!}"></script>
     {{--<!-- lozad JS -->--}}
     <script src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 

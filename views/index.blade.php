@@ -19,7 +19,7 @@
         @endif
 
         @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec4', $sections))
-            <x-theme::section.product1/>
+            <x-theme::section.blog-slide1/>
         @endif
 
         @if(is_array($sections) && in_array('sec5', $sections))
