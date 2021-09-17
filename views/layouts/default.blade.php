@@ -13,7 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {!! SeoHelper::render() !!}
 
-<!-- Fonts -->
+    <!-- Fonts -->
     <link rel=preload href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <style type="text/css">
@@ -717,11 +717,11 @@
 <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
 
 <div class="google-speed">
-@include(Theme::getThemeNamespace('layouts.footer'))
+    @include(Theme::getThemeNamespace('layouts.footer'))
 
-@include(Theme::getThemeNamespace('components.layout.list-sharing'))
+    @include(Theme::getThemeNamespace('components.layout.list-sharing'))
 
-<!-- Modal -->
+    <!-- Modal -->
     <x-theme::form.login-modal/>
 
     <x-theme::modal.youtube/>
@@ -772,10 +772,8 @@
                 e.target.src = '/images/no-image.jpg';
             });
         })
-
         const observer = lozad(); // lazy loads elements with default selector as '.lozad'
         observer.observe()
-
     })
 
     @if(is_active_plugin('ecommerce'))
