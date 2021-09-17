@@ -462,6 +462,12 @@
         .opacity-0 {
             opacity: 0;
         }
+        .col-span-2 {
+            grid-column: span 2 / span 2;
+        }
+        .order-first {
+            order: -9999;
+        }
         @media (min-width: 640px) {
             .sm\:w-16{
                 width: 4rem;
@@ -555,7 +561,18 @@
             .lg\:z-50 {
                 z-index: 50;
             }
-
+            .lg\:absolute {
+                position: absolute;
+            }
+            .lg\:opacity-0 {
+                opacity: 0;
+            }
+            .lg\:order-none {
+                order: 0;
+            }
+            .lg\:block {
+                display: block;
+            }
         }
 
         .thumb-bg .post-thumbnail a:after{

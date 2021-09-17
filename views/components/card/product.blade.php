@@ -19,17 +19,6 @@
                 <h3 class="text-xs md:text-base font-semibold text-gray-700 line-clamp-2">{{ $data->name }}</h3>
             </a>
 
-            @if(is_active_plugin('ec_review'))
-                @php
-                    $avg = $data->reviews_avg; //get_average_star_of_product($data->id);
-                @endphp
-                <div class="flex items-center my-1 md:mt-2 md: mb-0">
-                    @for($i=0; $i < 5; $i++)
-                        <x-theme::icons.star :active="$i < $avg"/>
-                    @endfor
-                </div>
-
-            @endif
             <div class="flex justify-between items-center">
                 @if(!empty($data->sell_price) && $data->sell_price > 0)
                     <div class="inline-flex items-center">

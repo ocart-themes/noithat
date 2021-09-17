@@ -51,7 +51,7 @@ $product3 = json_decode(theme_options()->getOption('product3', []));
                 <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
                     @foreach(get_list_products_category($item_menu->id, 7) as $key=>$product)
                         @if($key == 1)
-                            <div class="hidden lg:block col-span-2">
+                            <div class="lg:block col-span-2 order-first lg:order-none">
                                 <x-theme::card.product-horizontal-big :data="$product"/>
                             </div>
                         @else
