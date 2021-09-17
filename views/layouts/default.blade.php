@@ -658,7 +658,7 @@
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="preload" href="{!! asset('access/swiper/css/swiper-bundle.min.css') !!}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <style type="text/css">
         .swiper-container {
             margin-left: auto;
@@ -698,11 +698,11 @@
         }
     </style>
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
     <!-- Swiper JS -->
-    <script src="{!! asset('access/swiper/js/swiper-bundle.min.js') !!}"></script>
+    <script src="{!! asset('access/swiper/js/swiper.min.js') !!}"></script>
     {{--<!-- lozad JS -->--}}
     <script src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 
