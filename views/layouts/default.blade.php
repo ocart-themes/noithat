@@ -637,7 +637,7 @@
 <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
-    <script src="{!! asset('access/jquery.pjax.js') !!}"></script>
+    <script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
 
     <!-- Swiper CSS -->
 {{--    <style type="text/css">--}}
@@ -736,8 +736,9 @@
 
 @stack('bodybelow')
 
-<!-- LazyLoad JS -->
-<script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
+
+{{--<!-- LazyLoad JS -->--}}
+<script defer src="{!! asset('access/lazyload/lozad.min.js') !!}"></script>
 
 <script>
     $(function(){
