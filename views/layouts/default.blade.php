@@ -708,23 +708,23 @@
 @stack('body')
 
 @include(Theme::getThemeNamespace('layouts.header'))
-<div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
-
 <div class="google-speed">
+    <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
+
     @include(Theme::getThemeNamespace('layouts.footer'))
 
     @include(Theme::getThemeNamespace('components.layout.list-sharing'))
 
     <!-- Modal -->
-{{--    <x-theme::form.login-modal/>--}}
+    <x-theme::form.login-modal/>
 
-{{--    <x-theme::modal.youtube/>--}}
+    <x-theme::modal.youtube/>
 
-{{--    @if(is_active_plugin('contact'))--}}
-{{--        <x-theme::form.contact-modal/>--}}
-{{--    @endif--}}
+    @if(is_active_plugin('contact'))
+        <x-theme::form.contact-modal/>
+    @endif
 
-{{--    <x-theme::modal.search/>--}}
+    <x-theme::modal.search/>
     <!-- End Modal -->
     <div id="loading" style="display:none" class="fixed w-full h-full top-0 z-50 flex items-center justify-center">
         <div class="relative inline-flex">
