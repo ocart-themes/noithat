@@ -5,9 +5,9 @@ module.exports = {
         './resources/**/*.blade.php',
         './system/**/*.blade.php',
         './plugins/**/*.blade.php',
-        './themes/ripple/**/*.blade.php',
-        './themes/ripple/**/*.js',
-        './themes/ripple/**/*.vue',
+        './themes/noithat/**/*.blade.php',
+        './themes/noithat/**/*.js',
+        './themes/noithat/**/*.vue',
     ],
     // purge: false,
 
