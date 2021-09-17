@@ -708,7 +708,7 @@
 @stack('body')
 
 @include(Theme::getThemeNamespace('layouts.header'))
-<div class="google-speed hidden">
+<div class="hidden">
     <div id="body-content" class="content" data-pjax-container="body">{{ $slot }}</div>
 
     @include(Theme::getThemeNamespace('layouts.footer'))
