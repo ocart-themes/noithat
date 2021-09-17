@@ -14,7 +14,7 @@
     {!! SeoHelper::render() !!}
 
 <!-- Fonts -->
-    <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel=preload href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <style type="text/css">
         *, ::before, ::after {
