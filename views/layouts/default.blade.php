@@ -635,8 +635,9 @@
     {{--<link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
 
 <!-- Scripts -->
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{!! asset('access/jquery/jquery.min.js') !!}"></script>
+    <script src="{!! asset('access/jquery.pjax.js') !!}"></script>
 
     <!-- Swiper CSS -->
 {{--    <style type="text/css">--}}
@@ -688,6 +689,17 @@
 
     @stack('head')
 
+    <script>
+        const bodyLoading = {
+            show() {
+                $('#loading').show();
+            },
+            hide() {
+                $('#loading').hide();
+            }
+        }
+    </script>
+
 </head>
 <body id="body" class="font-sans text-gray-900 antialiased">
 @stack('body')
@@ -724,23 +736,8 @@
 
 @stack('bodybelow')
 
-{{--<script src="{!! asset('access/jquery/jquery.min.js') !!}" defer></script>--}}
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
-<script src="{!! asset('access/jquery.pjax.js') !!}" defer></script>
-
 <!-- LazyLoad JS -->
 <script src="{!! asset('access/lazyload/lazysizes.min.js') !!}" defer></script>
-
-<script>
-    const bodyLoading = {
-        show() {
-            $('#loading').show();
-        },
-        hide() {
-            $('#loading').hide();
-        }
-    }
-</script>
 
 <script>
     $(function(){

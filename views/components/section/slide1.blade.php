@@ -13,22 +13,11 @@
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="banner home 1"
                         class="mx-auto lazyload w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                        width="1400"
+                        height="554"
                     >
                 </a>
             </div>
         @endif
     </div>
-{{--    <script>--}}
-{{--        var slide1{{$keySlide}} = new Swiper(".swiperSlide1{{$keySlide}}", {--}}
-{{--            spaceBetween: 1,--}}
-{{--            slidesPerView: 1,--}}
-{{--            autoplay: {--}}
-{{--                delay: 10000,--}}
-{{--            },--}}
-{{--            navigation: {--}}
-{{--                nextEl: ".swiper-button-next",--}}
-{{--                prevEl: ".swiper-button-prev",--}}
-{{--            },--}}
-{{--        });--}}
-{{--    </script>--}}
 </section>

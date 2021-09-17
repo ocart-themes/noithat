@@ -16,6 +16,8 @@
                         class="w-10 h-10 sm:w-16 sm:h-16 md:max-w-xs logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
+                        width="300"
+                        height="300"
                     >
                 </a>
             </div>
@@ -229,6 +231,8 @@
                         class="w-8 h-8 logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
+                        width="300"
+                        height="300"
                     >
                 </div>
                 <div class="-mr-2">
