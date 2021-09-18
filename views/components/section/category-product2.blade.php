@@ -4,8 +4,8 @@
     <div class="container-custom">
         <div class="{{ 'swiperCategoryProduct'.$keySlide }} swiper-main swiper-container mySwiperGecko my-swiper-main overflow-hidden">
             <div class="swiper-wrapper">
-                @foreach(get_categories_feature() as $category)
-                    <div class="h-28 lg:h-40 swiper-slide">
+                @foreach(get_categories_feature(10) as $category)
+                    <div class="swiper-slide">
                         <div class="text-center rounded-t-full hover:shadow-xl">
                             <a href="{!! $category->url !!}"
                                class="inline-block w-full">

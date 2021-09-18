@@ -1,7 +1,7 @@
 @props(['keySlide'=> 'default'])
 
 <section class="sec-testimonial section-custom">
-    <div class="max-w-6xl mx-auto px-8">
+    <div class="max-w-6xl mx-auto px-4">
         <!-- Swiper -->
         <div class="{{ 'swiperTestimonial1'.$keySlide }} swiper-container shadow-2xl rounded-lg">
             <div class="swiper-wrapper">

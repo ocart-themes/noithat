@@ -586,6 +586,9 @@
             .lg\:h-40 {
                 height: 10rem;
             }
+            .lg\:h-36 {
+                height: 9rem;
+            }
 
         }
 
@@ -702,14 +705,6 @@
 
         .swiper-button-next, .swiper-button-prev {
             width: 44px !important;
-        }
-        .h-28 {
-            height: 7rem;
-        }
-        @media (min-width: 1024px) {
-            .lg\:h-40 {
-                height: 10rem;
-            }
         }
         @media (max-width: 768px) {
             .swiper-button-next, .swiper-button-prev {

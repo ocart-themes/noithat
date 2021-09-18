@@ -30,11 +30,12 @@
                 </div>
             @endif
 
-            <div class="block mb-4">
+            <div class="block mb-4 relative" style="padding-bottom: calc( 0.594 * 100% );">
                 <img
-                    class="w-full lozad rounded-md"
-                    data-src="{{ TnMedia::getImageUrl($post->image, asset('/images/no-image.jpg')) }}"
-                    src="{{ TnMedia::getImageUrl($post->image, 'thumb', asset('/images/no-image.jpg')) }}"
+                    class="w-full lozad rounded-md absolute h-full"
+                    data-src="{{ TnMedia::getImageUrl($post->image, 'medium', asset('/images/no-image.jpg')) }}"
+                    data-srcset="{{ TnMedia::getImageUrl($post->image, 'medium', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl($post->image, 'large', asset('/images/no-image.jpg')) }} 2000w"
+                    src="{{ asset('/images/no-image.jpg') }}"
                     alt="{{ $post->name }}"
                 >
             </div>

@@ -21,8 +21,9 @@
                         <div class="mb-4">
                             <img
                                 id="imageMainProduct"
-                                class="w-full h-full object-cover object-center rounded"
-                                x-bind:src="product.images.length ? product.images[index]  + `?w=850&h=850` : '/no-images'"
+                                class="w-full h-full object-cover object-center rounded lozad"
+                                src="{{ asset('/images/no-image.jpg') }}"
+                                x-bind:data-src="product.images.length ? product.images[index]  + `?w=850&h=850` : '/no-images'"
                                 alt="ecommerce image">
                         </div>
 
