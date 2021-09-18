@@ -109,7 +109,7 @@ Event::listen(RouteMatched::class, function () {
         'name' => 'section_list',
         'label' => trans('Section List'),
         'attr' => [
-            'placeholder' => trans('[Section List]'),
+            'placeholder' => trans('["sec1","sec2","sec3","sec4","sec5","sec6","sec7","sec8","sec9","sec10","sec11"]'),
         ]
     ])->setField([
         'id' => 'link_slide1',
@@ -501,12 +501,12 @@ Event::listen(RouteMatched::class, function () {
         'section_id' => 'opt-sections',
         'type' => Field::TEXT,
         'name' => 'title_contact1',
-        'label' => trans('Section 12 Title'),
+        'label' => trans('Section 11 Title'),
     ])->setField([
         'id' => 'deps_contact1',
         'section_id' => 'opt-sections',
         'type' => Field::TEXT,
         'name' => 'deps_contact1',
-        'label' => trans('Section 12.2 Deps'),
+        'label' => trans('Section 11.2 Deps'),
     ]);
 });

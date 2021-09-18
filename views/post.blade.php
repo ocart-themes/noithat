@@ -75,7 +75,7 @@
                         // add list item
                         $li = $doc->createElement('li');
                         $head->appendChild($li);
-                        $a = $doc->createElement('a', $headline->textContent);
+                        $a = $doc->createElement('a', preg_replace("/&(?!\S+;)/", "&amp;", $headline->textContent));
                         $head->lastChild->appendChild($a);
 
                         // build ID

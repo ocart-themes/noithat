@@ -471,6 +471,10 @@
         .h-28 {
             height: 7rem;
         }
+        .h-10 {
+            height: 2.5rem;
+        }
+
         @media (min-width: 640px) {
             .sm\:w-16{
                 width: 4rem;
@@ -548,6 +552,9 @@
             }
             .lg\:h-20 {
                 height: 5rem;
+            }
+            .lg\:h-12 {
+                height: 3rem;
             }
             .lg\:bg-auto {
                 background-size: auto;

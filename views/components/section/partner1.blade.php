@@ -16,7 +16,7 @@
                     <div class="w-1/4 p-1 lg:p-2">
                         <div class="bg-gray-100 p-2 sm:py-4 sm:px-0">
                             <img
-                                class="w-auto max-h-12 mx-auto lozad"
+                                class="w-auto h-10 lg:h-12 mx-auto lozad"
                                 data-src="{{ TnMedia::getImageUrl($item->img, 'thumb', asset('/images/no-image.jpg')) }}"
                                 src="{{ asset('/images/no-image.jpg') }}"
                                 alt="partner"

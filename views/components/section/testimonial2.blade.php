@@ -12,7 +12,8 @@
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                     <img
                         class="absolute h-full w-full object-cover lozad"
-                        data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=600', asset('/images/no-image.jpg')) }}"
+                        data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=400', asset('/images/no-image.jpg')) }}"
+                        data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=600', asset('/images/no-image.jpg')) }} 2000w"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ theme_options()->getOption('title_testimonial1', '') }}"
                     />
@@ -48,7 +49,8 @@
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                     <img
                         class="absolute h-full w-full object-cover lozad"
-                        data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_2', null) . '?w=600', asset('/images/no-image.jpg')) }}"
+                        data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_2', null) . '?w=400', asset('/images/no-image.jpg')) }}"
+                        data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_2', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=600', asset('/images/no-image.jpg')) }} 2000w"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ theme_options()->getOption('title_testimonial1_2', '') }}"
                     />
@@ -84,7 +86,8 @@
                 <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                     <img
                         class="absolute h-full w-full object-cover lozad"
-                        data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_3', null) . '?w=600', asset('/images/no-image.jpg')) }}"
+                        data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_3', null) . '?w=400', asset('/images/no-image.jpg')) }}"
+                        data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_3', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=600', asset('/images/no-image.jpg')) }} 2000w"
                         src="{{ asset('/images/no-image.jpg') }}"
                         alt="{{ theme_options()->getOption('title_testimonial1_3', '') }}"
                     />
