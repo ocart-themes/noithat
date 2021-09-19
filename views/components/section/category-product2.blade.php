@@ -34,7 +34,7 @@
             spaceBetween: 15,
             slidesPerView: 4,
             autoplay: {
-                delay: 7000,
+                delay: 10000,
             },
             breakpoints: {
                 991: {

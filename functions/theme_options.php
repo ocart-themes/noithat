@@ -109,7 +109,7 @@ Event::listen(RouteMatched::class, function () {
         'name' => 'section_list',
         'label' => trans('Section List'),
         'attr' => [
-            'placeholder' => trans('["sec1","sec2","sec3","sec4","sec5","sec6","sec7","sec8","sec9","sec10","sec11"]'),
+            'placeholder' => trans('["sec1","sec4","sec5","sec6","sec7","sec9","sec11","sec12"]'),
         ]
     ])->setField([
         'id' => 'link_slide1',
