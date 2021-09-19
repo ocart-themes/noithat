@@ -8,3 +8,6 @@ mix.postCss(resourcePath + 'assets/css/style.css', publicPath + 'css', [
     require('tailwindcss')('./themes/noithat/tailwind.config.js'),
     require('autoprefixer')
 ]).copy(publicPath + 'css/', resourcePath + 'public/css');
+
+mix.postCss(resourcePath + 'assets/css/speed.css', publicPath + 'css', [
+]).copy(publicPath + 'css/', resourcePath + 'public/css');

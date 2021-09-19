@@ -1,9 +1,6 @@
 @props(['data' => null,'class' => '', 'type' => 'thumb-top', 'thumbnail' => true,'deps' => false, 'sizeImage' => 'medium', 'author' => false, 'postMeta' => true, 'classTitle' => 'md:text-base md:mb-2', 'categoryBg' => 'bg-red-500', 'ratio' => 0.594, 'contentgrow' => 1, 'categoryType' => 1, 'transform' => true, 'thumbRadius' => false, 'dark' => false, 'rounded' => 'rounded-md', 'video' => false ])
 @if($data)
-    <div
-        class="card-post {{ $class }} @if($type === 'thumb-right' || $type === 'thumb-left') flex @endif @if($type === 'thumb-bottom') flex flex-col-reverse @endif @if($type === 'thumb-bg') thumb-bg flex relative @endif h-full relative block overflow-hidden"
-{{--        transition ease-in-out duration-500 transform @if($transform) lg:hover:-translate-y-3 @endif--}}
-    >
+    <div class="card-post {{ $class }} @if($type === 'thumb-right' || $type === 'thumb-left') flex @endif @if($type === 'thumb-bottom') flex flex-col-reverse @endif @if($type === 'thumb-bg') thumb-bg flex relative @endif h-full relative block overflow-hidden">
         @if($thumbnail)
             <div
                 class="@if($type === 'thumb-right') flex-1 flex-shrink flex-grow order-2 @elseif($type === 'thumb-left') flex-1 flex-shrink flex-grow order-1 @endif @if($type === 'thumb-bg') w-full h-full @endif @if($thumbRadius) rounded-full @endif post-thumbnail effect"
@@ -21,10 +18,8 @@
                         alt="{{ $data->name }}"
                     >
                 </a>
-                @if($video && !empty($data->code_video_youtube))
-                    <div
-                        class="post-video-icon"
-                    >
+                @if($video && !empty($data->code_video_youtube) )
+                    <div class="post-video-icon">
                         <a
                             href="javascript:void(0)"
                             onclick="youtubeLink('{{ $data->code_video_youtube }}')"

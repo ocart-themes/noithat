@@ -1,6 +1,6 @@
 @props(['keySlide'=> 'default'])
 
-<section class="sec-slide1 section-custom py-4">
+<section {!! $attributes->merge(['class' => 'sec-slide1 section-custom py-4']) !!}>
     <div class="container-custom">
         <div class="{{ 'swiperSlide1'.$keySlide }} swiper-container overflow-hidden">
             <div class="swiper-wrapper">

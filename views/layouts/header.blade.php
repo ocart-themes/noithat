@@ -1,32 +1,40 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
+@php
+    $logo = get_logo();
+    $homepage = "/";
+    $currentpage = $_SERVER['REQUEST_URI'];
+    $menuMain = main_navigation();
+    $menuMain = parent_recursive($menuMain->toArray());
+@endphp
 <header
     x-data="{ openMobile : false }"
     id="header"
     class="relative bg-white sticky top-0 z-40 shadow"
 >
     <div class="container-custom">
-        <div class="flex justify-between items-center py-2 lg:py-0 lg:space-x-4 h-14 lg:h-20">
-            <div class="items-center">
-                <a href="{!! route('home') !!}">
-                    @php
-                        $logo = get_logo();
-                    @endphp
-                    <img
-                        class="w-10 h-10 sm:w-16 sm:h-16 md:max-w-xs logo-header"
-                        src="{{ $logo }}?w=300&h=300"
-                        alt="logo"
-                        width="300"
-                        height="300"
-                    >
-                </a>
+        <div class="flex justify-end items-center py-2 lg:py-0 lg:space-x-8 h-14 lg:h-20">
+            <div class="items-center flex-1">
+                @if($currentpage == $homepage)
+                    <h1 title="{!! get_title() !!}">
+                        <a href="{!! route('home') !!}">
+                            <img
+                                class="h-10 sm:h-16 logo-header"
+                                src="{{ $logo }}?w=300&h=300"
+                                alt="{!! get_title() !!}"
+                            >
+                        </a>
+                    </h1>
+                @else
+                    <a href="{!! route('home') !!}">
+                        <img
+                            class="h-10 sm:h-16 logo-header"
+                            src="{{ $logo }}?w=300&h=300"
+                            alt="{!! get_title() !!}"
+                        >
+                    </a>
+                @endif
             </div>
             <div class="hidden lg:block items-center">
                 <!-- Menu Main -->
-                @php
-                    $menuMain = main_navigation();
-                    $menuMain = parent_recursive($menuMain->toArray());
-                @endphp
-
                 @if(!empty($menuMain))
                     <nav class="lg:flex space-x-6">
                         @foreach($menuMain as $item)
@@ -44,7 +52,7 @@
                                     </a>
 
                                     <div
-                                        class="absolute z-10 -ml-4 w-screen max-w-md lg:ml-0 lg:left-0 top-full absolute hidden group-hover:block"
+                                        class="absolute z-10 w-screen max-w-md lg:right-0 top-full absolute hidden group-hover:block"
                                     >
                                         <div
                                             class="shadow-lg ring-1 ring-black ring-opacity-5 max-h-screen overflow-hidden overflow-y-auto pb-12 bg-white py-4">
@@ -56,9 +64,7 @@
                                                     <a href="{{ Arr::get($i, 'url') }}"
                                                        class="p-3 flex items-center justify-between hover:bg-gray-100">
                                                         {{ Arr::get($i, 'title') }}
-
                                                         <x-theme::icons.chevron-down class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"/>
-
                                                     </a>
                                                     @foreach($subChildren as $subitemi)
                                                         <a href="{{ Arr::get($subitemi, 'url') }}"
@@ -131,7 +137,7 @@
             <!-- End Menu mobile -->
 
             <!-- Login/Cart -->
-            <div class="hidden lg:flex items-center justify-end">
+            <div class="hidden lg:flex items-center">
                 <a
                     href="javascript:void(0)"
                     rel="nofollow"
@@ -215,11 +221,9 @@
             <div class="flex items-center justify-between px-4 pt-1">
                 <div>
                     <img
-                        class="w-8 h-8 logo-header"
+                        class="h-8 logo-header"
                         src="{{ $logo }}?w=300&h=300"
                         alt="logo"
-                        width="300"
-                        height="300"
                     >
                 </div>
                 <div class="-mr-2">
@@ -291,7 +295,7 @@
                                                     @if(!empty($subChildren))
                                                         <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50">
                                                             <div
-                                                                class="{{ !empty($subChildren) ? 'flex items-center justify-between' : '' }}">
+                               @                                 class="{{ !empty($subChildren) ? 'flex items-center justify-between' : '' }}">
                                                                 <a
                                                                     href="{{ Arr::get($subitem, 'url') }}"
                                                                 >
