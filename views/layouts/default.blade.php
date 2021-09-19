@@ -80,7 +80,7 @@
 
 <script>
     $(function(){
-        $(document).pjax('a:not(.blank)', '#body');
+        $(document).pjax('a:not(.blank)', '#body-content');
         $.pjax.defaults.timeout = 1200;
 
         let loading;
