@@ -31,8 +31,6 @@
                 @if(!empty($data->sell_price) && $data->sell_price > 0)
                     <div class="flex text-red-600">
                         <span class="font-bold text-sm md:text-base">{{ format_price($data->sell_price) }}</span>
-                        &nbsp;
-                        <span class="text-sm font-semibold">đ</span>
                     </div>
                 @else
                     <div class="flex text-red-600">
