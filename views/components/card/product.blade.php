@@ -25,8 +25,6 @@
                         <span class="font-bold text-sm md:text-base">
                             {{ format_price($data->sell_price) }}
                         </span>
-                        &nbsp;
-                        <span class="text-base font-semibold underline">đ</span>
                         @if($data->price > $data->sell_price)
                             <span class="font-bold text-white bg-red-500 rounded-sm px-1 text-xs ml-2">
                                 -{{ format_price(100 - ($data->sell_price/$data->price)*100) }}%
