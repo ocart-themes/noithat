@@ -1,8 +1,15 @@
 @props(['keySlide'=> 'default'])
 
-<section class="sec-testimonial section-custom">
+<section class="sec-testimonial section-custom" style="background: url({{ TnMedia::getImageUrl(!empty(theme_options()->getOption('bg_testimonial1', null)) ? theme_options()->getOption('bg_testimonial1', null) : asset('/images/no-image.jpg')) }}) center center no-repeat;">
     <div class="max-w-6xl mx-auto px-4">
-        <!-- Swiper -->
+        @if(!empty(theme_options()->getOption('title_main_testimonial1', '')))
+            <div class="sec-blog-header lg:py-12">
+                <a href="{{ '/' }}" class="text-center section-title-main lg:text-3xl block">
+                    {{ theme_options()->getOption('title_main_testimonial1', '') }}
+                </a>
+            </div>
+    @endif
+    <!-- Swiper -->
         <div class="{{ 'swiperTestimonial1'.$keySlide }} swiper-container shadow-2xl rounded-lg">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -12,8 +19,8 @@
                         <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                             <img
                                 class="absolute h-full w-full object-cover lozad"
-                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=400', asset('/images/no-image.jpg')) }}"
-                                data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1', null) . '?w=600', asset('/images/no-image.jpg')) }} 2000w"
+                                data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1', null)) ? theme_options()->getOption('image_testimonial1', null) . '?w=400' : asset('/images/no-image.jpg')) }}"
+                                data-srcset="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1', null)) ? theme_options()->getOption('image_testimonial1', null) . '?w=400' : asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1', null)) ? theme_options()->getOption('image_testimonial1', null) . '?w=600' : asset('/images/no-image.jpg')) }} 2000w"
                                 src="{{ asset('/images/no-image.jpg') }}"
                                 alt="{{ theme_options()->getOption('title_testimonial1', '') }}"
                             />
@@ -29,10 +36,10 @@
                                 </p>
                                 <p class="mt-6 animate-bounce">
                                     <a
-                                        href="{{ theme_options()->getOption('link_testimonial1', 'javascript:void(0)') }}"
+                                        href="javascript:void(0)"
                                         class="font-medium text-blue-600 hover:text-blue-900"
                                     >
-                                        {{ theme_options()->getOption('title_testimonial1', '') }} &rarr;
+                                        {{ theme_options()->getOption('title_testimonial1', '') }}
                                     </a>
                                 </p>
                             </div>
@@ -46,8 +53,8 @@
                         <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                             <img
                                 class="absolute h-full w-full object-cover lozad"
-                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_2', null) . '?w=400', asset('/images/no-image.jpg')) }}"
-                                data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_2', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_2', null) . '?w=600', asset('/images/no-image.jpg')) }} 2000w"
+                                data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1_2', null)) ? theme_options()->getOption('image_testimonial1_2', null) . '?w=400' : asset('/images/no-image.jpg')) }}"
+                                data-srcset="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1_2', null)) ? theme_options()->getOption('image_testimonial1_2', null) . '?w=400' : asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1_2', null)) ? theme_options()->getOption('image_testimonial1_2', null) . '?w=600' : asset('/images/no-image.jpg')) }} 2000w"
                                 src="{{ asset('/images/no-image.jpg') }}"
                                 alt="{{ theme_options()->getOption('title_testimonial1_2', '') }}"
                             />
@@ -63,10 +70,10 @@
                                 </p>
                                 <p class="mt-6 animate-bounce">
                                     <a
-                                        href="{{ theme_options()->getOption('link_testimonial1_2', 'javascript:void(0)') }}"
+                                        href="javascript:void(0)"
                                         class="font-medium text-blue-600 hover:text-blue-900"
                                     >
-                                        {{ theme_options()->getOption('title_testimonial1_2', '') }} &rarr;
+                                        {{ theme_options()->getOption('title_testimonial1_2', '') }}
                                     </a>
                                 </p>
                             </div>
@@ -80,8 +87,8 @@
                         <div class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center effect">
                             <img
                                 class="absolute h-full w-full object-cover lozad"
-                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_3', null) . '?w=400', asset('/images/no-image.jpg')) }}"
-                                data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_3', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('image_testimonial1_3', null) . '?w=600', asset('/images/no-image.jpg')) }} 2000w"
+                                data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1_3', null)) ? theme_options()->getOption('image_testimonial1_3', null) . '?w=400' : asset('/images/no-image.jpg')) }}"
+                                data-srcset="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1_3', null)) ? theme_options()->getOption('image_testimonial1_3', null) . '?w=400' : asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_testimonial1_3', null)) ? theme_options()->getOption('image_testimonial1_3', null) . '?w=600' : asset('/images/no-image.jpg')) }} 2000w"
                                 src="{{ asset('/images/no-image.jpg') }}"
                                 alt="{{ theme_options()->getOption('title_testimonial1_3', '') }}"
                             />
@@ -97,10 +104,10 @@
                                 </p>
                                 <p class="mt-6 animate-bounce">
                                     <a
-                                        href="{{ theme_options()->getOption('link_testimonial1_3', 'javascript:void(0)') }}"
+                                        href="javascript:void(0)"
                                         class="font-medium text-blue-600 hover:text-blue-900"
                                     >
-                                        {{ theme_options()->getOption('title_testimonial1_3', '') }} &rarr;
+                                        {{ theme_options()->getOption('title_testimonial1_3', '') }}
                                     </a>
                                 </p>
                             </div>
