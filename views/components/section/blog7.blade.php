@@ -14,7 +14,7 @@
         @endphp
         <div class="w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
             @foreach($posts as $post)
-                <x-theme::card.post :data="$post" :video="true"/>
+                <x-theme::card.post :data="$post" :video="true" :postMeta="false"/>
             @endforeach
         </div>
     </div>

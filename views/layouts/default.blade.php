@@ -16,6 +16,11 @@
     <!-- Fonts -->
     <link rel=preload href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 
+    <style>
+        section:nth-child(odd) {
+            background: #ececec63;
+        }
+    </style>
     <link rel="stylesheet" href="{{ Theme::asset('css/speed.css') }}"/>
     <link rel="preload" href="{{ Theme::asset('css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <!-- Swiper CSS -->

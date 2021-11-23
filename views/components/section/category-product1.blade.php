@@ -1,9 +1,9 @@
-@props(['keySlide'=> 'default'])
+@props(['keySlide'=> 'default', 'limit' => 10])
 
 <section class="section-custom sec-category-product bg-white lg:bg-auto antialiased">
     <div class="container-custom">
-        <div class="w-full grid grid-cols-5 lg:grid-cols-10 gap-2 lg:gap-4">
-            @foreach(get_categories_feature(10) as $category)
+        <div class="w-full grid grid-cols-{{ $limit/2 }} lg:grid-cols-{{ $limit }} gap-2 lg:gap-4">
+            @foreach(get_categories_feature($limit) as $category)
                 <div class="text-center rounded-t-full hover:shadow-xl">
                     <a href="{!! $category->url !!}"
                        class="inline-block w-full">

@@ -6,18 +6,27 @@
                     @php
                         $address1 = theme_options()->getOption('address1', null);
                         $address2 = theme_options()->getOption('address2', null);
-                        $hotline = theme_options()->getOption('phone', null);
+                        $hotline1 = theme_options()->getOption('phone1', null);
+                        $hotline2 = theme_options()->getOption('phone2', null);
+                        $email = theme_options()->getOption('email', null);
                     @endphp
                     <h4 class="widget-title mb-3 font-bold text-lg text-white">{!! get_title() !!}</h4>
                     <p>{!! get_deps_footer() !!}</p>
+                    @if($hotline1)
+                        <p>Hotline: {!! $hotline1 !!}
+                        @if($hotline2)
+                            <span> - {!! $hotline2 !!}</span>
+                        @endif
+                        </p>
+                    @endif
+                    @if($email)
+                        <p>Email: {!! $email !!}</p>
+                    @endif
                     @if($address1)
                     <p>Địa chỉ 1: {!! $address1 !!}</p>
                     @endif
                     @if($address2)
                     <p>Địa chỉ 2: {!! $address2 !!}</p>
-                    @endif
-                    @if($hotline)
-                    <p>Hotline: {!! $hotline !!}</p>
                     @endif
                 </div>
 

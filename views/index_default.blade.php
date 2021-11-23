@@ -8,11 +8,11 @@
     @endif
 
     @if(is_array($sections) && in_array('sec2', $sections))
-        <x-theme::section.category-product1 :limit="8"/>
+        <x-theme::section.grid1/>
     @endif
 
     @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec3', $sections))
-        <x-theme::section.about4/>
+        <x-theme::section.category-product1/>
     @endif
 
     @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec4', $sections))
@@ -20,7 +20,7 @@
     @endif
 
     @if(is_array($sections) && in_array('sec5', $sections))
-        <x-theme::section.about5/>
+        <x-theme::section.about1/>
     @endif
 
     @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec6', $sections))
@@ -36,11 +36,20 @@
     @endif
 
     @if(is_active_plugin('blog') && is_array($sections) && in_array('sec9', $sections))
-        <x-theme::section.blog7/>
-        <x-theme::section.blog8/>
+        <x-theme::section.blog6/>
+    @endif
+
+    @if(is_array($sections) && in_array('sec10', $sections))
+        <x-theme::section.partner1/>
     @endif
 
     @if(is_active_plugin('contact') && is_array($sections) && in_array('sec11', $sections))
         <x-theme::section.contact1/>
     @endif
+
+    <style>
+        section:nth-child(odd) {
+            background: #ececec63;
+        }
+    </style>
 </x-guest-layout>

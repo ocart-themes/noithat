@@ -7,7 +7,7 @@
                 style="padding-bottom: calc( {{ $ratio }} * 100% );"
             >
                 <a
-                    href="{!! route(ROUTE_BLOG_POST_SCREEN_NAME, ['slug' => $data->slug]) !!}"
+                    href="{!! !empty($data->slug) ? $data->url : 'javascript:void(0)' !!}"
                     class="block"
                 >
                     <img
@@ -77,7 +77,7 @@
                     {{ $classTitle }}"
             >
                 <a
-                    href="{!! route(ROUTE_BLOG_POST_SCREEN_NAME, ['slug' => $data->slug]) !!}"
+                    href="{!! !empty($data->slug) ? $data->url : 'javascript:void(0)' !!}"
                     class="hover:underline"
                 >
                     {{ $data->name }}
