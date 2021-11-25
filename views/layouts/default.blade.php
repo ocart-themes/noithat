@@ -17,7 +17,7 @@
     <link rel=preload href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 
     <style>
-        section:nth-child(odd) {
+        section:nth-child(odd), .sec-category-product1 {
             background: #ececec63;
         }
     </style>

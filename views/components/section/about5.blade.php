@@ -5,27 +5,39 @@
                 <div class="flex flex-wrap items-center">
                     <div class="w-24 h-24 lg:w-32 lg:h-32">
                         <img
-                            src="http://thanglongosc.edu.vn/wp-content/uploads/2016/08/tuyen-nhan-vien-tu-van-xuat-khau-lao-dong.jpg"
-                            alt=""
-                            class="w-full h-full object-cover rounded-full"
+                            data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about5', null)) ? theme_options()->getOption('image_about5', null) . '?w=150' : asset('/images/no-image.jpg')) }}"
+                            src="{{ asset('/images/no-image.jpg') }}"
+                            class="w-full h-full object-cover rounded-full lozad"
+                            alt="professional consultant 1"
                         >
                     </div>
                     <div class="flex-1 text-left ml-2 lg:ml-8 lg:pr-8">
-                        <div class="text-xl lg:text-2xl font-bold">Diệu Linh</div>
-                        <div>Chuyên viên tư vấn sức khỏe</div>
-                        <div>
-                            <a href="tel:0972675428">SĐT: 0972675428</a>
+                        <div class="text-xl lg:text-2xl font-bold">
+                            {!! theme_options()->getOption('title_about5', '') !!}
                         </div>
                         <div>
-                            <a href="https://zalo.me/0972675428">Zalo: Diệu Linh</a>
+                            {!! theme_options()->getOption('deps_about5', '') !!}
                         </div>
+                        <div>
+                            <a href="tel:{!! theme_options()->getOption('phone_about5', '') !!}">SĐT: {!! theme_options()->getOption('phone_about5', '') !!}</a>
+                        </div>
+                        @if(theme_options()->getOption('zalo_about5', ''))
+                        <div>
+                            <a
+                                href="https://zalo.me/{!! theme_options()->getOption('zalo_about5', '') !!}"
+                                target="_blank"
+                            >
+                                Zalo: {!! theme_options()->getOption('zalo_about5', '') !!}
+                            </a>
+                        </div>
+                        @endif
                         <div class="hidden lg:block hotline-phone-ring-wrap absolute right-5 top-5">
                             <div class="hotline-phone-ring">
                                 <div class="hotline-phone-ring-circle"></div>
                                 <div class="hotline-phone-ring-circle-fill bg-indigo-500 opacity-60"></div>
                                 <div class="hotline-phone-ring-img-circle bg-indigo-500">
-                                    <a href="tel:0984151000" class="pps-btn-img">
-                                        <img src="https://dongycotruyenvietnam.net/wp-content/plugins/hotline-phone-ring/assets/images/icon-2.png" alt="Số điện thoại" width="50">
+                                    <a href="tel:{!! theme_options()->getOption('phone_about5', '') !!}" class="pps-btn-img">
+                                        <img src="{{ asset('/images/icon-phone.png') }}" alt="Số điện thoại" width="50">
                                     </a>
                                 </div>
                             </div>
@@ -37,27 +49,39 @@
                 <div class="flex flex-wrap items-center">
                     <div class="w-24 h-24 lg:w-32 lg:h-32">
                         <img
-                            src="http://thanglongosc.edu.vn/wp-content/uploads/2016/08/tuyen-nhan-vien-tu-van-xuat-khau-lao-dong.jpg"
-                            alt=""
-                            class="w-full h-full object-cover rounded-full"
+                            data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about5_2', null)) ? theme_options()->getOption('image_about5_2', null) . '?w=150' : asset('/images/no-image.jpg')) }}"
+                            src="{{ asset('/images/no-image.jpg') }}"
+                            class="w-full h-full object-cover rounded-full lozad"
+                            alt="professional consultant 2"
                         >
                     </div>
                     <div class="flex-1 text-left ml-2 lg:ml-8 lg:pr-8">
-                        <div class="text-xl lg:text-2xl font-bold">Thùy Trang</div>
-                        <div>Chuyên viên tư vấn sinh lý</div>
-                        <div>
-                            <a href="tel:0972675428">SĐT: 0999888666</a>
+                        <div class="text-xl lg:text-2xl font-bold">
+                            {!! theme_options()->getOption('title_about5_2', '') !!}
                         </div>
                         <div>
-                            <a href="https://zalo.me/0972675428">Zalo: Thùy Trang</a>
+                            {!! theme_options()->getOption('deps_about5_2', '') !!}
                         </div>
+                        <div>
+                            <a href="tel:{!! theme_options()->getOption('phone_about5_2', '') !!}">SĐT: {!! theme_options()->getOption('phone_about5_2', '') !!}</a>
+                        </div>
+                        @if(theme_options()->getOption('zalo_about5_2', ''))
+                        <div>
+                            <a
+                                href="https://zalo.me/{!! theme_options()->getOption('zalo_about5_2', '') !!}"
+                                target="_blank"
+                            >
+                                Zalo: {!! theme_options()->getOption('zalo_about5_2', '') !!}
+                            </a>
+                        </div>
+                        @endif
                         <div class="hidden lg:block hotline-phone-ring-wrap absolute right-5 top-5">
                             <div class="hotline-phone-ring">
                                 <div class="hotline-phone-ring-circle"></div>
-                                <div class="hotline-phone-ring-circle-fill bg-red-500 opacity-60"></div>
-                                <div class="hotline-phone-ring-img-circle bg-red-500">
-                                    <a href="tel:0984151000" class="pps-btn-img">
-                                        <img src="https://dongycotruyenvietnam.net/wp-content/plugins/hotline-phone-ring/assets/images/icon-2.png" alt="Số điện thoại" width="50">
+                                <div class="hotline-phone-ring-circle-fill bg-indigo-500 opacity-60"></div>
+                                <div class="hotline-phone-ring-img-circle bg-indigo-500">
+                                    <a href="tel:{!! theme_options()->getOption('phone_about5_2', '') !!}" class="pps-btn-img">
+                                        <img src="{{ asset('/images/icon-phone.png') }}" alt="Số điện thoại" width="50">
                                     </a>
                                 </div>
                             </div>

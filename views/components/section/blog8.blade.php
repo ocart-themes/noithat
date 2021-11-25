@@ -1,16 +1,16 @@
 <section class="sec-blog8 section-custom antialiased">
     <div class="container-custom">
-        <div class="sec-heading mx-auto mb-8">
+        <div class="sec-heading mx-auto lg:mb-8">
             <h2 class="text-xl md:text-2xl font-bold">
-                Sức khỏe
+                {{ theme_options()->getOption('title_blog8', '') }}
             </h2>
         </div>
-        <div class="grid grid-cols-12">
-            <div class="col-span-3 mr-8">
+        <div class="lg:grid lg:grid-cols-12">
+            <div class="lg:col-span-3 lg:mr-8 mb-4 lg:mb-0">
                 <ul>
                     @php $categories = get_blog_categories() @endphp
                     @foreach($categories as $category)
-                        <li class="py-3 pl-5 text-lg border-b border-dashed border-gray-300 relative">
+                        <li class="py-3 pl-5 lg:text-lg border-b border-dashed border-gray-300 relative">
                             <a href="{{ $category->url }}"
                                data-body="category-container"
                                class="font-bold text-blue-600 block hover:underline"
@@ -36,7 +36,7 @@
                 </style>
             </div>
             <div class="col-span-9">
-                <div class="grid grid-cols-2 gap-8">
+                <div class="lg:grid lg:grid-cols-2 gap-8">
                     @php
                         $posts = get_list_posts_feature(5);
                     @endphp

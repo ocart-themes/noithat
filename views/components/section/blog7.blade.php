@@ -1,10 +1,10 @@
 <section class="sec-blog6 section-custom antialiased">
     <div class="sec-heading text-center max-w-3xl mx-auto px-4 sm:px-6 mb-8">
         <h2 class="text-xl md:text-2xl font-bold">
-            {{ theme_options()->getOption('title_blog6', '') }}
+            {{ theme_options()->getOption('title_blog7', '') }}
         </h2>
         <p class="text-sm md:text-base text-gray-600">
-            {{ theme_options()->getOption('deps_blog6', '') }}
+            {{ theme_options()->getOption('deps_blog7', '') }}
         </p>
     </div>
 

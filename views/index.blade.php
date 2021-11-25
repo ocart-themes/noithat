@@ -23,24 +23,15 @@
         <x-theme::section.about5/>
     @endif
 
-    @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec6', $sections))
-        <x-theme::section.product2/>
-    @endif
-
-    @if(is_array($sections) && in_array('sec7', $sections))
-        <x-theme::section.testimonial1 keySlide="sec7"/>
-    @endif
-
-    @if(is_active_plugin('ecommerce') && is_array($sections) && in_array('sec8', $sections))
-        <x-theme::section.product3/>
-    @endif
-
-    @if(is_active_plugin('blog') && is_array($sections) && in_array('sec9', $sections))
+    @if(is_active_plugin('blog') && is_array($sections) && in_array('sec6', $sections))
         <x-theme::section.blog7/>
+    @endif
+
+    @if(is_active_plugin('blog') && is_array($sections) && in_array('sec7', $sections))
         <x-theme::section.blog8/>
     @endif
 
-    @if(is_active_plugin('contact') && is_array($sections) && in_array('sec11', $sections))
+    @if(is_active_plugin('contact') && is_array($sections) && in_array('sec8', $sections))
         <x-theme::section.contact1/>
     @endif
 </x-guest-layout>
