@@ -10,7 +10,7 @@
 
     <div class="container-custom">
         @php
-            $posts = get_list_posts_feature(6);
+            $posts = get_list_posts_feature_format_type('video', 6);
         @endphp
         <div class="w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
             @foreach($posts as $post)
