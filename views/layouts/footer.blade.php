@@ -50,7 +50,7 @@
                                     <ul class="footer-menu">
                                         @foreach($children as $i)
                                             @if(!empty(Arr::get($i, 'url')))
-                                                <li><a href="{{ Arr::get($i, 'url') }}">{{ Arr::get($i, 'title') }}</a></li>
+                                                <li><a href="{{ Arr::get($i, 'url') }}" target="{{ Arr::get($i, 'target') }}">{{ Arr::get($i, 'title') }}</a></li>
                                             @else
                                                 <li>{{ Arr::get($i, 'title') }}</li>
                                             @endif
