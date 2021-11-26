@@ -2,7 +2,7 @@
 @if($data)
     <div class="h-full block shadow-md hover:shadow-xl rounded-lg overflow-hidden">
         <a
-            href="{!! $data->url !!}"
+            href="{!! !empty($data->slug) ? $data->url : 'javascript:void(0)' !!}"
             class="effect"
             style="padding-bottom: calc( {{ $ratio }} * 100% );"
         >
@@ -15,7 +15,10 @@
             >
         </a>
         <div class="p-2 md:p-3">
-            <a href="{!! $data->url !!}" class="hover:text-blue-700">
+            <a
+                href="{!! !empty($data->slug) ? $data->url : 'javascript:void(0)' !!}"
+                class="hover:text-blue-700"
+            >
                 <h3 class="text-xs md:text-base font-semibold text-gray-700 line-clamp-2">{{ $data->name }}</h3>
             </a>
 
@@ -36,7 +39,7 @@
                         <span class="font-bold text-sm md:text-base">Liên hệ</span>
                     </div>
                 @endif
-                <button onclick="addToCart({{ $data->id, $data->slug }})" class="hidden md:block flex text-blue-600 p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:text-green-500" title="Thêm vào giỏ hàng">
+                <button onclick="addToCart({{ $data->id, !empty($data->slug) ? $data->url : 'javascript:void(0)' }})" class="hidden md:block flex text-blue-600 p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:text-green-500" title="Thêm vào giỏ hàng">
                     <x-theme::icons.shopping-cart class="w-7"/>
                 </button>
 
