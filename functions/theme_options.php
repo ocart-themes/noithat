@@ -227,6 +227,15 @@ Event::listen(RouteMatched::class, function () {
         'name' => 'deps_product1',
         'label' => trans('Section 4 Deps'),
     ])->setField([
+        'id' => 'bg_about_5',
+        'section_id' => 'opt-sections',
+        'type' => Field::MEDIA_IMAGE,
+        'name' => 'bg_about_5',
+        'label' => trans('Section 5 Background'),
+        'attr' => [
+            'placeholder' => trans('Image'),
+        ]
+    ])->setField([
         'id' => 'image_about5',
         'section_id' => 'opt-sections',
         'type' => Field::MEDIA_IMAGE,
@@ -260,6 +269,12 @@ Event::listen(RouteMatched::class, function () {
         'name' => 'zalo_about5',
         'label' => trans('Section 5 Zalo'),
     ])->setField([
+        'id' => 'facebook_about5',
+        'section_id' => 'opt-sections',
+        'type' => Field::TEXT,
+        'name' => 'facebook_about5',
+        'label' => trans('Section 5 Facebook'),
+    ])->setField([
         'id' => 'image_about5_2',
         'section_id' => 'opt-sections',
         'type' => Field::MEDIA_IMAGE,
@@ -292,6 +307,12 @@ Event::listen(RouteMatched::class, function () {
         'type' => Field::TEXT,
         'name' => 'zalo_about5_2',
         'label' => trans('Section 5_2 Zalo'),
+    ])->setField([
+        'id' => 'facebook_about5_2',
+        'section_id' => 'opt-sections',
+        'type' => Field::TEXT,
+        'name' => 'facebook_about5_2',
+        'label' => trans('Section 5_2 Facebook'),
     ])->setField([
         'id' => 'title_blog7',
         'section_id' => 'opt-sections',

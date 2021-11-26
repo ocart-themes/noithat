@@ -1,7 +1,10 @@
-<section class="sec-about5 section-custom antialiased">
+<section
+    class="sec-about5 section-custom antialiased"
+    style="@if(!empty(theme_options()->getOption('bg_about_5', null))) background: url({{ TnMedia::getImageUrl(theme_options()->getOption('bg_about_5', null)) }}) center center no-repeat;background-size: cover @endif"
+>
     <div class="container-custom">
         <div class="lg:grid lg:grid-cols-2 lg:gap-5 xl:gap-7">
-            <div class="p-4 lg:p-8 mb-4 lg:mb-0 rounded-md text-white bg-purple-400 relative">
+            <div class="content-left p-4 lg:p-8 mb-4 lg:mb-0 rounded-md text-white bg-blue-400 relative">
                 <div class="flex flex-wrap items-center">
                     <div class="w-24 h-24 lg:w-32 lg:h-32">
                         <img
@@ -31,21 +34,31 @@
                             </a>
                         </div>
                         @endif
+                        @if(theme_options()->getOption('facebook_about5', ''))
                         <div class="hidden lg:block hotline-phone-ring-wrap absolute right-5 top-5">
                             <div class="hotline-phone-ring">
                                 <div class="hotline-phone-ring-circle"></div>
-                                <div class="hotline-phone-ring-circle-fill bg-indigo-500 opacity-60"></div>
-                                <div class="hotline-phone-ring-img-circle bg-indigo-500">
-                                    <a href="tel:{!! theme_options()->getOption('phone_about5', '') !!}" class="pps-btn-img">
-                                        <img src="{{ asset('/images/icon-phone.png') }}" alt="Số điện thoại" width="50">
+                                <div class="hotline-phone-ring-circle-fill bg-green-600 opacity-60"></div>
+                                <div class="hotline-phone-ring-img-circle bg-green-600">
+                                    <a
+                                        href="{!! theme_options()->getOption('facebook_about5', '') !!}"
+                                        class="pps-btn-img"
+                                        target="_blank"
+                                    >
+                                        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M22.0026 7.70215C14.1041 7.70215 7.70117 13.6308 7.70117 20.9442C7.70117 25.1115 9.78083 28.8286 13.0309 31.256V36.305L17.9004 33.6325C19.2 33.9922 20.5767 34.1863 22.0026 34.1863C29.9011 34.1863 36.304 28.2576 36.304 20.9442C36.304 13.6308 29.9011 7.70215 22.0026 7.70215ZM23.4221 25.5314L19.7801 21.6471L12.6738 25.5314L20.4908 17.2331L24.2216 21.1174L31.239 17.2331L23.4221 25.5314Z"
+                                                  fill="white"></path>
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
-            <div class="p-4 lg:p-8 mb-4 lg:mb-0 rounded-md text-white bg-yellow-500 relative">
+            <div class="content-right p-4 lg:p-8 mb-4 lg:mb-0 rounded-md text-white bg-yellow-400 relative">
                 <div class="flex flex-wrap items-center">
                     <div class="w-24 h-24 lg:w-32 lg:h-32">
                         <img
@@ -75,17 +88,27 @@
                             </a>
                         </div>
                         @endif
+                        @if(theme_options()->getOption('facebook_about5_2', ''))
                         <div class="hidden lg:block hotline-phone-ring-wrap absolute right-5 top-5">
                             <div class="hotline-phone-ring">
                                 <div class="hotline-phone-ring-circle"></div>
-                                <div class="hotline-phone-ring-circle-fill bg-indigo-500 opacity-60"></div>
-                                <div class="hotline-phone-ring-img-circle bg-indigo-500">
-                                    <a href="tel:{!! theme_options()->getOption('phone_about5_2', '') !!}" class="pps-btn-img">
-                                        <img src="{{ asset('/images/icon-phone.png') }}" alt="Số điện thoại" width="50">
+                                <div class="hotline-phone-ring-circle-fill bg-red-500 opacity-60"></div>
+                                <div class="hotline-phone-ring-img-circle bg-red-500">
+                                    <a
+                                        href="{!! theme_options()->getOption('facebook_about5_2', '') !!}"
+                                        class="pps-btn-img"
+                                        target="_blank"
+                                    >
+                                        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M22.0026 7.70215C14.1041 7.70215 7.70117 13.6308 7.70117 20.9442C7.70117 25.1115 9.78083 28.8286 13.0309 31.256V36.305L17.9004 33.6325C19.2 33.9922 20.5767 34.1863 22.0026 34.1863C29.9011 34.1863 36.304 28.2576 36.304 20.9442C36.304 13.6308 29.9011 7.70215 22.0026 7.70215ZM23.4221 25.5314L19.7801 21.6471L12.6738 25.5314L20.4908 17.2331L24.2216 21.1174L31.239 17.2331L23.4221 25.5314Z"
+                                                  fill="white"></path>
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -187,9 +210,9 @@
             display: -ms-flexbox;
             display: flex;
         }
-        .hotline-phone-ring-img-circle .pps-btn-img img {
-            width: 33px;
-            height: 33px;
+        .hotline-phone-ring-img-circle .pps-btn-img img, .hotline-phone-ring-img-circle .pps-btn-img svg {
+            width: 50px;
+            height: 50px;
         }
     </style>
 </section>
