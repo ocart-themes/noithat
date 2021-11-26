@@ -19,12 +19,12 @@
                             {!! theme_options()->getOption('deps_about5', '') !!}
                         </div>
                         <div>
-                            <a href="tel:{!! theme_options()->getOption('phone_about5', '') !!}">SĐT: {!! theme_options()->getOption('phone_about5', '') !!}</a>
+                            <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone_about5', null) )}}">SĐT: {!! theme_options()->getOption('phone_about5', '') !!}</a>
                         </div>
                         @if(theme_options()->getOption('zalo_about5', ''))
                         <div>
                             <a
-                                href="https://zalo.me/{!! theme_options()->getOption('zalo_about5', '') !!}"
+                                href="https://zalo.me/{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('zalo_about5', null) )}}"
                                 target="_blank"
                             >
                                 Zalo: {!! theme_options()->getOption('zalo_about5', '') !!}
@@ -63,12 +63,12 @@
                             {!! theme_options()->getOption('deps_about5_2', '') !!}
                         </div>
                         <div>
-                            <a href="tel:{!! theme_options()->getOption('phone_about5_2', '') !!}">SĐT: {!! theme_options()->getOption('phone_about5_2', '') !!}</a>
+                            <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone_about5_2', null) )}}">SĐT: {!! theme_options()->getOption('phone_about5_2', '') !!}</a>
                         </div>
                         @if(theme_options()->getOption('zalo_about5_2', ''))
                         <div>
                             <a
-                                href="https://zalo.me/{!! theme_options()->getOption('zalo_about5_2', '') !!}"
+                                href="https://zalo.me/{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('zalo_about5_2', null) )}}"
                                 target="_blank"
                             >
                                 Zalo: {!! theme_options()->getOption('zalo_about5_2', '') !!}
