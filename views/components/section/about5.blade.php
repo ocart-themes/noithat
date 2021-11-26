@@ -19,7 +19,7 @@
                             {!! theme_options()->getOption('deps_about5', '') !!}
                         </div>
                         <div>
-                            <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone_about5', null) )}}">SĐT: {!! theme_options()->getOption('phone_about5', '') !!}</a>
+                            <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone_about5', null) )}}">Phone: {!! theme_options()->getOption('phone_about5', '') !!}</a>
                         </div>
                         @if(theme_options()->getOption('zalo_about5', ''))
                         <div>
@@ -63,7 +63,7 @@
                             {!! theme_options()->getOption('deps_about5_2', '') !!}
                         </div>
                         <div>
-                            <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone_about5_2', null) )}}">SĐT: {!! theme_options()->getOption('phone_about5_2', '') !!}</a>
+                            <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone_about5_2', null) )}}">Phone: {!! theme_options()->getOption('phone_about5_2', '') !!}</a>
                         </div>
                         @if(theme_options()->getOption('zalo_about5_2', ''))
                         <div>
