@@ -18,7 +18,7 @@
 
     <style>
         section:nth-child(odd), .sec-category-product1 {
-            background: #ececec63;
+            background-color: #ececec63;
         }
     </style>
     <link rel="stylesheet" href="{{ Theme::asset('css/speed.css') }}"/>
@@ -38,6 +38,14 @@
     <!-- Meta Head -->
     {!! theme_options()->getOption('meta_header', '') !!}
     <!-- End Meta Head -->
+
+    <!-- Style Css Custom -->
+    @if(!empty(theme_options()->getOption('style_custom', '')))
+        <style>
+            {!! theme_options()->getOption('style_custom', '') !!}
+        </style>
+    @endif
+    <!-- End Style Css Custom -->
 
     @stack('head')
 

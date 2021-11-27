@@ -49,6 +49,17 @@ Event::listen(RouteMatched::class, function () {
             'rows' => 3,
         ]
     ])->setField([
+        'id' => 'style_custom',
+        'section_id' => 'opt-general',
+        'type' => Field::TEXTAREA,
+        'name' => 'style_custom',
+        'label' => trans('Css Custom'),
+        'attr' => [
+            'placeholder' => trans('Code Css'),
+            'inline' => true,
+            'rows' => 3,
+        ]
+    ])->setField([
         'id' => 'address1',
         'section_id' => 'opt-general',
         'type' => Field::TEXT,

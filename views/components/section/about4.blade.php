@@ -1,4 +1,4 @@
-<section class="sec-about4 section-custom antialiased">
+<section class="sec-about4 section-custom antialiased" style="background-color: rgba(59,130,246,1) !important;">
     <div class="container-custom">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full xl:w-1/2 p-4 pt-14 text-white">
@@ -39,9 +39,6 @@
             height: 100%;
             border: 4px solid #fff;
             right: 0;
-        }
-        .sec-about4{
-            background-color: rgba(37, 99, 235, 1) !important;
         }
     </style>
 
