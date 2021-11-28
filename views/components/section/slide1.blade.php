@@ -68,7 +68,7 @@
             spaceBetween: 1,
             slidesPerView: 1,
             autoplay: {
-                delay: 15000,
+                delay: 5000,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
