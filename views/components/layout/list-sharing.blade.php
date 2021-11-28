@@ -1,8 +1,8 @@
 <div id="list-sharing-desktop" class="list-sharing z-50">
     <ul class="list-sharing-ul">
-        @if(!empty(theme_options()->getOption('phone', null)))
+        @if(!empty(theme_options()->getOption('phone1', null)))
             <li class="list-sharing-item">
-                <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone', null) )}}" rel="nofollow"
+                <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone1', null) )}}" rel="nofollow"
                    class="list-sharing-item-icon">
                     <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="22" cy="22" r="22" fill="url(#paint2_linear)"></circle>
