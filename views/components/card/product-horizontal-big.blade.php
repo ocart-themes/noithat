@@ -11,7 +11,9 @@
         </a>
 
         <div class="lg:opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out absolute bottom-0 right-0 top-0 bg-white bg-opacity-90 w-1/2 p-2 md:p-3" >
-            <a href="{!! $data->url !!}">
+            <a
+                href="{!! !empty($data->slug) ? $data->url : 'javascript:void(0)' !!}"
+            >
                 <h3 class="text-xs md:text-base font-semibold text-gray-700 line-clamp-4 hover:text-blue-700 mt-4">{{ $data->name }}</h3>
             </a>
 
