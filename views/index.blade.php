@@ -4,7 +4,7 @@
     @endphp
 
     @if(is_array($sections) && in_array('sec1', $sections))
-        <x-theme::section.slide1 keySlide="sec1"/>
+        <x-theme::section.slide2 keySlide="sec1"/>
     @endif
 
     @if(is_array($sections) && in_array('sec2', $sections))
