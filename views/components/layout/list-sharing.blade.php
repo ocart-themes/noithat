@@ -154,11 +154,11 @@
         }
         .list-sharing-ul{
             display: flex;
-            align-items: center;
+            /*align-items: center;*/
             background: white;
         }
         .list-sharing-ul .list-sharing-item{
-            margin-bottom: 7px;
+            margin-bottom: 3px;
             margin-top: 5px;
             flex: 1;
             text-align: center;
