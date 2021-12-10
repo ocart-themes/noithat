@@ -2,7 +2,7 @@
     <div class="container-custom">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full xl:w-1/2 p-4 pt-14 text-white">
-                <h2 class="text-2xl font-bold pl-4 border-l-2 mb-4">
+                <h2 class="text-xl md:text-2xl font-bold pl-4 border-l-2 mb-4">
                     {!! theme_options()->getOption('title_about4', '') !!}
                 </h2>
                 <div>{!! theme_options()->getOption('deps_about4', '') !!}</div>
