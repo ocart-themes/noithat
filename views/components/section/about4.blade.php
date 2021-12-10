@@ -19,13 +19,15 @@
             </div>
             <div class="w-full xl:w-1/2 p-4">
                 <div class="image relative">
-                    <img
-                        data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=400' : asset('/images/no-image.jpg')) }}"
-                        data-srcset="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=400' : asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=600' : asset('/images/no-image.jpg')) }} 2000w"
-                        src="{{ asset('/images/no-image.jpg') }}"
-                        class="w-full h-full block m-auto relative lozad md:pl-0 md:p-10 rounded-md border-4 border-white"
-                        alt="about"
-                    >
+                    <div class="md:pl-0 md:p-10">
+                        <img
+                            data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=400' : asset('/images/no-image.jpg')) }}"
+                            data-srcset="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=400' : asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=600' : asset('/images/no-image.jpg')) }} 2000w"
+                            src="{{ asset('/images/no-image.jpg') }}"
+                            class="w-full h-full block m-auto relative lozad rounded-md border-4 border-white md:border-none shadow-2xl"
+                            alt="about"
+                        >
+                    </div>
                 </div>
             </div>
         </div>
