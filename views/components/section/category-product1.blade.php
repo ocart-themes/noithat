@@ -17,7 +17,7 @@
                             >
                         </div>
 
-                        <div class="text-gray-600 font-bold lg:line-clamp-1 text-xs md:text-base">
+                        <div class="text-gray-600 font-bold lg:line-clamp-1 text-xs md:text-base mt-2 md:mt-0">
                             {{ $category->name }}
                         </div>
                     </a>

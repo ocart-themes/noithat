@@ -23,7 +23,7 @@
                         data-src="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=400' : asset('/images/no-image.jpg')) }}"
                         data-srcset="{{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=400' : asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(!empty(theme_options()->getOption('image_about4', null)) ? theme_options()->getOption('image_about4', null) . '?w=600' : asset('/images/no-image.jpg')) }} 2000w"
                         src="{{ asset('/images/no-image.jpg') }}"
-                        class="w-full h-full block m-auto relative lozad pl-0 p-10"
+                        class="w-full h-full block m-auto relative lozad md:pl-0 md:p-10 rounded-md border-4 border-white"
                         alt="about"
                     >
                 </div>
@@ -31,15 +31,18 @@
         </div>
     </div>
     <style>
-        .sec-about4 .image:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            border: 4px solid #fff;
-            right: 0;
+        @media (min-width: 768px) {
+            .sec-about4 .image:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 50%;
+                height: 100%;
+                border: 4px solid #fff;
+                right: 0;
+            }
         }
+
     </style>
 
 </section>
