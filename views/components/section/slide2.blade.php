@@ -21,7 +21,7 @@
 
                             <img
                                 data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_mobile', null) . '?w=600', asset('/images/no-image.jpg')) }}"
-                                src="{{ asset('/images/no-image.jpg') }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_mobile', null) . '?w=100', asset('/images/no-image.jpg')) }}"
                                 alt="banner home 1 mobile"
                                 class="mx-auto lozad w-full md:hidden"
                                 width="750"
@@ -47,7 +47,7 @@
 
                             <img
                                 data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2_mobile', null) . '?w=600', asset('/images/no-image.jpg')) }}"
-                                src="{{ asset('/images/no-image.jpg') }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2_mobile', null) . '?w=100', asset('/images/no-image.jpg')) }}"
                                 alt="banner home 2 mobile"
                                 class="mx-auto lozad w-full md:hidden"
                                 width="750"
@@ -73,7 +73,7 @@
 
                             <img
                                 data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3_mobile', null) . '?w=600', asset('/images/no-image.jpg')) }}"
-                                src="{{ asset('/images/no-image.jpg') }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3_mobile', null) . '?w=100', asset('/images/no-image.jpg')) }}"
                                 alt="banner home 3 mobile"
                                 class="mx-auto lozad w-full md:hidden"
                                 width="750"
