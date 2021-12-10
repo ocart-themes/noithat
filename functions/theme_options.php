@@ -159,6 +159,15 @@ Event::listen(RouteMatched::class, function () {
             'placeholder' => trans('Image'),
         ]
     ])->setField([
+        'id' => 'slide1_mobile',
+        'section_id' => 'opt-sections',
+        'type' => Field::MEDIA_IMAGE,
+        'name' => 'slide1_mobile',
+        'label' => trans('Section 1 Slide Mobile'),
+        'attr' => [
+            'placeholder' => trans('Image'),
+        ]
+    ])->setField([
         'id' => 'link_slide1_2',
         'section_id' => 'opt-sections',
         'type' => Field::TEXT,
@@ -177,6 +186,15 @@ Event::listen(RouteMatched::class, function () {
             'placeholder' => trans('Image'),
         ]
     ])->setField([
+        'id' => 'slide1_2_mobile',
+        'section_id' => 'opt-sections',
+        'type' => Field::MEDIA_IMAGE,
+        'name' => 'slide1_2_mobile',
+        'label' => trans('Section 1.2 Slide Mobile'),
+        'attr' => [
+            'placeholder' => trans('Image'),
+        ]
+    ])->setField([
         'id' => 'link_slide1_3',
         'section_id' => 'opt-sections',
         'type' => Field::TEXT,
@@ -191,6 +209,15 @@ Event::listen(RouteMatched::class, function () {
         'type' => Field::MEDIA_IMAGE,
         'name' => 'slide1_3',
         'label' => trans('Section 1.3 Slide'),
+        'attr' => [
+            'placeholder' => trans('Image'),
+        ]
+    ])->setField([
+        'id' => 'slide1_3_mobile',
+        'section_id' => 'opt-sections',
+        'type' => Field::MEDIA_IMAGE,
+        'name' => 'slide1_3_mobile',
+        'label' => trans('Section 1.3 Slide Mobile'),
         'attr' => [
             'placeholder' => trans('Image'),
         ]

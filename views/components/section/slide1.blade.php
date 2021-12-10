@@ -1,7 +1,7 @@
 @props(['keySlide'=> 'default'])
 
-<section {!! $attributes->merge(['class' => 'sec-slide1 section-custom py-4']) !!}>
-    <div class="container-custom">
+<section {!! $attributes->merge(['class' => 'sec-slide1 section-custom py-0']) !!}>
+    <div class="box-slide1">
         <div class="{{ 'swiperSlide1'.$keySlide }} swiper-container overflow-hidden">
             <div class="swiper-wrapper">
                 @if(!empty(theme_options()->getOption('slide1', null)))
@@ -11,13 +11,21 @@
                             class="inline-block w-full"
                         >
                             <img
-                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=400', asset('/images/no-image.jpg')) }}"
-                                data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=1200', asset('/images/no-image.jpg')) }} 2000w"
-                                src="{{ asset('/images/no-image.jpg') }}"
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=1920', asset('/images/no-image.jpg')) }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1', null) . '?w=100', asset('/images/no-image.jpg')) }}"
                                 alt="banner home 1"
-                                class="mx-auto lozad w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                                class="mx-auto lozad w-full hidden md:inline-block"
                                 width="1200"
                                 height="554"
+                            >
+
+                            <img
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_mobile', null) . '?w=600', asset('/images/no-image.jpg')) }}"
+                                src="{{ asset('/images/no-image.jpg') }}"
+                                alt="banner home 1 mobile"
+                                class="mx-auto lozad w-full md:hidden"
+                                width="750"
+                                height="820"
                             >
                         </a>
                     </div>
@@ -29,13 +37,21 @@
                             class="inline-block w-full"
                         >
                             <img
-                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=400', asset('/images/no-image.jpg')) }}"
-                                data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=1200', asset('/images/no-image.jpg')) }} 2000w"
-                                src="{{ asset('/images/no-image.jpg') }}"
-                                alt="banner home 1"
-                                class="mx-auto lozad w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=1920', asset('/images/no-image.jpg')) }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2', null) . '?w=100', asset('/images/no-image.jpg')) }}"
+                                alt="banner home 2"
+                                class="mx-auto lozad w-full hidden md:inline-block"
                                 width="1200"
                                 height="554"
+                            >
+
+                            <img
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_2_mobile', null) . '?w=600', asset('/images/no-image.jpg')) }}"
+                                src="{{ asset('/images/no-image.jpg') }}"
+                                alt="banner home 2 mobile"
+                                class="mx-auto lozad w-full md:hidden"
+                                width="750"
+                                height="820"
                             >
                         </a>
                     </div>
@@ -47,13 +63,21 @@
                             class="inline-block w-full"
                         >
                             <img
-                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=400', asset('/images/no-image.jpg')) }}"
-                                data-srcset="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=400', asset('/images/no-image.jpg')) }} 1000w, {{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=1200', asset('/images/no-image.jpg')) }} 2000w"
-                                src="{{ asset('/images/no-image.jpg') }}"
-                                alt="banner home 1"
-                                class="mx-auto lozad w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=1920', asset('/images/no-image.jpg')) }}"
+                                src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3', null) . '?w=100', asset('/images/no-image.jpg')) }}"
+                                alt="banner home 3"
+                                class="mx-auto lozad w-full hidden md:inline-block"
                                 width="1200"
                                 height="554"
+                            >
+
+                            <img
+                                data-src="{{ TnMedia::getImageUrl(theme_options()->getOption('slide1_3_mobile', null) . '?w=600', asset('/images/no-image.jpg')) }}"
+                                src="{{ asset('/images/no-image.jpg') }}"
+                                alt="banner home 3 mobile"
+                                class="mx-auto lozad w-full md:hidden"
+                                width="750"
+                                height="820"
                             >
                         </a>
                     </div>
