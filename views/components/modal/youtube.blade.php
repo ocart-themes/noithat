@@ -35,6 +35,7 @@
                         class="mfp-iframe w-full h-full"
                         src=""
                         allowfullscreen
+                        allow='autoplay'
                     >
                     </iframe>
                 </div>
