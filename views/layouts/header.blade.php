@@ -356,8 +356,8 @@
                     @if(theme_options()->getOption('seo_description', null))
                         <p>{{ theme_options()->getOption('seo_description', null) }}</p>
                     @endif
-                    @if(theme_options()->getOption('phone', null))
-                        <p>Hotline: {{ theme_options()->getOption('phone', null) }}</p>
+                    @if(theme_options()->getOption('phone1', null))
+                        <p>Hotline: {{ theme_options()->getOption('phone1', null) }}</p>
                     @endif
                     @if(theme_options()->getOption('address1', null))
                         <p>Địa chỉ 1: {{ theme_options()->getOption('address1', null) }}</p>

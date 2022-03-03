@@ -71,7 +71,7 @@
             @php
                 $domain = theme_options()->getOption('domain_web', '');
             @endphp
-            <p class="mb-0">© 2021 {{ $domain }} Designd By <a href="https://sevenweb.vn">SevenWeb</a> All Rights
+            <p class="mb-0">© 2021 {{ $domain }} Designd By <a href="https://zalo.me/0972675428" rel="noreferrer nofollow" target="_blank">SevenWeb</a> All Rights
                 Reserved</p>
         </div>
     </div>

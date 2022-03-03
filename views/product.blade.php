@@ -172,12 +172,12 @@
                                 </div>
                             </button>
 
-                            @if(!empty(theme_options()->getOption('phone', null)))
-                                <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone', null) )}}"
+                            @if(!empty(theme_options()->getOption('phone1', null)))
+                                <a href="tel:{{ preg_replace( '/[^0-9]/', '', theme_options()->getOption('phone1', null) )}}"
                                    class="items-center whitespace-nowrap inline-flex w-full text-white bg-green-500 border-0 py-3 px-6 mt-3 focus:outline-none rounded">
                                     <x-theme::icons.phone class="w-8"/>
                                     <span
-                                        class="w-full text-xl text-center">{{ theme_options()->getOption('phone', null) }}</span>
+                                        class="w-full text-xl text-center">{{ theme_options()->getOption('phone1', null) }}</span>
                                 </a>
                             @endif
 
