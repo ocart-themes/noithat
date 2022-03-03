@@ -43,7 +43,9 @@
             <div class="content-mce mb-4">
                 @php
                     $doc = new DOMDocument();
+                    libxml_use_internal_errors(true);
                     $doc->loadHTML('<?xml encoding="utf-8" ?>' . '<body><div class="generate-index-content mb-4 p-4 bg-gray-100 rounded-md"><div class="font-bold text-xl py-1">Xem nhanh</div></div>' . $post->content . '</body>');
+                    libxml_clear_errors();
 
                     // create document fragment
                     $frag = $doc->createDocumentFragment();
