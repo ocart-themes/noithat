@@ -601,6 +601,7 @@
         function product() {
             let product = @json($product);
             const link_home_storage = @json(TnMedia::url('/'));
+            console.log('link_home_storage', link_home_storage);
             let attributes = {};
             let list_attr = [];
             let _index = 0;
